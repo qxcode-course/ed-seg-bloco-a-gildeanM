@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_21-55-05",
+            "content": "package main\n\nimport \"fmt\"\n\nconst NAME_LEN = 25\nconst CLASSIFICATION_LEN = 8\n\nfunc main() {\n\tvar name string\n\tvar age int\n\tfmt.Scan(&name)\n\tfmt.Scan(&age)\n\n\tvar classification string\n\n\tif age < 12 {\n\t\tclassification = \"crianca\"\n\t} else if age < 18 {\n\t\tclassification = \"jovem\"\n\t} else if age < 65 {\n\t\tclassification = \"adulto\"\n\t} else if age < 1000 {\n\t\tclassification = \"idoso\"\n\t} else {\n\t\tclassification = \"mumia\"\n\t}\n\n\tfmt.Printf(\"%s eh %s\\n\", name, classification)\n}\n",
+            "lines": "29"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_21-48-01",
+            "content": "@@ -129,12 +129,10 @@\n (%22%25f\n- \n %25f\n- \n %25f%22,\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-15_21-49-21",
+            "content": "@@ -129,14 +129,12 @@\n (%22%25f\n-%5Cn%25f%5Cn\n+ %25f \n %25f%22,\n@@ -199,19 +199,17 @@\n  *%0A%09%09%09(p\n- - \n+-\n a) *%0A%09%09%09\n@@ -210,19 +210,17 @@\n  *%0A%09%09%09(p\n- - \n+-\n b) *%0A%09%09%09\n@@ -225,11 +225,9 @@\n %09%09(p\n- - \n+-\n c),%0A\n@@ -262,6 +262,5 @@\n ea)%0A\n+\n %7D\n-%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-15_21-49-47",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\t// puts(\"qxcode\");\n\tvar a, b, c float64\n\tvar p, area float64\n\n\tfmt.Scanf(\"%f\\n%f\\n%f\", &a, &b, &c)\n\n\tp = (a + b + c) / 2\n\n\tarea = math.Sqrt(\n\t\tp *\n\t\t\t(p - a) *\n\t\t\t(p - b) *\n\t\t\t(p - c),\n\t)\n\n\tfmt.Printf(\"%.2f\\n\", area)\n}\n",
+            "lines": "25"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_22-05-23",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nconst MIN_DISTANCE = 10\n\nfunc calc_distance(stoneA, stoneB int) int {\n\tdiff := stoneA - stoneB\n\tif diff < 0 {\n\t\tdiff = -diff\n\t}\n\treturn diff\n}\n\nfunc main() {\n\tvar n int\n\tif _, err := fmt.Scan(&n); err != nil {\n\t\treturn\n\t}\n\n\trank := make([][2]int, n)\n\tminor_distance := 101\n\tidx_winner := -1\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&rank[i][0], &rank[i][1])\n\t}\n\n\tfor i := 0; i < n; i++ {\n\t\tdistance := calc_distance(rank[i][0], rank[i][1])\n\n\t\tif rank[i][0] < MIN_DISTANCE || rank[i][1] < MIN_DISTANCE {\n\t\t\tcontinue\n\t\t}\n\t\tif distance < minor_distance {\n\t\t\tminor_distance = distance\n\t\t\tidx_winner = i\n\t\t}\n\t}\n\n\tif idx_winner == -1 {\n\t\tfmt.Println(\"sem ganhador\")\n\t\treturn\n\t}\n\n\tfmt.Println(idx_winner)\n}\n",
+            "lines": "49"
+        }
+    ]
+}

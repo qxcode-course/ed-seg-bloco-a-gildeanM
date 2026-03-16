@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_22-09-29",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc match_pair(animal int, descasados []int, n int) int {\n\tfor i := 0; i < n; i++ {\n\t\tpair := 0 - animal\n\t\tif descasados[i] == pair {\n\t\t\treturn i\n\t\t}\n\t}\n\treturn -1\n}\n\nfunc main() {\n\treader := bufio.NewReader(os.Stdin)\n\twriter := bufio.NewWriter(os.Stdout)\n\tdefer writer.Flush()\n\n\t// puts(\"qxcode\");\n\n\tvar n int\n\tif _, err := fmt.Fscan(reader, &n); err != nil {\n\t\treturn\n\t}\n\n\tdescasados := make([]int, n)\n\tqtd_pairs := 0\n\n\tfor i := 0; i < n; i++ {\n\t\tvar animal int\n\t\tfmt.Fscan(reader, &animal)\n\n\t\tpair_index := match_pair(animal, descasados, i)\n\n\t\tif pair_index != -1 {\n\t\t\tdescasados[pair_index] = 0\n\t\t\tqtd_pairs++\n\t\t} else {\n\t\t\tdescasados[i] = animal\n\t\t}\n\t}\n\n\tfmt.Fprintln(writer, qtd_pairs)\n}\n",
+            "lines": "49"
+        }
+    ]
+}

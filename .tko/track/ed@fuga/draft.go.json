@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_21-59-43",
+            "content": "package main\n\nimport \"fmt\"\n\nconst HORARIO = -1\nconst ANTI_HORARIO = 1\n\nfunc calc_distance(from int, to int, direction int) int {\n\tisHorario := 0\n\tif direction == HORARIO {\n\t\tisHorario = 1\n\t}\n\tdistance := 0\n\tif to > from {\n\t\tif isHorario == 1 {\n\t\t\tdistance = 16 - (to - from)\n\t\t} else {\n\t\t\tdistance = to - from\n\t\t}\n\t} else {\n\t\tif isHorario == 1 {\n\t\t\tdistance = from - to\n\t\t} else {\n\t\t\tdistance = 16 - (from - to)\n\t\t}\n\t}\n\treturn distance\n}\n\nfunc main() {\n\tvar h, p, f, d int\n\tvar res byte = 'S'\n\n\tfmt.Scanf(\"%d %d %d %d\", &h, &p, &f, &d)\n\n\tdistanceFromFToH := calc_distance(f, h, d)\n\tdistanceFromPToH := calc_distance(p, h, d)\n\n\tif distanceFromFToH > distanceFromPToH {\n\t\tres = 'N'\n\t}\n\n\tfmt.Printf(\"%c\\n\", res)\n}\n",
+            "lines": "44"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_22-14-34",
+            "content": "@@ -78,33 +78,34 @@\n %0A%0Afunc atualizar\n-C\n+_c\n obra(cobra %5B%5DPos\n@@ -348,113 +348,116 @@\n  %7B%0A%09\n-var qtdGomos int%0A%09var pos byte%0A%0A%09reader := bufio.NewReader(os.Stdin)%0A%09fmt.Fscanf(reader, %22%25d %25c%5Cn%22\n+// puts(%22qxcode%22);%0A%0A%09in := bufio.NewReader(os.Stdin)%0A%09var qtd_gomos int%0A%09var pos byte%0A%0A%09fmt.Fscan(in\n , &qtd\n-G\n+_g\n omos\n@@ -486,25 +486,26 @@\n e(%5B%5DPos, qtd\n-G\n+_g\n omos)%0A%0A%09for \n@@ -511,33 +511,34 @@\n  i := 0; i %3C qtd\n-G\n+_g\n omos; i++ %7B%0A%09%09fm\n@@ -548,27 +548,11 @@\n scan\n-f(reader, %22%25d %25d%5Cn%22\n+(in\n , &c\n@@ -593,9 +593,10 @@\n izar\n-C\n+_c\n obra\n@@ -605,24 +605,59 @@\n obra, pos)%0A%0A\n+%09out := bufio.NewWriter(os.Stdout)%0A\n %09for i := 0;\n@@ -668,9 +668,10 @@\n  qtd\n-G\n+_g\n omos\n@@ -688,15 +688,21 @@\n fmt.\n-P\n+Fp\n rintf(\n+out, \n %22%25d \n@@ -731,14 +731,27 @@\n ra%5Bi%5D.y)%0A%09%7D%0A\n+%09out.Flush()%0A\n %7D%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-15_22-20-06",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tx, y int\n}\n\nfunc atualizarCobra(cobra []Pos, direcao byte) {\n\tfor i := len(cobra) - 1; i > 0; i-- {\n\t\tcobra[i] = cobra[i-1]\n\t}\n\n\tswitch direcao {\n\tcase 'U':\n\t\tcobra[0].y -= 1\n\tcase 'D':\n\t\tcobra[0].y += 1\n\tcase 'L':\n\t\tcobra[0].x -= 1\n\tcase 'R':\n\t\tcobra[0].x += 1\n\t}\n}\n\nfunc main() {\n\tvar qtdGomos int\n\tvar pos byte\n\n\treader := bufio.NewReader(os.Stdin)\n\tfmt.Fscanf(reader, \"%d %c\\n\", &qtdGomos, &pos)\n\n\tcobra := make([]Pos, qtdGomos)\n\n\tfor i := 0; i < qtdGomos; i++ {\n\t\tfmt.Fscanf(reader, \"%d %d\\n\", &cobra[i].x, &cobra[i].y)\n\t}\n\n\tatualizarCobra(cobra, pos)\n\n\tfor i := 0; i < qtdGomos; i++ {\n\t\tfmt.Printf(\"%d %d\\n\", cobra[i].x, cobra[i].y)\n\t}\n}\n",
+            "lines": "48"
+        }
+    ]
+}

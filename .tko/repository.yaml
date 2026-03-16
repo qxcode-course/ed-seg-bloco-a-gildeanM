@@ -1,0 +1,37 @@
+version: '0.2'
+sources:
+- name: sandbox
+  target: sandbox
+  type: local
+  writeable: true
+  quests: null
+  tasks: null
+- name: ed
+  target: https://github.com/qxcodeed/arcade.git
+  type: git
+  writeable: false
+  cache_timestamp: '2026-03-15 21:43:58'
+  quests: null
+  tasks: null
+expanded:
+- ed@análise
+- ed@pilha-e-fila
+- ed@revisão
+- ed@main-quest
+- ed@side-quests
+tasks:
+  ed@pintando: '{rate:100}'
+  ed@mumia: '{rate:100}'
+  ed@fuga: '{rate:100}'
+  ed@pedra: '{rate:100}'
+  ed@casais: '{rate:100}'
+  ed@baruel: '{rate:100}'
+flags:
+  painel: 0
+  quests: 0
+  tracks: 0
+  tasks: 0
+  task_graph_mode: 0
+  show_time: 0
+lang: go
+selected: ed@gomos
