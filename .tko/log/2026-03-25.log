@@ -1,0 +1,15 @@
+2026-03-25 20:58:11, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-03-25 20:58:13, EXEC, v:1, k:ed@gomos, mode:FULL, rate:100
+2026-03-25 20:58:17, MOVE, v:1, k:ed@gomos, mode:BACK
+2026-03-25 20:58:24, MOVE, v:1, k:ed@manipulacao, mode:PICK
+2026-03-25 20:58:27, EXEC, v:1, k:ed@manipulacao, mode:FULL, rate:57, size:132
+2026-03-25 21:11:52, EXEC, v:1, k:ed@manipulacao, mode:FULL, rate:57, size:123
+2026-03-25 21:13:35, EXEC, v:1, k:ed@manipulacao, mode:FULL, rate:57, size:125
+2026-03-25 21:19:06, EXEC, v:1, k:ed@manipulacao, mode:FULL, rate:71, size:126
+2026-03-25 21:25:22, MOVE, v:1, k:ed@manipulacao, mode:BACK
+2026-03-25 21:51:05, MOVE, v:1, k:ed@manipulacao, mode:PICK
+2026-03-25 21:51:08, EXEC, v:1, k:ed@manipulacao, mode:FULL, rate:85, size:136
+2026-03-25 22:01:52, EXEC, v:1, k:ed@manipulacao, mode:FULL, rate:100, size:148
+2026-03-25 22:01:55, MOVE, v:1, k:ed@manipulacao, mode:BACK
+2026-03-25 22:12:54, MOVE, v:1, k:ed@especiais, mode:PICK
+2026-03-25 22:12:57, EXEC, v:1, k:ed@especiais, mode:FULL, rate:0, size:132

@@ -10,15 +10,11 @@ sources:
   target: https://github.com/qxcodeed/arcade.git
   type: git
   writeable: false
-  cache_timestamp: '2026-03-15 21:43:58'
   quests: null
   tasks: null
 expanded:
-- ed@análise
-- ed@pilha-e-fila
-- ed@revisão
-- ed@main-quest
-- ed@side-quests
+- ed@rec
+- ed@map_set
 tasks:
   ed@pintando: '{rate:100}'
   ed@mumia: '{rate:100}'
@@ -26,12 +22,18 @@ tasks:
   ed@pedra: '{rate:100}'
   ed@casais: '{rate:100}'
   ed@baruel: '{rate:100}'
+  ed@gomos: '{rate:100}'
+  ed@apagando: '{rate:100}'
+  ed@manipulacao: '{rate:100}'
+  ed@buscas: '{rate:100}'
+  ed@rotacoes: '{rate:100}'
+  ed@triangulo: '{rate:100}'
+  ed@treinando: '{rate:33}'
 flags:
-  painel: 0
-  quests: 0
-  tracks: 0
-  tasks: 0
+  panel: 1
+  inbox: 1
+  show_panel: 1
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@gomos
+selected: ed@diagonal

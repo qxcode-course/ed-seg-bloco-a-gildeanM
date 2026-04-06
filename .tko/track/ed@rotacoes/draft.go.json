@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-03_20-40-49",
+            "content": "@@ -378,16 +378,18 @@\n d_vector\n+%09%09\n %0A%0A%09%09vect\n@@ -451,104 +451,25 @@\n rint\n-(%22%5B %22)%0A%09for _, val := range vector_rotated %7B%0A%09%09fmt.Print(val)%0A%09%09fmt.Print(%22 %22)%0A%09%7D%0A%09fmt.Print(%22%5D%22\n+ln(vector_rotated\n )%0A%0A%7D\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-03_20-43-19",
+            "content": "@@ -541,10 +541,8 @@\n rint\n-ln\n (%22%5D%22\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-03_20-43-28",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\tvar qtd_vector, qtd_rotations int\n\n\tfmt.Scan(&qtd_vector, &qtd_rotations)\n\n\tvector := make([]int, qtd_vector)\n\tvector_rotated := make([]int, qtd_vector)\n\n\tfor i := 0; i < qtd_vector; i++ {\n\n\t\tfmt.Scan(&vector[i])\n\n\t}\n\n\tfor i := qtd_vector - 1; i >= 0; i-- {\n\t\tvalue_on_last_idx := vector[i]\n\t\tidx_upgraded := (i + qtd_rotations) % qtd_vector\n\n\t\tvector_rotated[idx_upgraded] = value_on_last_idx\n\t}\n\n\tfmt.Print(\"[ \")\n\tfor _, val := range vector_rotated {\n\t\tfmt.Print(val)\n\t\tfmt.Print(\" \")\n\t}\n\tfmt.Println(\"]\")\n\n}\n",
+            "lines": "34"
+        }
+    ]
+}

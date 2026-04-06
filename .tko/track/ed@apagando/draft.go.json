@@ -1,0 +1,74 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-16_21-14-12",
+            "content": "@@ -162,35 +162,25 @@\n nt%0A%09fmt.Scan\n-f(%22%25d%5Cn%22, &\n+(\n qtd_persons)\n@@ -267,17 +267,9 @@\n Scan\n-f(%22%25d%22, &\n+(\n queu\n@@ -309,27 +309,17 @@\n fmt.Scan\n-f(%22%25d%5Cn%22, &\n+(\n qtd_quit\n@@ -441,19 +441,9 @@\n Scan\n-f(%22%25d%5Cn%22, &\n+(\n quit\n@@ -577,13 +577,14 @@\n dx, \n-idx+1\n+person\n )%0A%09%09\n@@ -594,126 +594,39 @@\n %7D%0A%0A%09\n-qtd_persons -= qtd_quitters%0A%0A%09for i := 0; i %3C qtd_persons; i++ %7B%0A%09%09fmt.Print(queue%5Bi%5D)%0A%09%09if i != (qtd_persons - 1)\n+for _, person := range queue\n  %7B%0A\n-%09\n %09%09fm\n@@ -637,46 +637,15 @@\n int(\n-%22 %22)%0A%09%09%7D else %7B%0A%09%09%09fmt.Print(%22%5Cn%22)%0A%09%09%7D\n+person)\n %0A%09%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-16_21-40-55",
+            "content": "@@ -23,16 +23,26 @@\n %0A%09%22fmt%22%0A\n+%09%22slices%22%0A\n )%0A%0A// fu\n@@ -521,128 +521,15 @@\n %7D%0A%0A%09\n-qtdPersonsAfterQuitters := qtd_persons - qtd_quitters%0A%09queueAfterQuitters := make(%5B%5Dint, qtdPersonsAfterQuitters)%0A%09for _\n+for idx\n , pe\n@@ -559,9 +559,8 @@\n %09if \n-!\n quit\n@@ -586,65 +586,80 @@\n ueue\n-AfterQuitters = append(queueAfterQuitters, person)%0A%09%09%7D%0A%09%7D\n+ = slices.Delete(queue, idx, idx+1)%0A%09%09%7D%0A%09%7D%0A%0A%09qtd_persons -= qtd_quitters\n %0A%0A%09f\n@@ -680,28 +680,16 @@\n  qtd\n-P\n+_p\n ersons\n-AfterQuitters\n ; i+\n@@ -707,43 +707,80 @@\n rint\n-f(%22%25d %22, queueAfterQuitters%5Bi%5D)%0A%09%7D%0A\n+(queue%5Bi%5D)%0A%09%09if i != (qtd_persons - 1) %7B%0A%09%09%09fmt.Print(%22 %22)%0A%09%09%7D else %7B%0A%09%09\n %09fmt\n@@ -791,12 +791,19 @@\n nt(%22%5Cn%22)\n+%0A%09%09%7D%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-16_21-49-02",
+            "content": "@@ -30,23 +30,27 @@\n %0A)%0A%0A\n+// \n func \n-has\n+find\n Quitte\n-d\n+r\n (qui\n@@ -92,62 +92,28 @@\n l %7B%0A\n-%09if quitters%5Bperson%5D %7B%0A%09%09return true%0A%09%7D%0A%09return false%0A\n+%0A// %09return true%0A// \n %7D%0A%0Af\n@@ -625,18 +625,8 @@\n rs)%0A\n-%09idx := 0%0A\n %09for\n@@ -663,27 +663,16 @@\n if !\n-hasQuitted(\n quitters\n , pe\n@@ -671,17 +671,16 @@\n ters\n-, \n+%5B\n person\n-)\n+%5D\n  %7B%0A%09\n@@ -703,31 +703,45 @@\n ters\n-%5Bidx%5D = person%0A%09%09%09idx++\n+ = append(queueAfterQuitters, person)\n %0A%09%09%7D\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-16_22-13-00",
+            "content": "@@ -661,17 +661,16 @@\n dx := 0%0A\n-%0A\n %09for _, \n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-16_22-24-37",
+            "content": "@@ -629,11 +629,8 @@\n int,\n- 0,\n  qtd\n@@ -646,24 +646,34 @@\n terQuitters)\n+%0A%09idx := 0\n %0A%0A%09for _, pe\n@@ -756,45 +756,31 @@\n ters\n- = append(queueAfterQuitters, person)\n+%5Bidx%5D = person%0A%09%09%09idx++\n %0A%09%09%7D\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-16_22-29-27",
+            "content": "@@ -660,19 +660,17 @@\n )%0A%0A%09for \n-idx\n+_\n , person\n@@ -692,16 +692,17 @@\n  %7B%0A%09%09if \n+!\n hasQuitt\n@@ -728,85 +728,8 @@\n ) %7B%0A\n-%09%09%09queue%5Bidx%5D = 0%0A%09%09%7D%0A%09%7D%0A%0A%09for _, person := range queue %7B%0A%09%09if person != 0 %7B%0A\n %09%09%09q\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-03-16_22-54-12",
+            "content": "@@ -485,17 +485,26 @@\n fmt.Scan\n-(\n+f(%22%25d%5Cn%22, \n &quitter\n@@ -747,17 +747,16 @@\n = 0%0A%09%09%7D%0A\n-%0A\n %09%7D%0A%0A%09for\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-03-17_16-39-18",
+            "content": "@@ -747,26 +747,8 @@\n %09%7D%0A%0A\n-%09fmt.Print(%22oi%22)%0A%0A\n %09for\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-03-23_16-17-43",
+            "content": "@@ -739,24 +739,42 @@\n  0%0A%09%09%7D%0A%0A%09%7D%0A%0A\n+%09fmt.Print(%22oi%22)%0A%0A\n %09for _, pers\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-03-23_16-17-56",
+            "content": "@@ -651,17 +651,19 @@\n )%0A%0A%09for \n-_\n+idx\n , person\n@@ -689,17 +689,27 @@\n %09if \n-!\n+hasQuitted(\n quitters\n %5Bper\n@@ -700,32 +700,111 @@\n ted(quitters\n-%5B\n+, \n person\n-%5D\n+) %7B%0A%09%09%09queue%5Bidx%5D = 0%0A%09%09%7D%0A%0A%09%7D%0A%0A%09for _, person := range queue %7B%0A%09%09if person != 0\n  %7B%0A%09%09%09queueA\n@@ -853,25 +853,24 @@\n person)%0A%09%09%7D%0A\n-%0A\n %09%7D%0A%0A%09for _, \n@@ -870,27 +870,30 @@\n for \n-_, v := range queue\n+i := 0; i %3C qtdPersons\n Afte\n@@ -901,16 +901,21 @@\n Quitters\n+; i++\n  %7B%0A%09%09fmt\n@@ -929,17 +929,37 @@\n (%22%25d %22, \n-v\n+queueAfterQuitters%5Bi%5D\n )%0A%09%7D%0A%09fm\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-03-23_16-23-38",
+            "content": "@@ -320,27 +320,8 @@\n %09%7D%0A%0A\n-%09fmt.Print(queue)%0A%0A\n %09var\n@@ -531,30 +531,8 @@\n %09%7D%0A%0A\n-%09fmt.Print(quitters)%0A%0A\n %09qtd\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-23_16-24-55",
+            "content": "@@ -293,17 +293,24 @@\n fmt.Scan\n-(\n+f(%22%25d%22, \n &queue%5Bi\n@@ -326,18 +326,16 @@\n mt.Print\n-ln\n (queue)%0A\n@@ -366,17 +366,26 @@\n fmt.Scan\n-(\n+f(%22%25d%5Cn%22, \n &qtd_qui\n@@ -560,10 +560,8 @@\n rint\n-ln\n (qui\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-23_16-26-22",
+            "content": "@@ -306,27 +306,24 @@\n ue%5Bi%5D)%0A%09%7D%0A%0A%09\n-// \n fmt.Println(\n@@ -537,11 +537,8 @@\n %7D%0A%0A%09\n-// \n fmt.\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-23_16-27-03",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc hasQuitted(quitters map[int]bool, person int) bool {\n\tif quitters[person] {\n\t\treturn true\n\t}\n\treturn false\n}\n\nfunc main() {\n\n\tvar qtd_persons int\n\tfmt.Scanf(\"%d\\n\", &qtd_persons)\n\n\tqueue := make([]int, qtd_persons)\n\n\tfor i := 0; i < qtd_persons; i++ {\n\t\tfmt.Scan(&queue[i])\n\t}\n\n\t// fmt.Println(queue)\n\n\tvar qtd_quitters int\n\tfmt.Scan(&qtd_quitters)\n\n\tquitters := make(map[int]bool, qtd_quitters)\n\n\tfor i := 0; i < qtd_quitters; i++ {\n\t\tvar quitter int\n\t\tfmt.Scan(&quitter)\n\t\tquitters[quitter] = true\n\t}\n\n\t// fmt.Println(quitters)\n\n\tqtdPersonsAfterQuitters := qtd_persons - qtd_quitters\n\tqueueAfterQuitters := make([]int, 0, qtdPersonsAfterQuitters)\n\n\tfor _, person := range queue {\n\t\tif !quitters[person] {\n\t\t\tqueueAfterQuitters = append(queueAfterQuitters, person)\n\t\t}\n\n\t}\n\n\tfor _, v := range queueAfterQuitters {\n\t\tfmt.Printf(\"%d \", v)\n\t}\n\tfmt.Print(\"\\n\")\n\n}\n",
+            "lines": "55"
+        }
+    ]
+}

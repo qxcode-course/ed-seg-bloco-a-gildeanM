@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-03_21-14-41",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc processa(vet []int) {\n\t// 1. defina o ponto de parada\n\tif len(vet) > 1 {\n\n\t\t// 2. monte o vetor auxiliar com os resultados das somas\n\t\taux := make([]int, 0)\n\n\t\tfor i := 0; i < len(vet)-1; i++ {\n\t\t\tsum := vet[i] + vet[i+1]\n\t\t\taux = append(aux, sum)\n\t\t}\n\n\t\t// 3. chame recursivamente a fun\u00e7\u00e3o processa para o vetor auxiliar\n\t\tprocessa(aux)\n\t}\n\n\t// 4. imprima o vetor original\n\tfmt.Print(\"[ \")\n\tfor _, val := range vet {\n\t\tfmt.Print(val)\n\t\tfmt.Print(\" \")\n\t}\n\n\tfmt.Println(\"]\")\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\tparts := strings.Fields(line)\n\tvet := []int{}\n\tfor _, part := range parts {\n\t\tif value, err := strconv.Atoi(part); err == nil {\n\t\t\tvet = append(vet, value)\n\t\t}\n\t}\n\tprocessa(vet)\n}\n\nfunc Join[T any](v []T, sep string) string {\n\tif len(v) == 0 {\n\t\treturn \"\"\n\t}\n\ts := \"\"\n\tfor i, x := range v {\n\t\tif i > 0 {\n\t\t\ts += sep\n\t\t}\n\t\ts += fmt.Sprintf(\"%v\", x)\n\t}\n\treturn s\n}\n",
+            "lines": "65"
+        }
+    ]
+}

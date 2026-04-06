@@ -1,0 +1,43 @@
+2026-04-03 20:40:45, MOVE, v:1, k:ed@rotacoes, mode:PICK
+2026-04-03 20:40:49, EXEC, v:1, k:ed@rotacoes, mode:FULL, rate:0, size:29
+2026-04-03 20:43:19, EXEC, v:1, k:ed@rotacoes, mode:FULL, rate:0, size:34
+2026-04-03 20:43:28, EXEC, v:1, k:ed@rotacoes, mode:FULL, rate:100, size:34
+2026-04-03 20:43:34, MOVE, v:1, k:ed@rotacoes, mode:BACK
+2026-04-03 20:44:31, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-04-03 20:44:36, MOVE, v:1, k:ed@triangulo, mode:DOWN
+2026-04-03 20:44:38, MOVE, v:1, k:ed@treinando, mode:DOWN
+2026-04-03 20:44:39, MOVE, v:1, k:ed@resto, mode:DOWN
+2026-04-03 20:44:41, MOVE, v:1, k:ed@mdc, mode:DOWN
+2026-04-03 20:44:42, MOVE, v:1, k:ed@queimada, mode:DOWN
+2026-04-03 20:44:43, MOVE, v:1, k:ed@labirinto, mode:DOWN
+2026-04-03 20:44:45, MOVE, v:1, k:ed@eh_primo, mode:DOWN
+2026-04-03 20:44:47, MOVE, v:1, k:ed@vetequals, mode:DOWN
+2026-04-03 20:45:21, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-03 20:45:23, EXEC, v:1, k:ed@fractais_png, mode:FREE, size:136
+2026-04-03 20:45:31, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-04-03 20:45:36, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-03 20:47:18, EXEC, v:1, k:ed@fractais_png, mode:FULL, fail:COMP
+2026-04-03 20:47:27, EXEC, v:1, k:ed@fractais_png, mode:FULL, fail:COMP
+2026-04-03 20:47:27, EXEC, v:1, k:ed@fractais_png, mode:FULL, fail:COMP
+2026-04-03 20:48:14, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-04-03 20:52:28, EXEC, v:1, k:fractais_png@go, mode:FREE, size:136
+2026-04-03 20:54:08, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-03 20:54:10, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0
+2026-04-03 20:54:20, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-04-03 21:14:40, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-04-03 21:14:41, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:100, size:65
+2026-04-03 21:14:55, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-04-03 21:50:14, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-04-03 21:50:15, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:100
+2026-04-03 21:50:18, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-04-03 21:50:23, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-04-03 21:50:24, EXEC, v:1, k:ed@treinando, mode:FULL, rate:0, size:91
+2026-04-03 21:56:00, EXEC, v:1, k:ed@treinando, mode:FULL, rate:0, size:94
+2026-04-03 21:56:46, EXEC, v:1, k:ed@treinando, mode:FREE
+2026-04-03 22:15:05, EXEC, v:1, k:ed@treinando, mode:FULL, rate:0, size:99
+2026-04-03 22:15:54, EXEC, v:1, k:ed@treinando, mode:FULL, rate:0
+2026-04-03 22:16:00, EXEC, v:1, k:ed@treinando, mode:FREE
+2026-04-03 22:16:54, EXEC, v:1, k:ed@treinando, mode:FULL, rate:16, size:99
+2026-04-03 22:17:32, EXEC, v:1, k:ed@treinando, mode:FULL, rate:16, size:105
+2026-04-03 22:18:07, EXEC, v:1, k:ed@treinando, mode:FULL, rate:33, size:105
+2026-04-03 22:22:10, MOVE, v:1, k:ed@treinando, mode:BACK

@@ -1,0 +1,89 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-30_15-56-05",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,531 +37,32 @@\n ) %7B%0A\n-%0A%09var nquerys, nsearchs int%0A%0A%09fmt.Scan(nquerys)%0A%0A%09strs := make(%5B%5Dstring, nquerys)%0A%0A%09for i := 0; i %3C nquerys; i++ %7B%0A%09%09var query string%0A%09%09fmt.Scan(query)%0A%09%09strs = append(strs, query)%0A%09%7D%0A%0A%09fmt.Scan(nsearchs)%0A%0A%09searchs := make(map%5Bstring%5Dint, nsearchs)%0A%09searchsnum := make(%5B%5Dint, nsearchs)%0A%0A%09for i := 0; i %3C nsearchs; i++ %7B%0A%09%09var search string%0A%09%09fmt.Scan(search)%0A%09%09searchs%5Bsearch%5D = i%0A%09%7D%0A%0A%09for _, s := range strs %7B%0A%09%09idx := searchs%5Bs%5D%0A%09%09searchsnum%5Bidx%5D++%0A%09%7D%0A%0A%09for _, num := range searchsnum %7B%0A%09%09fmt.Print(num)%0A%09%7D%0A%09fmt.Println()%0A\n+    fmt.Println(%22qxcode%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-30_16-20-32",
+            "content": "@@ -48,16 +48,26 @@\n  nquerys\n+, nsearchs\n  int%0A%0A%09f\n@@ -225,29 +225,8 @@\n %7D%0A%0A%09\n-fmt.Print(strs)%0A%0A%09// \n fmt.\n@@ -242,19 +242,16 @@\n rchs)%0A%0A%09\n-// \n searchs \n@@ -285,19 +285,16 @@\n archs)%0A%09\n-// \n searchsn\n@@ -323,19 +323,16 @@\n rchs)%0A%0A%09\n-// \n for i :=\n@@ -356,19 +356,16 @@\n  i++ %7B%0A%09\n-// \n %09var sea\n@@ -376,19 +376,16 @@\n string%0A%09\n-// \n %09fmt.Sca\n@@ -395,19 +395,16 @@\n earch)%0A%09\n-// \n %09searchs\n@@ -417,26 +417,20 @@\n h%5D = i%0A%09\n-// \n %7D%0A%0A%09\n-// \n for _, s\n@@ -447,19 +447,16 @@\n strs %7B%0A%09\n-// \n %09idx := \n@@ -467,19 +467,16 @@\n chs%5Bs%5D%0A%09\n-// \n %09searchs\n@@ -491,18 +491,12 @@\n ++%0A%09\n-// \n %7D%0A%0A%09\n-// \n for \n@@ -525,19 +525,16 @@\n snum %7B%0A%09\n-// \n %09fmt.Pri\n@@ -546,17 +546,11 @@\n m)%0A%09\n-// %7D%0A%09// \n+%7D%0A%09\n fmt.\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-30_16-22-09",
+            "content": "@@ -214,28 +214,8 @@\n %09%7D%0A%0A\n-%09fmt.Print(nquerys)%0A\n %09fmt\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-30_16-22-50",
+            "content": "@@ -68,9 +68,8 @@\n can(\n-&\n nque\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-30_16-23-01",
+            "content": "@@ -211,16 +211,36 @@\n ry)%0A%09%7D%0A%0A\n+%09fmt.Print(nquerys)%0A\n %09fmt.Pri\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-30_16-23-21",
+            "content": "@@ -215,35 +215,8 @@\n %09%7D%0A%0A\n-%09for _, s := range strs %7B%0A%09\n %09fmt\n@@ -223,20 +223,20 @@\n .Print(s\n-)%0A%09%7D\n+trs)\n %0A%0A%09// fm\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-30_16-23-52",
+            "content": "@@ -48,26 +48,16 @@\n  nquerys\n-, nsearchs\n  int%0A%0A%09f\n@@ -171,17 +171,16 @@\n mt.Scan(\n-&\n query)%0A%09\n@@ -212,16 +212,64 @@\n y)%0A%09%7D%0A%0A%09\n+for _, s := range strs %7B%0A%09%09fmt.Print(s)%0A%09%7D%0A%0A%09// \n fmt.Scan\n@@ -269,17 +269,16 @@\n mt.Scan(\n-&\n nsearchs\n@@ -281,16 +281,19 @@\n rchs)%0A%0A%09\n+// \n searchs \n@@ -327,16 +327,19 @@\n archs)%0A%09\n+// \n searchsn\n@@ -364,24 +364,27 @@\n nsearchs)%0A%0A%09\n+// \n for i := 0; \n@@ -400,24 +400,27 @@\n chs; i++ %7B%0A%09\n+// \n %09var search \n@@ -419,32 +419,35 @@\n  search string%0A%09\n+// \n %09fmt.Scan(&searc\n@@ -440,17 +440,16 @@\n mt.Scan(\n-&\n search)%0A\n@@ -449,16 +449,19 @@\n earch)%0A%09\n+// \n %09searchs\n@@ -474,20 +474,26 @@\n h%5D = i%0A%09\n+// \n %7D%0A%0A%09\n+// \n for _, s\n@@ -510,16 +510,19 @@\n strs %7B%0A%09\n+// \n %09idx := \n@@ -533,16 +533,19 @@\n chs%5Bs%5D%0A%09\n+// \n %09searchs\n@@ -556,20 +556,26 @@\n idx%5D++%0A%09\n+// \n %7D%0A%0A%09\n+// \n for _, n\n@@ -596,24 +596,27 @@\n archsnum %7B%0A%09\n+// \n %09fmt.Print(n\n@@ -624,11 +624,17 @@\n m)%0A%09\n-%7D%0A%09\n+// %7D%0A%09// \n fmt.\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-30_16-24-30",
+            "content": "@@ -543,17 +543,9 @@\n rint\n-f(%22%25d %22, \n+(\n num)\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-30_16-25-39",
+            "content": "@@ -423,12 +423,8 @@\n  = i\n- + 1\n %0A%09%7D%0A\n@@ -490,10 +490,8 @@\n %5Bidx\n--1\n %5D++%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-30_16-27-53",
+            "content": "@@ -477,12 +477,8 @@\n s%5Bs%5D\n- - 1\n %0A%09%09s\n@@ -490,16 +490,18 @@\n snum%5Bidx\n+-1\n %5D++%0A%09%7D%0A%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-30_16-30-03",
+            "content": "@@ -419,16 +419,20 @@\n rch%5D = i\n+ + 1\n %0A%09%7D%0A%0A%09fo\n@@ -473,16 +473,20 @@\n archs%5Bs%5D\n+ - 1\n %0A%09%09searc\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-30_16-31-31",
+            "content": "@@ -423,12 +423,8 @@\n  = i\n- + 1\n %0A%09%7D%0A\n@@ -473,43 +473,8 @@\n s%5Bs%5D\n- - 1%0A%09%09if idx %3C 0 %7B%0A%09%09%09continue%0A%09%09%7D\n %0A%09%09s\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-30_16-33-05",
+            "content": "@@ -538,17 +538,17 @@\n %7D%0A%0A%09for \n-i\n+_\n , num :=\n@@ -583,16 +583,17 @@\n intf(%22%25d\n+ \n %22, num)%0A\n@@ -597,49 +597,10 @@\n m)%0A%09\n-%09fmt.Print(%22 %22)%0A%09%09if i == nsearchs-1 %7B%0A%09%09\n+%7D%0A\n %09fmt\n@@ -613,15 +613,8 @@\n ln()\n-%0A%09%09%7D%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-30_16-35-47",
+            "content": "@@ -647,13 +647,11 @@\n rint\n-(%22%5Cn%22\n+ln(\n )%0A%09%09\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-30_16-36-37",
+            "content": "@@ -595,33 +595,8 @@\n um)%0A\n-%0A%09%09if i != nsearchs-1 %7B%0A%09\n %09%09fm\n@@ -614,14 +614,26 @@\n )%0A%09%09\n-%7D else\n+if i == nsearchs-1\n  %7B%0A%09\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-30_16-37-06",
+            "content": "@@ -103,22 +103,16 @@\n ake(\n-map\n %5B\n+%5D\n string\n-%5Dint\n , nq\n@@ -199,17 +199,30 @@\n strs\n-%5B\n+ = append(strs, \n query\n-%5D++\n+)\n %0A%09%7D%0A\n@@ -249,11 +249,8 @@\n )%0A%0A%09\n-// \n sear\n@@ -261,24 +261,30 @@\n := make(\n+map\n %5B\n-%5D\n string\n+%5Dint\n , nsearc\n@@ -411,29 +411,129 @@\n rchs\n-num%5Bi%5D = strs%5Bsearch%5D\n+%5Bsearch%5D = i + 1%0A%09%7D%0A%0A%09for _, s := range strs %7B%0A%09%09idx := searchs%5Bs%5D - 1%0A%09%09if idx %3C 0 %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09searchsnum%5Bidx%5D++\n %0A%09%7D%0A\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-30_16-53-54",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\tvar nquerys, nsearchs int\n\n\tfmt.Scan(&nquerys)\n\n\tstrs := make(map[string]int, nquerys)\n\n\tfor i := 0; i < nquerys; i++ {\n\t\tvar query string\n\t\tfmt.Scan(&query)\n\t\tstrs[query]++\n\t}\n\n\tfmt.Scan(&nsearchs)\n\n\t// searchs := make([]string, nsearchs)\n\tsearchsnum := make([]int, nsearchs)\n\n\tfor i := 0; i < nsearchs; i++ {\n\t\tvar search string\n\t\tfmt.Scan(&search)\n\t\tsearchsnum[i] = strs[search]\n\t}\n\n\tfor i, num := range searchsnum {\n\t\tfmt.Printf(\"%d\", num)\n\n\t\tif i != nsearchs-1 {\n\t\t\tfmt.Print(\" \")\n\t\t} else {\n\t\t\tfmt.Print(\"\\n\")\n\t\t}\n\t}\n\n}\n",
+            "lines": "40"
+        }
+    ]
+}
