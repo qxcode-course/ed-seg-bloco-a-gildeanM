@@ -1,0 +1,79 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-14_13-29-25",
+            "content": "@@ -634,25 +634,16 @@\n t, 0)%0A%0A%09\n-primes = \n getPrime\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-05-14_13-31-10",
+            "content": "@@ -31,16 +31,27 @@\n %09%22math%22%0A\n+%09%22strconv%22%0A\n )%0A%0Afunc \n@@ -669,19 +669,16 @@\n imes)%0A%0A%09\n-// \n str := %22\n@@ -689,64 +689,8 @@\n for \n-prime := range primes %7B%0A%09%09fmt.Println(prime)%0A%09%7D%0A%09// for \n i :=\n@@ -707,19 +707,16 @@\n  i++ %7B%0A%09\n-// \n %09str += \n@@ -740,19 +740,16 @@\n es%5Bi%5D)%0A%09\n-// \n %09if i !=\n@@ -756,19 +756,16 @@\n  n-1 %7B%0A%09\n-// \n %09%09str +=\n@@ -775,24 +775,15 @@\n  %22%0A%09\n-// \n %09%7D%0A%09\n-// %7D%0A%09// \n+%7D%0A%09\n str \n@@ -795,11 +795,8 @@\n %22%0A%0A%09\n-// \n fmt.\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-05-15_10-00-12",
+            "content": "@@ -623,16 +623,25 @@\n t, 0)%0A%0A%09\n+primes = \n getPrime\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-05-15_10-00-41",
+            "content": "@@ -35,19 +35,8 @@\n th%22%0A\n-%09%22strconv%22%0A\n )%0A%0Af\n@@ -470,52 +470,8 @@\n ) %7B%0A\n-%09%09fmt.Println(strconv.Itoa(p) + %22eh primo%22)%0A\n %09%09pr\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-05-15_10-02-22",
+            "content": "@@ -413,16 +413,59 @@\n %5Dint %7B%0A%0A\n+%09if len(primes) == n %7B%0A%09%09return primes%0A%09%7D%0A%0A\n %09if eh_p\n@@ -558,51 +558,8 @@\n %09%7D%0A%0A\n-%09if len(primes) == n %7B%0A%09%09return primes%0A%09%7D%0A%0A\n %09get\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-05-15_10-03-20",
+            "content": "@@ -552,25 +552,18 @@\n rimes%0A%09%7D\n- else %7B%0A%09\n+%0A%0A\n %09getPrim\n@@ -580,19 +580,16 @@\n  primes)\n-%0A%09%7D\n %0A%0A%09retur\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-05-15_10-03-48",
+            "content": "@@ -562,23 +562,16 @@\n lse %7B%0A%09%09\n-return \n getPrime\n@@ -588,24 +588,47 @@\n primes)%0A%09%7D%0A%0A\n+%09return make(%5B%5Dint, 0)%0A\n %7D%0A%0Afunc main\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-05-15_10-04-50",
+            "content": "@@ -403,16 +403,22 @@\n s %5B%5Dint)\n+ %5B%5Dint\n  %7B%0A%0A%09if \n@@ -531,17 +531,17 @@\n es) \n-!\n+=\n = n %7B%0A%09%09\n getP\n@@ -536,16 +536,49 @@\n = n %7B%0A%09%09\n+return primes%0A%09%7D else %7B%0A%09%09return \n getPrime\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-05-15_10-06-39",
+            "content": "@@ -403,22 +403,16 @@\n s %5B%5Dint)\n- %5B%5Dint\n  %7B%0A%0A%09if \n@@ -505,24 +505,8 @@\n  p)%0A\n-%09%09return primes%0A\n %09%7D%0A%0A\n@@ -530,23 +530,16 @@\n = n %7B%0A%09%09\n-return \n getPrime\n@@ -564,23 +564,8 @@\n %09%7D%0A%0A\n-%09return primes%0A\n %7D%0A%0Af\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-05-15_10-11-04",
+            "content": "@@ -507,16 +507,32 @@\n mes, p)%0A\n+%09%09return primes%0A\n %09%7D%0A%0A%09if \n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-05-15_10-11-50",
+            "content": "@@ -661,25 +661,16 @@\n t, 0)%0A%0A%09\n-primes = \n getPrime\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-05-15_10-12-08",
+            "content": "@@ -527,17 +527,18 @@\n primes) \n-%3C\n+!=\n  n %7B%0A%09%09r\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-05-15_10-13-45",
+            "content": "@@ -717,11 +717,8 @@\n %09for\n- _,\n  pri\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-05-15_10-14-05",
+            "content": "@@ -440,11 +440,8 @@\n %7B%0A%09%09\n-// \n fmt.\n@@ -695,16 +695,19 @@\n imes)%0A%0A%09\n+// \n str := %22\n@@ -714,16 +714,75 @@\n %5B%22%0A%09for \n+_, prime := range primes %7B%0A%09%09fmt.Println(prime)%0A%09%7D%0A%09// for \n i := 0; \n@@ -795,16 +795,19 @@\n  i++ %7B%0A%09\n+// \n %09str += \n@@ -831,16 +831,19 @@\n es%5Bi%5D)%0A%09\n+// \n %09if i !=\n@@ -850,16 +850,19 @@\n  n-1 %7B%0A%09\n+// \n %09%09str +=\n@@ -872,15 +872,24 @@\n  %22%0A%09\n+// \n %09%7D%0A%09\n-%7D%0A%09\n+// %7D%0A%09// \n str \n@@ -897,16 +897,19 @@\n = %22%5D%22%0A%0A%09\n+// \n fmt.Prin\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-05-15_10-14-40",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n\t\"strconv\"\n)\n\nfunc eh_primo(x int, div int) bool {\n\t_, _ = x, div\n\n\tif x <= 1 {\n\t\treturn false\n\t}\n\tif x <= 3 {\n\t\treturn true\n\t}\n\tif x%2 == 0 || x%3 == 0 {\n\t\treturn false\n\t}\n\n\tif div > int(math.Sqrt(float64(x)))+1 {\n\t\treturn true\n\t} else {\n\t\tif x%div == 0 || x%(div+2) == 0 {\n\t\t\treturn false\n\t\t}\n\t\treturn eh_primo(x, div+6)\n\t}\n\n}\n\nfunc getPrimes(p int, n int, primes []int) []int {\n\n\tif eh_primo(p, 5) {\n\t\t// fmt.Println(strconv.Itoa(p) + \"eh primo\")\n\t\tprimes = append(primes, p)\n\t}\n\n\tif len(primes) < n {\n\t\treturn getPrimes(p+1, n, primes)\n\t}\n\n\treturn primes\n}\n\nfunc main() {\n\n\tvar n int\n\n\tfmt.Scan(&n)\n\n\tprimes := make([]int, 0)\n\n\tprimes = getPrimes(2, n, primes)\n\n\tstr := \"[\"\n\tfor i := 0; i < n; i++ {\n\t\tstr += strconv.Itoa(primes[i])\n\t\tif i != n-1 {\n\t\t\tstr += \", \"\n\t\t}\n\t}\n\tstr += \"]\"\n\n\tfmt.Println(str)\n\n}\n",
+            "lines": "68"
+        }
+    ]
+}

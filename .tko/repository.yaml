@@ -2,38 +2,26 @@ version: '0.2'
 sources:
 - name: sandbox
   target: sandbox
+  index: README.md
   type: local
   writeable: true
   quests: null
   tasks: null
 - name: ed
   target: https://github.com/qxcodeed/arcade.git
+  index: README.md
   type: git
   writeable: false
   quests: null
   tasks: null
 expanded:
 - ed@rec
-- ed@map_set
-tasks:
-  ed@pintando: '{rate:100}'
-  ed@mumia: '{rate:100}'
-  ed@fuga: '{rate:100}'
-  ed@pedra: '{rate:100}'
-  ed@casais: '{rate:100}'
-  ed@baruel: '{rate:100}'
-  ed@gomos: '{rate:100}'
-  ed@apagando: '{rate:100}'
-  ed@manipulacao: '{rate:100}'
-  ed@buscas: '{rate:100}'
-  ed@rotacoes: '{rate:100}'
-  ed@triangulo: '{rate:100}'
-  ed@treinando: '{rate:33}'
 flags:
-  panel: 1
-  inbox: 1
-  show_panel: 1
-  task_graph_mode: 0
-  show_time: 0
+  inbox: all
+  panel: skills
+  show_panel: 'true'
+  task_graph_mode: executions
+  show_time: 'true'
 lang: go
-selected: ed@diagonal
+selected: ed@santo
+selected_index: 24

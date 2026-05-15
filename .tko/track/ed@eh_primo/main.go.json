@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-12_14-09-02",
+            "content": "@@ -18,26 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22math%22%0A)\n %0A%0A//\n@@ -321,39 +321,16 @@\n  div\n- %3E int(math.Sqrt(float64(x)))+1\n+*div %3E x\n  %7B%0A%09\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-12_14-10-49",
+            "content": "@@ -269,16 +269,70 @@\n lse%0A%09%7D%0A%0A\n+%09if x%25div == 0 %7C%7C x%25(div+2) == 0 %7B%0A%09%09return false%0A%09%7D%0A%0A\n %09if div \n@@ -392,64 +392,8 @@\n e %7B%0A\n-%09%09if x%25div == 0 %7C%7C x%25(div+2) == 0 %7B%0A%09%09%09return false%0A%09%09%7D%0A\n %09%09re\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-12_14-13-54",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\n// x: n\u00famero que est\u00e1 sendo testado\n// div: divisor que est\u00e1 sendo testado\nfunc eh_primo(x int, div int) bool {\n\t_, _ = x, div\n\n\tif x <= 1 {\n\t\treturn false\n\t}\n\tif x <= 3 {\n\t\treturn true\n\t}\n\tif x%2 == 0 || x%3 == 0 {\n\t\treturn false\n\t}\n\n\tif div > int(math.Sqrt(float64(x)))+1 {\n\t\treturn true\n\t} else {\n\t\tif x%div == 0 || x%(div+2) == 0 {\n\t\t\treturn false\n\t\t}\n\t\treturn eh_primo(x, div+6)\n\t}\n\n}\n\nfunc main() {\n\tvar x int\n\tfmt.Scan(&x)\n\tif eh_primo(x, 5) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "42"
+        }
+    ]
+}

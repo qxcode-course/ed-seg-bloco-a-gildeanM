@@ -21,6 +21,16 @@ func equals(a []int, b []int) bool {
 	// Use recursao para consultar os outros elementos equals(a[1:], b[1:])
 	// não altere o protótipo da função nem crie funções auxiliares
 	_, _ = a, b
+
+	if EhVazio(a) && !EhVazio(b) || !EhVazio(a) && EhVazio(b) {
+		return false
+	} else if EhVazio(a) && EhVazio(b) {
+		return true
+	}
+
+	if a[0] == b[0] {
+		return equals(a[1:], b[1:])
+	}
 	return false
 }
 

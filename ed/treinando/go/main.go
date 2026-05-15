@@ -8,26 +8,38 @@ import (
 	"strings"
 )
 
-func tostr(vet []int) string {
-	_ = vet
-	// length := len(vet)
+func elements(vet []int) string {
+	if len(vet) == 0 {
+		return ""
+	} else if len(vet) == 1 {
+		return strconv.Itoa(vet[0])
+	}
 
-	// if length == 1 {
-	// 	return strconv.Itoa(vet[0])
-	// } else {
-	// 	return tostr(vet[:length-1]) + ", "
-	// }
-	return ""
+	return strconv.Itoa(vet[0]) + ", " + elements(vet[1:])
+}
+
+func tostr(vet []int) string {
+	return "[" + elements(vet) + "]"
 }
 
 func tostrrev(vet []int) string {
-	_ = vet
-	return ""
+	reverse(vet)
+	return tostr(vet)
 }
 
 // reverse: inverte os elementos do slice
 func reverse(vet []int) {
-	_ = vet
+
+	if len(vet) > 1 {
+
+		last := len(vet) - 1
+		reverse(vet[1:last])
+
+		tmp := vet[last]
+		vet[last] = vet[0]
+		vet[0] = tmp
+	}
+
 }
 
 // sum: soma dos elementos do slice
@@ -61,8 +73,31 @@ func mult(vet []int) int {
 // var rec func(v []int) (int, int)
 // para fazer uma recursão que retorna valor e índice
 func min(vet []int) int {
-	_ = vet
-	return 0
+
+	if len(vet) == 0 {
+		return -1
+	}
+
+	var rec func(v []int, idx int) (int, int)
+
+	rec = func(v []int, idx int) (int, int) {
+
+		if len(v) == 1 {
+			return v[0], idx
+		}
+
+		minVal, minIdx := rec(v[1:], idx+1)
+
+		if v[0] < minVal {
+			return v[0], idx
+		}
+
+		return minVal, minIdx
+	}
+
+	_, minIdx := rec(vet, 0)
+
+	return minIdx
 }
 
 func main() {

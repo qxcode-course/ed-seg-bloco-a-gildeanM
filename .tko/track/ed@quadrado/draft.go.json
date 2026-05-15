@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-15_10-28-26",
+            "content": "@@ -104,32 +104,8 @@\n 1 %7B%0A\n-%09%09fmt.Println(%221%C2%B2 = 1%22)%0A\n %09%09re\n@@ -114,16 +114,17 @@\n rn 1%0A%09%7D%0A\n+%0A\n %09quadrad\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-05-15_10-29-55",
+            "content": "@@ -120,10 +120,9 @@\n n(%221\n-%5E2\n+%C2%B2\n  = 1\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-05-15_10-30-24",
+            "content": "@@ -249,19 +249,16 @@\n n(&x)%0A%0A%09\n-// \n fmt.Prin\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-05-15_10-30-47",
+            "content": "@@ -249,16 +249,31 @@\n n(&x)%0A%0A%09\n+// fmt.Println(\n calc_qua\n@@ -280,11 +280,12 @@\n drado(x)\n+)\n %0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-05-15_10-31-40",
+            "content": "@@ -142,93 +142,8 @@\n 1%0A%09%7D\n-%0A%0A%09anterior := x - 1%0A%09fmt.Printf(%22%25d%5E2 = %25d%5E2 + 2*%25d + 1 = ?%22, x, anterior, anterior)\n %0A%09qu\n@@ -170,31 +170,21 @@\n ado(\n-anterior) + 2*(anterior\n+x-1) + 2*(x-1\n ) + \n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-05-15_10-34-56",
+            "content": "@@ -202,10 +202,8 @@\n  = ?\n-%5Cn\n %22, x\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-05-15_10-35-12",
+            "content": "@@ -350,18 +350,8 @@\n )%0A%0A%09\n-result := \n calc\n@@ -366,103 +366,7 @@\n o(x)\n-%0A%0A%09anterior := x - 1%0A%09fmt.Printf(%22%25d%5E2 = %25d%5E2 + 2*%25d + 1 = %25d%5Cn%22, x, anterior, anterior, result)\n %0A%7D%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-05-15_10-36-32",
+            "content": "@@ -102,19 +102,16 @@\n = 1 %7B%0A%09%09\n-// \n fmt.Prin\n@@ -397,58 +397,8 @@\n - 1%0A\n-%09if x == 1 %7B%0A%09%09fmt.Println(%221%5E2 = 1%22)%0A%0A%09%7D else %7B%0A%09\n %09fmt\n@@ -469,13 +469,10 @@\n result)%0A\n-%09%7D%0A\n %7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-05-15_10-37-34",
+            "content": "@@ -98,24 +98,27 @@\n  x == 1 %7B%0A%09%09\n+// \n fmt.Println(\n@@ -406,11 +406,48 @@\n f x \n-%3E 1\n+== 1 %7B%0A%09%09fmt.Println(%221%5E2 = 1%22)%0A%0A%09%7D else\n  %7B%0A%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-05-15_10-39-05",
+            "content": "@@ -287,87 +287,8 @@\n  1%0A%0A\n-%09fmt.Printf(%22%25d%5E2 = %25d%5E2 + 2*%25d + 1 = %25d%5Cn%22, x, anterior, anterior, quadrado)%0A%0A\n %09ret\n@@ -346,16 +346,26 @@\n n(&x)%0A%0A%09\n+result := \n calc_qua\n@@ -374,10 +374,121 @@\n ado(x)%0A%0A\n+%09anterior := x - 1%0A%09if x %3E 1 %7B%0A%09%09fmt.Printf(%22%25d%5E2 = %25d%5E2 + 2*%25d + 1 = %25d%5Cn%22, x, anterior, anterior, result)%0A%09%7D%0A\n %7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-05-15_10-41-10",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc calc_quadrado(x int) int {\n\n\t// x^y = (x-1)^y + 2*(x-1) + 1\n\n\tif x == 1 {\n\t\tfmt.Println(\"1^2 = 1\")\n\t\treturn 1\n\t}\n\n\tanterior := x - 1\n\tfmt.Printf(\"%d^2 = %d^2 + 2*%d + 1 = ?\\n\", x, anterior, anterior)\n\tquadrado := calc_quadrado(anterior) + 2*(anterior) + 1\n\n\tfmt.Printf(\"%d^2 = %d^2 + 2*%d + 1 = %d\\n\", x, anterior, anterior, quadrado)\n\n\treturn quadrado\n}\n\nfunc main() {\n\n\tvar x int\n\n\tfmt.Scan(&x)\n\n\tcalc_quadrado(x)\n\n}\n",
+            "lines": "31"
+        }
+    ]
+}

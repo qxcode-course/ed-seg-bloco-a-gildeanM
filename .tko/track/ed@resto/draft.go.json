@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_11-06-17",
+            "content": "@@ -133,16 +133,25 @@\n Printf(%22\n+num: %25d, \n q: %25d, r\n@@ -158,16 +158,21 @@\n : %25d%5Cn%22,\n+ num,\n  q, r)%0A%09\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-13_11-06-43",
+            "content": "@@ -133,18 +133,25 @@\n Printf(%22\n-%25d\n+q: %25d, r:\n  %25d%5Cn%22, \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-13_11-07-04",
+            "content": "@@ -67,11 +67,36 @@\n num \n-%3E 0\n+== 0 %7B%0A%09%09return 0, 1%0A%09%7D else\n  %7B%0A%09\n@@ -153,13 +153,9 @@\n  r)%0A\n-%0A%09%7D%0A%0A\n+%09\n %09ret\n@@ -175,16 +175,20 @@\n num %25 2%0A\n+%09%7D%0A%0A\n %7D%0A%0Afunc \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-13_11-11-36",
+            "content": "@@ -67,10 +67,9 @@\n num \n-!=\n+%3E\n  0 %7B\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-13_11-13-26",
+            "content": "@@ -67,25 +67,14 @@\n num \n-=\n+!\n = 0 %7B\n-%0A%0A%09%7D else %7B\n %0A%09%09q\n@@ -125,16 +125,17 @@\n , q, r)%0A\n+%0A\n %09%7D%0A%0A%09ret\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-13_11-13-48",
+            "content": "@@ -74,21 +74,8 @@\n 0 %7B%0A\n-%09%09return 0, 1\n %0A%09%7D \n@@ -137,16 +137,19 @@\n  q, r)%0A%09\n+%7D%0A%0A\n %09return \n@@ -165,20 +165,16 @@\n num %25 2%0A\n-%09%7D%0A%0A\n %7D%0A%0Afunc \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-13_11-14-22",
+            "content": "@@ -59,46 +59,55 @@\n  %7B%0A%0A\n-%09var q, r int%0A\n %09if num\n-/2 !\n+ =\n = 0 %7B%0A\n+%09%09return 0, 1%0A%09%7D else %7B%0A\n %09%09q, r \n+:\n = re\n@@ -113,19 +113,22 @@\n esto(num\n+ / 2\n )%0A\n-%0A\n %09%09fmt.Pr\n@@ -182,20 +182,8 @@\n %0A%09%7D%0A\n-%09return 0, 0\n %0A%7D%0A%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-13_11-22-13",
+            "content": "@@ -59,55 +59,46 @@\n  %7B%0A%0A\n+%09var q, r int%0A\n %09if num\n- =\n+/2 !\n = 0 %7B%0A\n-%09%09return 0, 1%0A%09%7D else %7B%0A\n %09%09q, r \n-:\n = re\n@@ -108,14 +108,11 @@\n (num\n- / 2\n )%0A\n+%0A\n %09%09fm\n@@ -166,16 +166,28 @@\n  %25 2%0A%09%7D%0A\n+%09return 0, 0\n %0A%7D%0A%0Afunc\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-13_11-22-46",
+            "content": "@@ -82,17 +82,17 @@\n turn 0, \n-0\n+1\n %0A%09%7D else\n@@ -123,33 +123,8 @@\n  2)%0A\n-%09%09if q != 0 && r != 0 %7B%0A%09\n %09%09fm\n@@ -153,12 +153,8 @@\n  r)%0A\n-%09%09%7D%0A\n %09%09re\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-13_11-24-03",
+            "content": "@@ -126,17 +126,17 @@\n %0A%09%09if q \n-=\n+!\n = 0 && r\n@@ -140,26 +140,15 @@\n & r \n-=\n+!\n = 0 %7B%0A\n-%09%09%7D else %7B%0A\n %09%09%09f\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-13_11-24-28",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc resto(num int) (int, int) {\n\n\tif num == 0 {\n\t\treturn 0, 0\n\t} else {\n\t\tq, r := resto(num / 2)\n\t\tif q == 0 && r == 0 {\n\t\t} else {\n\t\t\tfmt.Printf(\"%d %d\\n\", q, r)\n\t\t}\n\t\treturn num / 2, num % 2\n\t}\n\n}\n\nfunc main() {\n\n\tvar num int\n\n\tfmt.Scan(&num)\n\tfmt.Println(resto(num))\n\n}\n",
+            "lines": "27"
+        }
+    ]
+}

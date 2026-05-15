@@ -67,8 +67,13 @@
         },
         {
             "label": "2026-03-23_16-27-03",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc hasQuitted(quitters map[int]bool, person int) bool {\n\tif quitters[person] {\n\t\treturn true\n\t}\n\treturn false\n}\n\nfunc main() {\n\n\tvar qtd_persons int\n\tfmt.Scanf(\"%d\\n\", &qtd_persons)\n\n\tqueue := make([]int, qtd_persons)\n\n\tfor i := 0; i < qtd_persons; i++ {\n\t\tfmt.Scan(&queue[i])\n\t}\n\n\t// fmt.Println(queue)\n\n\tvar qtd_quitters int\n\tfmt.Scan(&qtd_quitters)\n\n\tquitters := make(map[int]bool, qtd_quitters)\n\n\tfor i := 0; i < qtd_quitters; i++ {\n\t\tvar quitter int\n\t\tfmt.Scan(&quitter)\n\t\tquitters[quitter] = true\n\t}\n\n\t// fmt.Println(quitters)\n\n\tqtdPersonsAfterQuitters := qtd_persons - qtd_quitters\n\tqueueAfterQuitters := make([]int, 0, qtdPersonsAfterQuitters)\n\n\tfor _, person := range queue {\n\t\tif !quitters[person] {\n\t\t\tqueueAfterQuitters = append(queueAfterQuitters, person)\n\t\t}\n\n\t}\n\n\tfor _, v := range queueAfterQuitters {\n\t\tfmt.Printf(\"%d \", v)\n\t}\n\tfmt.Print(\"\\n\")\n\n}\n",
+            "content": "@@ -309,16 +309,40 @@\n i%5D)%0A%09%7D%0A%0A\n+%09// fmt.Println(queue)%0A%0A\n %09var qtd\n@@ -535,16 +535,43 @@\n rue%0A%09%7D%0A%0A\n+%09// fmt.Println(quitters)%0A%0A\n %09qtdPers\n",
             "lines": "55"
+        },
+        {
+            "label": "2026-05-11_16-48-04",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc hasQuitted(quitters map[int]bool, person int) bool {\n\tif quitters[person] {\n\t\treturn true\n\t}\n\treturn false\n}\n\nfunc main() {\n\n\tvar qtd_persons int\n\tfmt.Scanf(\"%d\\n\", &qtd_persons)\n\n\tqueue := make([]int, qtd_persons)\n\n\tfor i := 0; i < qtd_persons; i++ {\n\t\tfmt.Scan(&queue[i])\n\t}\n\n\tvar qtd_quitters int\n\tfmt.Scan(&qtd_quitters)\n\n\tquitters := make(map[int]bool, qtd_quitters)\n\n\tfor i := 0; i < qtd_quitters; i++ {\n\t\tvar quitter int\n\t\tfmt.Scan(&quitter)\n\t\tquitters[quitter] = true\n\t}\n\n\tqtdPersonsAfterQuitters := qtd_persons - qtd_quitters\n\tqueueAfterQuitters := make([]int, 0, qtdPersonsAfterQuitters)\n\n\tfor _, person := range queue {\n\t\tif !quitters[person] {\n\t\t\tqueueAfterQuitters = append(queueAfterQuitters, person)\n\t\t}\n\n\t}\n\n\tfor _, v := range queueAfterQuitters {\n\t\tfmt.Printf(\"%d \", v)\n\t}\n\tfmt.Print(\"\\n\")\n\n}\n",
+            "lines": "51"
         }
     ]
 }

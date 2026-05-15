@@ -1,0 +1,35 @@
+2026-05-13 21:11:27, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-05-13 21:11:36, EXEC, v:1, k:ed@setbuild, mode:FREE, size:93
+2026-05-13 21:38:24, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 21:45:54, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 21:48:34, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-05-13 21:48:35, EXEC, v:1, k:ed@setbuild, mode:FREE, size:161
+2026-05-13 21:53:18, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 21:55:49, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 22:07:27, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 22:08:56, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-05-13 22:08:57, EXEC, v:1, k:ed@setbuild, mode:FREE, size:175
+2026-05-13 22:11:49, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 22:22:44, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 22:33:55, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 22:36:51, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 22:43:27, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 22:47:42, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 22:53:52, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 22:55:27, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-05-13 22:55:28, EXEC, v:1, k:ed@setbuild, mode:FREE, size:217
+2026-05-13 22:59:44, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 23:00:35, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:33, size:217
+2026-05-13 23:01:25, EXEC, v:1, k:ed@setbuild, mode:FREE
+2026-05-13 23:04:51, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 23:09:41, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 23:13:44, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:0, size:218
+2026-05-13 23:14:07, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:66, size:218
+2026-05-13 23:14:03, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-05-13 23:16:15, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:66, size:218
+2026-05-13 23:16:42, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:66, size:218
+2026-05-13 23:17:24, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:100, size:219
+2026-05-13 23:17:33, MOVE, v:1, k:ed@setbuild, mode:BACK
+2026-05-13 23:17:55, SELF, v:1, k:ed@setbuild, self:1, rate:100, study:120
+2026-05-13 23:18:15, MOVE, v:1, k:ed@bettersearch, mode:PICK
+2026-05-13 23:18:26, MOVE, v:1, k:ed@bettersearch, mode:BACK
