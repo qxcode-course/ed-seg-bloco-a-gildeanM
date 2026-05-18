@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-15_14-16-19",
+            "content": "@@ -216,10 +216,8 @@\n es(n\n--1\n ) + \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-05-15_14-16-32",
+            "content": "package main\n\nimport \"fmt\"\n\n// grau 1 => 1 - 1 - 1\n// grau 2 => 1 + (1) - 1 + (2 + 1) - 2 + (1)\n// grau 3 => 2 + (1) - 4 + (2 + 3)  - 2 + (1)\n\nfunc padroes(n int) int {\n\n\tif n == 1 {\n\t\treturn n * 3\n\t}\n\n\treturn padroes(n-1) + (n + n - 1) + 2\n\n}\n\nfunc main() {\n\n\tvar n int\n\n\tfmt.Scan(&n)\n\n\tfmt.Println(padroes(n))\n}\n",
+            "lines": "26"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-15_14-27-00",
+            "content": "@@ -113,106 +113,8 @@\n %0A%7D%0A%0A\n-func padrao_f4(n int) int %7B%0A%0A%09if n == 1 %7B%0A%09%09return 1%0A%09%7D%0A%0A%09return padrao_f3(n-1) + (n + n - 1)%0A%0A%7D%0A%0A\n func\n@@ -221,41 +221,8 @@\n (n)%0A\n-%09case 4:%0A%09%09pontos = padrao_f4(n)%0A\n %09%7D%0A%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-05-15_14-28-27",
+            "content": "@@ -182,17 +182,17 @@\n padrao_f\n-4\n+3\n (n-1) + \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-05-15_14-29-13",
+            "content": "@@ -211,108 +211,8 @@\n %0A%7D%0A%0A\n-func padrao_f5(n int) int %7B%0A%0A%09if n == 1 %7B%0A%09%09return 1%0A%09%7D%0A%0A%09return padrao_f5(n-1) + n*2 + (n - 2)%0A%0A%7D%0A%0A\n func\n@@ -352,41 +352,8 @@\n (n)%0A\n-%09case 5:%0A%09%09pontos = padrao_f5(n)%0A\n %09%7D%0A%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-05-15_14-35-36",
+            "content": "@@ -311,458 +311,8 @@\n %0A%7D%0A%0A\n-func padrao_f6(n int) int %7B%0A%0A%09if n == 1 %7B%0A%09%09return 1%0A%09%7D%0A%0A%09return padrao_f6(n-1) + (n*2 + (n - 1) + (n - 2))%0A%0A%09// grau 2 -%3E n*2 + 1 (n - 1) -%3E n*3 - 1 -%3E 1 + 5 (n*2 + (n - 1) + (n - 2))%0A%09// grau 3 -%3E n*2 + 3 (n + 0) -%3E n*3 + 0 -%3E (1 + 5) + 9 (n*2 + (n-1) + (n - 2))%0A%09// grau 4 -%3E n*2 + 5 (n + 1) -%3E n*3 + 1 -%3E ((1 + 5) + 9) + 13 (n*2 + (n-1) + (n - 2))%0A%09// grau 5 -%3E n*2 + 7 (n + 2) -%3E n*3 + 2 -%3E (((1 + 5) + 9) + 13) + 17 (n*2 + (n-1) + (n - 2))%0A%0A%7D%0A%0A\n func\n@@ -485,41 +485,8 @@\n (n)%0A\n-%09case 6:%0A%09%09pontos = padrao_f5(n)%0A\n %09%7D%0A%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-05-15_15-00-36",
+            "content": "@@ -959,17 +959,17 @@\n padrao_f\n-6\n+5\n (n)%0A%09%7D%0A%0A\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-05-15_15-02-52",
+            "content": "@@ -21,19 +21,16 @@\n  %22fmt%22%0A%0A\n-// \n func pad\n@@ -42,35 +42,32 @@\n 3(n int) int %7B%0A%0A\n-// \n %09if n == 1 %7B%0A// \n@@ -55,35 +55,32 @@\n %7B%0A%0A%09if n == 1 %7B%0A\n-// \n %09%09return 1%0A// %09%7D\n@@ -70,34 +70,28 @@\n %0A%09%09return 1%0A\n-// \n %09%7D%0A%0A\n-// \n %09return padr\n@@ -106,25 +106,19 @@\n 1) + n%0A%0A\n-// %7D%0A%0A// \n+%7D%0A%0A\n func pad\n@@ -130,35 +130,32 @@\n 4(n int) int %7B%0A%0A\n-// \n %09if n == 1 %7B%0A// \n@@ -143,35 +143,32 @@\n %7B%0A%0A%09if n == 1 %7B%0A\n-// \n %09%09return 1%0A// %09%7D\n@@ -158,34 +158,28 @@\n %0A%09%09return 1%0A\n-// \n %09%7D%0A%0A\n-// \n %09return padr\n@@ -204,25 +204,19 @@\n n - 1)%0A%0A\n-// %7D%0A%0A// \n+%7D%0A%0A\n func pad\n@@ -228,35 +228,32 @@\n 5(n int) int %7B%0A%0A\n-// \n %09if n == 1 %7B%0A// \n@@ -241,35 +241,32 @@\n %7B%0A%0A%09if n == 1 %7B%0A\n-// \n %09%09return 1%0A// %09%7D\n@@ -256,34 +256,28 @@\n %0A%09%09return 1%0A\n-// \n %09%7D%0A%0A\n-// \n %09return padr\n@@ -304,25 +304,19 @@\n n - 2)%0A%0A\n-// %7D%0A%0A// \n+%7D%0A%0A\n func pad\n@@ -328,35 +328,32 @@\n 6(n int) int %7B%0A%0A\n-// \n %09if n == 1 %7B%0A// \n@@ -341,35 +341,32 @@\n %7B%0A%0A%09if n == 1 %7B%0A\n-// \n %09%09return 1%0A// %09%7D\n@@ -356,34 +356,28 @@\n %0A%09%09return 1%0A\n-// \n %09%7D%0A%0A\n-// \n %09return padr\n@@ -408,35 +408,32 @@\n  1) + (n - 2))%0A%0A\n-// \n %09// grau 2 -%3E n*\n@@ -484,35 +484,32 @@\n - 1) + (n - 2))%0A\n-// \n %09// grau 3 -%3E n*\n@@ -564,35 +564,32 @@\n n-1) + (n - 2))%0A\n-// \n %09// grau 4 -%3E n*\n@@ -659,19 +659,16 @@\n n - 2))%0A\n-// \n %09// grau\n@@ -758,342 +758,8 @@\n ))%0A%0A\n-// %7D%0A%0A// func padrao_f7(n int) int %7B%0A%0A// %09if n == 1 %7B%0A// %09%09return 1%0A// %09%7D%0A%0A// %09return padrao_f7(n-1) + (n*2 + (n - 1) + (n - 2))%0A%0A// %09// grau 2 -%3E 1 + 6%0A// %09// grau 3 -%3E (1 + 6) +%0A// %09// grau 4 -%3E%0A// %09// grau 5 -%3E%0A%0A// %7D%0A%0Afunc padroes(seq int, n int) int %7B%0A%0A%09if n == 1 %7B%0A%09%09return 1%0A%09%7D%0A%0A%09return padroes(seq, n) + (seq-2)*n - (seq - 3)%0A%0A\n %7D%0A%0Af\n@@ -823,38 +823,8 @@\n )%0A%0A%09\n-pontos = padroes(seq, n)%0A%0A%09// \n swit\n@@ -833,19 +833,16 @@\n  seq %7B%0A%09\n-// \n case 3:%0A\n@@ -842,19 +842,16 @@\n ase 3:%0A%09\n-// \n %09pontos \n@@ -862,27 +862,24 @@\n drao_f3(n)%0A%09\n-// \n case 4:%0A%09// \n@@ -875,19 +875,16 @@\n ase 4:%0A%09\n-// \n %09pontos \n@@ -895,27 +895,24 @@\n drao_f4(n)%0A%09\n-// \n case 5:%0A%09// \n@@ -908,19 +908,16 @@\n ase 5:%0A%09\n-// \n %09pontos \n@@ -932,19 +932,16 @@\n _f5(n)%0A%09\n-// \n case 6:%0A\n@@ -941,19 +941,16 @@\n ase 6:%0A%09\n-// \n %09pontos \n@@ -965,19 +965,16 @@\n _f6(n)%0A%09\n-// \n %7D%0A%0A%09fmt.\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-05-15_15-32-30",
+            "content": "@@ -1142,18 +1142,16 @@\n s(seq, n\n--1\n ) + (seq\n",
+            "lines": "95"
+        },
+        {
+            "label": "2026-05-15_15-32-56",
+            "content": "package main\n\nimport \"fmt\"\n\n// func padrao_f3(n int) int {\n\n// \tif n == 1 {\n// \t\treturn 1\n// \t}\n\n// \treturn padrao_f3(n-1) + n\n\n// }\n\n// func padrao_f4(n int) int {\n\n// \tif n == 1 {\n// \t\treturn 1\n// \t}\n\n// \treturn padrao_f4(n-1) + (n + n - 1)\n\n// }\n\n// func padrao_f5(n int) int {\n\n// \tif n == 1 {\n// \t\treturn 1\n// \t}\n\n// \treturn padrao_f5(n-1) + n*2 + (n - 2)\n\n// }\n\n// func padrao_f6(n int) int {\n\n// \tif n == 1 {\n// \t\treturn 1\n// \t}\n\n// \treturn padrao_f6(n-1) + (n*2 + (n - 1) + (n - 2))\n\n// \t// grau 2 -> n*2 + 1 (n - 1) -> n*3 - 1 -> 1 + 5 (n*2 + (n - 1) + (n - 2))\n// \t// grau 3 -> n*2 + 3 (n + 0) -> n*3 + 0 -> (1 + 5) + 9 (n*2 + (n-1) + (n - 2))\n// \t// grau 4 -> n*2 + 5 (n + 1) -> n*3 + 1 -> ((1 + 5) + 9) + 13 (n*2 + (n-1) + (n - 2))\n// \t// grau 5 -> n*2 + 7 (n + 2) -> n*3 + 2 -> (((1 + 5) + 9) + 13) + 17 (n*2 + (n-1) + (n - 2))\n\n// }\n\n// func padrao_f7(n int) int {\n\n// \tif n == 1 {\n// \t\treturn 1\n// \t}\n\n// \treturn padrao_f7(n-1) + (n*2 + (n - 1) + (n - 2))\n\n// \t// grau 2 -> 1 + 6\n// \t// grau 3 -> (1 + 6) +\n// \t// grau 4 ->\n// \t// grau 5 ->\n\n// }\n\nfunc padroes(seq int, n int) int {\n\n\tif n == 1 {\n\t\treturn 1\n\t}\n\n\treturn padroes(seq, n-1) + (seq-2)*n - (seq - 3)\n\n}\n\nfunc main() {\n\n\tvar seq, n, pontos int\n\n\tfmt.Scan(&seq, &n)\n\n\tpontos = padroes(seq, n)\n\n\t// switch seq {\n\t// case 3:\n\t// \tpontos = padrao_f3(n)\n\t// case 4:\n\t// \tpontos = padrao_f4(n)\n\t// case 5:\n\t// \tpontos = padrao_f5(n)\n\t// case 6:\n\t// \tpontos = padrao_f6(n)\n\t// }\n\n\tfmt.Println(pontos)\n}\n",
+            "lines": "95"
+        }
+    ]
+}

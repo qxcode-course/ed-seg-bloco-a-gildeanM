@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-15_16-37-39",
+            "content": "@@ -466,233 +466,8 @@\n lue%0A\n-%0A%09left := 0%0A%09right := len(slice) - 1%0A%0A%09for left %3C= right %7B%0A%09%09mid := left + (right-left)/2%0A%0A%09%09if slice%5Bmid%5D == value %7B%0A%09%09%09return true, mid%0A%09%09%7D%0A%0A%09%09if slice%5Bmid%5D %3C value %7B%0A%09%09%09left = mid + 1%0A%09%09%7D else %7B%0A%09%09%09right = mid - 1%0A%09%09%7D%0A%09%7D%0A%0A\n %09ret\n@@ -477,19 +477,17 @@\n  false, \n--1%0A\n+0\n %0A%7D%0A%0Afunc\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-05-15_16-41-39",
+            "content": "@@ -702,17 +702,18 @@\n  false, \n-0\n+-1\n %0A%0A%7D%0A%0Afun\n",
+            "lines": "74"
+        },
+        {
+            "label": "2026-05-15_16-42-04",
+            "content": "@@ -692,188 +692,23 @@\n %7D%0A%0A%09\n-probable_position := 0%0A%09for i := 0; i %3C len(slice)-1; i++ %7B%0A%09%09if value %3E slice%5Bi%5D && value %3C slice%5Bi+1%5D %7B%0A%09%09%09probable_position = i%0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A%0A%09return false, probable_position\n+return false, 0\n %0A%0A%7D%0A\n",
+            "lines": "74"
+        },
+        {
+            "label": "2026-05-15_16-47-49",
+            "content": "@@ -752,32 +752,8 @@\n + %7B%0A\n-%09%09fmt.Println(slice%5Bi%5D)%0A\n %09%09if\n@@ -798,32 +798,8 @@\n %5D %7B%0A\n-%09%09%09fmt.Println(%22entra%22)%0A\n %09%09%09p\n",
+            "lines": "82"
+        },
+        {
+            "label": "2026-05-15_16-49-57",
+            "content": "@@ -687,16 +687,40 @@\n %09%09%7D%0A%09%7D%0A%0A\n+%09probable_position := 0%0A\n %09for i :\n@@ -750,19 +750,16 @@\n i++ %7B%0A%09%09\n-// \n fmt.Prin\n@@ -821,19 +821,16 @@\n 1%5D %7B%0A%09%09%09\n-// \n fmt.Prin\n@@ -849,23 +849,38 @@\n %0A%09%09%09\n-return false, i\n+probable_position = i%0A%09%09%09break\n %0A%09%09%7D\n@@ -899,17 +899,34 @@\n  false, \n-0\n+probable_position%0A\n %0A%7D%0A%0Afunc\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-05-15_16-50-59",
+            "content": "@@ -691,32 +691,8 @@\n %09%7D%0A%0A\n-%09probable_position := 0%0A\n %09for\n@@ -724,16 +724,42 @@\n ; i++ %7B%0A\n+%09%09// fmt.Println(slice%5Bi%5D)\n %0A%09%09if va\n@@ -801,54 +801,61 @@\n %5D %7B%0A\n-%0A\n %09%09%09\n-probable_position = i + 1\n+// fmt.Println(%22entra%22)\n %0A%09%09%09\n-b\n re\n-ak\n+turn false, i\n %0A%09%09%7D%0A%09%7D%0A\n %09ret\n@@ -850,16 +850,17 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%0A\n %09return \n@@ -870,26 +870,9 @@\n se, \n-probable_position%0A\n+0\n %0A%7D%0A%0A\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-05-15_16-52-06",
+            "content": "@@ -799,78 +799,8 @@\n %5D %7B%0A\n-%09%09%09probable_position = i + 1%0A%09%09%09break%0A%09%09%7D else if value %3E slice%5Bi+1%5D %7B\n %0A%09%09%09\n@@ -823,17 +823,17 @@\n n = i + \n-2\n+1\n %0A%09%09%09brea\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-15_16-54-19",
+            "content": "@@ -836,20 +836,22 @@\n reak%0A%09%09%7D\n-%0A%0A%09%09\n+ else \n if value\n@@ -859,27 +859,18 @@\n %3E slice%5B\n-len(slice)-\n+i+\n 1%5D %7B%0A%09%09%09\n@@ -889,26 +889,21 @@\n ition = \n-len(slice)\n+i + 2\n %0A%09%09%09brea\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-05-15_16-55-51",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\n// func (s Set) binarySearch(value int) int {\n\n// \tleft := 0\n// \tright := s.size - 1\n\n// \tfor left <= right {\n// \t\tmid := left + (right-left)/2\n\n// \t\tif s.data[mid] == value {\n// \t\t\treturn mid\n// \t\t}\n\n// \t\tif s.data[mid] < value {\n// \t\t\tleft = mid + 1\n// \t\t} else {\n// \t\t\tright = mid - 1\n// \t\t}\n// \t}\n\n// \treturn -1\n// }\n\nfunc BetterSearch(slice []int, value int) (bool, int) {\n\t_, _ = slice, value\n\n\tleft := 0\n\tright := len(slice) - 1\n\n\tfor left <= right {\n\t\tmid := left + (right-left)/2\n\n\t\tif slice[mid] == value {\n\t\t\treturn true, mid\n\t\t}\n\n\t\tif slice[mid] < value {\n\t\t\tleft = mid + 1\n\t\t} else {\n\t\t\tright = mid - 1\n\t\t}\n\t}\n\n\tprobable_position := 0\n\tfor i := 0; i < len(slice)-1; i++ {\n\n\t\tif value > slice[i] && value < slice[i+1] {\n\t\t\tprobable_position = i + 1\n\t\t\tbreak\n\t\t}\n\n\t\tif value > slice[len(slice)-1] {\n\t\t\tprobable_position = len(slice)\n\t\t\tbreak\n\t\t}\n\t}\n\treturn false, probable_position\n\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\tslice := []int{}\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tfound, result := BetterSearch(slice, value)\n\tif found {\n\t\tfmt.Println(\"V\", result)\n\t} else {\n\t\tfmt.Println(\"F\", result)\n\t}\n}\n",
+            "lines": "87"
+        }
+    ]
+}

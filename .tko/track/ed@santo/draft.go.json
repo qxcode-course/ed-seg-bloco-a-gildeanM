@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-15_13-50-09",
+            "content": "@@ -48,23 +48,19 @@\n ntradas \n-float32\n+int\n , doacao\n@@ -64,24 +64,16 @@\n cao \n-float32) float32\n+int) int\n  %7B%0A%0A\n@@ -401,15 +401,11 @@\n cao \n-float32\n+int\n %0A%0A%09f\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-05-15_13-50-42",
+            "content": "@@ -88,50 +88,8 @@\n  %7B%0A%0A\n-%09fmt.Printf(%22%25f - %25f%22, entradas, doacao)%0A%0A\n %09if \n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-05-15_13-52-53",
+            "content": "@@ -108,10 +108,8 @@\n - %25f\n-%5Cn\n %22, e\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-05-15_13-53-01",
+            "content": "@@ -144,17 +144,17 @@\n adas == \n-1\n+0\n  %7B%0A%09%09ret\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-05-15_13-54-06",
+            "content": "@@ -85,19 +85,16 @@\n t32 %7B%0A%0A%09\n-// \n fmt.Prin\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-05-15_13-54-16",
+            "content": "@@ -510,18 +510,11 @@\n rint\n-f(%22%25.2f%22, \n+ln(\n dobr\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-05-15_13-54-49",
+            "content": "@@ -513,18 +513,16 @@\n tf(%22%25.2f\n-%5Cn\n %22, dobra\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-05-15_13-54-59",
+            "content": "@@ -21,19 +21,16 @@\n  %22fmt%22%0A%0A\n-// \n func dob\n@@ -84,19 +84,16 @@\n at32 %7B%0A%0A\n-// \n %09// fmt.\n@@ -131,19 +131,16 @@\n oacao)%0A%0A\n-// \n %09if entr\n@@ -151,19 +151,16 @@\n  == 1 %7B%0A\n-// \n %09%09return\n@@ -175,18 +175,12 @@\n / 2%0A\n-// \n %09%7D%0A%0A\n-// \n %09ret\n@@ -232,19 +232,16 @@\n o) / 2%0A%0A\n-// \n %09// entr\n@@ -251,19 +251,16 @@\n %3E 17,50%0A\n-// \n %09// dobr\n@@ -274,27 +274,24 @@\n 0 * 2) - 20%0A\n-// \n %09// ((17,50 \n@@ -308,19 +308,16 @@\n *2 - 20%0A\n-// \n %09// (((1\n@@ -351,19 +351,16 @@\n  20 = 0%0A\n-// \n %09// (0 +\n@@ -371,19 +371,16 @@\n /2 = 10%0A\n-// \n %09// (10 \n@@ -392,19 +392,16 @@\n /2 = 15%0A\n-// \n %09// (15 \n@@ -416,19 +416,16 @@\n = 17,5%0A%0A\n-// \n %7D%0A%0Afunc \n@@ -469,209 +469,8 @@\n 32%0A%0A\n-%09var dobra_doacao func(entradas float32) float32%0A%0A%09dobra_doacao = func(entradas float32) float32 %7B%0A%0A%09%09if entradas == 1 %7B%0A%09%09%09return doacao / 2%0A%09%09%7D%0A%0A%09%09return (dobra_doacao(entradas-1) + doacao) / 2%0A%0A%09%7D%0A%0A\n %09fmt\n@@ -539,13 +539,21 @@\n entradas\n+, doacao\n ))%0A%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-05-15_13-57-51",
+            "content": "package main\n\nimport \"fmt\"\n\n// func dobra_doacao(entradas float32, doacao float32) float32 {\n\n// \t// fmt.Printf(\"%f - %f\\n\", entradas, doacao)\n\n// \tif entradas == 1 {\n// \t\treturn doacao / 2\n// \t}\n\n// \treturn (dobra_doacao(entradas-1, doacao) + doacao) / 2\n\n// \t// entra -> 17,50\n// \t// dobra (17,50 * 2) - 20\n// \t// ((17,50 * 2) - 20)*2 - 20\n// \t// (((17,50 * 2) - 20)*2 - 20)*2 - 20 = 0\n// \t// (0 + 20)/2 = 10\n// \t// (10 + 20)/2 = 15\n// \t// (15 + 20)/2 = 17,5\n\n// }\n\nfunc main() {\n\n\tvar entradas, doacao float32\n\n\tvar dobra_doacao func(entradas float32) float32\n\n\tdobra_doacao = func(entradas float32) float32 {\n\n\t\tif entradas == 1 {\n\t\t\treturn doacao / 2\n\t\t}\n\n\t\treturn (dobra_doacao(entradas-1) + doacao) / 2\n\n\t}\n\n\tfmt.Scan(&entradas, &doacao)\n\n\tfmt.Printf(\"%.2f\\n\", dobra_doacao(entradas))\n}\n",
+            "lines": "44"
+        }
+    ]
+}
