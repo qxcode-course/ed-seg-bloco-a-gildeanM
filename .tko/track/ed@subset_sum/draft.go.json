@@ -1,0 +1,169 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-19_16-16-20",
+            "content": "@@ -18,18 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A)\n %0A%0Afu\n@@ -51,225 +51,84 @@\n %5Dint\n-, cachedSum int) bool %7B%0A%0A%09if len(set) == 0 %7B%0A%09%09return false%0A%09%7D%0A%0A%09cachedSum -= set%5B0%5D%0A%0A%09if cachedSum == 0 %7B%0A%09%09return true%0A%09%7D else if cachedSum %3C 0 %7B%0A%09%09return false%0A%09%7D else %7B%0A%09%09return isSubsetSum(set%5B1:%5D, cachedSum)%0A%09%7D%0A\n+) bool %7B%0A%0A%09for i := 0; i %3C len(set); i++ %7B%0A%09%09fmt.Println()%0A%09%7D%0A%0A%09return false\n %0A%7D%0A%0A\n@@ -287,66 +287,24 @@\n %7B%0A%09%09\n-var value int%0A%09%09fmt.Scan(&value)%0A%09%09set = append(set, value\n+fmt.Scan(&set%5Bi%5D\n )%0A%09%7D\n@@ -321,23 +321,12 @@\n tSum(set\n-, total_sum\n )%0A%7D%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-05-19_22-17-30",
+            "content": "@@ -35,33 +35,20 @@\n unc \n-checkSum(currentIdx int, \n+isSubsetSum(\n set \n@@ -76,16 +76,17 @@\n  bool %7B%0A\n+%0A\n %09if len(\n@@ -121,18 +121,8 @@\n %7D%0A%0A%09\n-update := \n cach\n@@ -128,16 +128,17 @@\n hedSum -\n+=\n  set%5B0%5D%0A\n@@ -142,22 +142,25 @@\n 0%5D%0A%0A%09if \n-update\n+cachedSum\n  == 0 %7B%0A\n@@ -184,22 +184,25 @@\n else if \n-update\n+cachedSum\n  %3C 0 %7B%0A%09\n@@ -238,59 +238,8 @@\n urn \n-checkSum(currentIdx+1, set%5B1:%5D, update)%0A%09%7D%0A%7D%0A%0Afunc \n isSu\n@@ -241,38 +241,36 @@\n  isSubsetSum(set\n- %5B%5Dint\n+%5B1:%5D\n , cachedSum int)\n@@ -268,129 +268,13 @@\n dSum\n- int) bool %7B%0A%0A%09// var res bool%0A%09// for i := 0; i %3C len(set); i++ %7B%0A%09// %7D%0A%09res := checkSum(0, set, cachedSum)%0A%0A%09return res\n+)%0A%09%7D%0A\n %0A%7D%0A%0A\n@@ -498,15 +498,8 @@\n %7D%0A%0A%09\n-res := \n isSu\n@@ -525,26 +525,7 @@\n sum)\n-%0A%0A%09fmt.Println(res)\n %0A%7D%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-05-19_22-53-31",
+            "content": "@@ -36,24 +36,40 @@\n nc checkSum(\n+currentIdx int, \n set %5B%5Dint, c\n@@ -228,33 +228,13 @@\n urn \n-checkSum(set%5B2:%5D, update)\n+false\n %0A%09%7D \n@@ -258,16 +258,30 @@\n heckSum(\n+currentIdx+1, \n set%5B1:%5D,\n@@ -418,24 +418,27 @@\n := checkSum(\n+0, \n set, cachedS\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-19_22-57-12",
+            "content": "@@ -44,24 +44,8 @@\n Sum(\n-currentIdx int, \n set \n@@ -89,26 +89,17 @@\n set) == \n-currentIdx\n+0\n  %7B%0A%09%09ret\n@@ -139,26 +139,17 @@\n m - set%5B\n-currentIdx\n+0\n %5D%0A%0A%09if u\n@@ -221,36 +221,23 @@\n Sum(\n-currentIdx+1, set, cachedSum\n+set%5B2:%5D, update\n )%0A%09%7D\n@@ -266,25 +266,15 @@\n Sum(\n-currentIdx+1, set\n+set%5B1:%5D\n , up\n@@ -333,24 +333,27 @@\n t) bool %7B%0A%0A%09\n+// \n var res bool\n@@ -354,16 +354,19 @@\n s bool%0A%09\n+// \n for i :=\n@@ -390,21 +390,27 @@\n  i++ %7B%0A%09\n+// %7D%0A\n %09res \n+:\n = checkS\n@@ -412,19 +412,16 @@\n heckSum(\n-0, \n set, cac\n@@ -427,19 +427,16 @@\n chedSum)\n-%0A%09%7D\n %0A%0A%09retur\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-19_23-08-35",
+            "content": "@@ -272,21 +272,8 @@\n  set\n-%5BcurrentIdx:%5D\n , ca\n@@ -346,107 +346,8 @@\n %0A%7D%0A%0A\n-// input = '''%0A// 6 10%0A// 3 34 4 12 5 2%0A// '''%0A%0A/*%0A%0A3%0A34    4     12  5  2%0A   12 5 2       2%0A%0A%0A*/%0A%0A\n func\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-19_23-13-17",
+            "content": "@@ -67,21 +67,22 @@\n  %5B%5Dint, \n-total\n+cached\n Sum int)\n@@ -148,21 +148,22 @@\n date := \n-total\n+cached\n Sum - se\n@@ -211,19 +211,47 @@\n  true%0A%09%7D\n-%0A%0A%09\n+ else if update %3C 0 %7B%0A%09%09return \n checkSum\n@@ -287,20 +287,38 @@\n :%5D, \n-totalSum)%0A%0A%09\n+cachedSum)%0A%09%7D else %7B%0A%09%09return \n chec\n@@ -353,22 +353,10 @@\n te)%0A\n-%0A%09return false\n+%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-05-19_23-26-43",
+            "content": "@@ -96,17 +96,16 @@\n %09if \n-(\n len(set)\n  - 1\n@@ -104,13 +104,8 @@\n set)\n- - 1)\n  == \n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-05-19_23-27-16",
+            "content": "@@ -92,16 +92,17 @@\n l %7B%0A%09if \n+(\n len(set)\n@@ -102,20 +102,34 @@\n en(set) \n-== 0\n+- 1) == currentIdx\n  %7B%0A%09%09ret\n@@ -219,39 +219,11 @@\n e%0A%09%7D\n- else if update %3C 0 %7B%0A%09%09return \n+%0A%0A%09\n chec\n@@ -233,31 +233,42 @@\n m(currentIdx\n++1\n , set%5B\n-1\n+currentIdx\n :%5D, totalSum\n@@ -273,27 +273,10 @@\n um)%0A\n+%0A\n %09\n-%7D else %7B%0A%09%09return \n chec\n@@ -294,17 +294,15 @@\n tIdx\n++1\n , set\n-%5B1:%5D\n , up\n@@ -307,19 +307,30 @@\n update)%0A\n-%09%7D%0A\n+%0A%09return false\n %0A%7D%0A%0A// i\n@@ -539,17 +539,17 @@\n heckSum(\n-i\n+0\n , set, c\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-05-20_08-24-22",
+            "content": "@@ -252,34 +252,25 @@\n entIdx, set%5B\n-currentIdx\n+1\n :%5D, totalSum\n@@ -315,26 +315,17 @@\n dx, set%5B\n-currentIdx\n+1\n :%5D, upda\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-20_08-24-44",
+            "content": "@@ -252,25 +252,34 @@\n entIdx, set%5B\n-1\n+currentIdx\n :%5D, totalSum\n@@ -324,17 +324,26 @@\n dx, set%5B\n-1\n+currentIdx\n :%5D, upda\n@@ -353,16 +353,115 @@\n %0A%09%7D%0A%0A%7D%0A%0A\n+// input = '''%0A// 6 10%0A// 3 34 4 12 5 2%0A// '''%0A%0A/*%0A%0A3%0A34    4     12  5  2%0A   12 5 2       2%0A%0A%0A*/%0A%0A\n func isS\n@@ -609,107 +609,8 @@\n %0A%7D%0A%0A\n-// input = '''%0A// 6 10%0A// 3 34 4 12 5 2%0A// '''%0A%0A/*%0A%0A3%0A34    4     12  5  2%0A   12 5 2       2%0A%0A%0A*/%0A%0A\n func\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-20_08-26-06",
+            "content": "@@ -104,17 +104,17 @@\n set) == \n-1\n+0\n  %7B%0A%09%09ret\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-20_08-26-30",
+            "content": "@@ -100,25 +100,25 @@\n len(set) == \n-0\n+1\n  %7B%0A%09%09return \n@@ -252,38 +252,25 @@\n entIdx, set%5B\n-(currentIdx+1)\n+1\n :%5D, totalSum\n@@ -319,22 +319,9 @@\n set%5B\n-(currentIdx+1)\n+1\n :%5D, \n@@ -473,32 +473,8 @@\n um)%0A\n-%09%09if res %7B%0A%09%09%09break%0A%09%09%7D%0A\n %09%7D%0A%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-20_08-31-53",
+            "content": "@@ -104,26 +104,17 @@\n set) == \n-currentIdx\n+0\n  %7B%0A%09%09ret\n@@ -126,16 +126,17 @@\n alse%0A%09%7D%0A\n+%0A\n %09update \n@@ -250,23 +250,38 @@\n rrentIdx\n-+1\n , set\n+%5B(currentIdx+1):%5D\n , totalS\n@@ -326,15 +326,30 @@\n tIdx\n-+1\n , set\n+%5B(currentIdx+1):%5D\n , up\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-05-20_08-52-38",
+            "content": "@@ -36,24 +36,40 @@\n nc checkSum(\n+currentIdx int, \n set %5B%5Dint, t\n@@ -100,25 +100,34 @@\n len(set) == \n-0\n+currentIdx\n  %7B%0A%09%09return \n@@ -136,19 +136,16 @@\n lse%0A%09%7D%0A%09\n-// \n update :\n@@ -176,126 +176,11 @@\n Idx%5D\n-//3 - 34 - 4 - 12 - 5 - 2%0A%09// //7 = 10 - 3 %7C 3 = 7 - 4 %7C 1 = 3 - 2%0A%09// //-27 = 7 - 34 %7C -9 = 3 - 12 %7C -2 = 3 - 5%0A%0A%09// \n+%0A%0A%09\n if u\n@@ -189,27 +189,24 @@\n ate == 0 %7B%0A%09\n-// \n %09return true\n@@ -207,19 +207,16 @@\n n true%0A%09\n-// \n %7D else i\n@@ -227,27 +227,24 @@\n date %3C 0 %7B%0A%09\n-// \n %09return chec\n@@ -278,19 +278,16 @@\n alSum)%0A%09\n-// \n %7D else %7B\n@@ -288,19 +288,16 @@\n else %7B%0A%09\n-// \n %09return \n@@ -337,254 +337,14 @@\n e)%0A%09\n-// %7D%0A%0A%09totalSum -= set%5B0%5D%0A%0A%09if totalSum == 0 %7B%0A%09%09return true%0A%09%7D else if totalSum %3C 0 %7B%0A%09%09return false%0A%09%7D else %7B%0A%0A%09%09for i := 1; i %3C len(set); i++ %7B%0A%09%09%09res := checkSum(set%5Bi:%5D, totalSum)%0A%09%09%09if res %7B%0A%09%09%09%09return res%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%7D%0A%0A%09return false%0A%7D%0A%0A// \n+%7D%0A%0A%7D%0A%0A\n func\n@@ -390,23 +390,17 @@\n bool %7B%0A%0A\n-// %09// \n+%09\n var res \n@@ -404,23 +404,17 @@\n es bool%0A\n-// %09// \n+%09\n for i :=\n@@ -414,17 +414,17 @@\n or i := \n-1\n+0\n ; i %3C le\n@@ -441,69 +441,9 @@\n + %7B%0A\n-// %09// %09// %09if res %7B%0A// %09// %09// %09%09break%0A// %09// %09// %09%7D%0A// %09// \n+%09\n %09res\n@@ -454,19 +454,16 @@\n heckSum(\n-0, \n i, set, \n@@ -477,25 +477,37 @@\n um)%0A\n-// %09// %7D%0A%0A// %09// \n+%09%09if res %7B%0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A%0A%09\n retu\n@@ -513,19 +513,16 @@\n urn res%0A\n-// \n %7D%0A%0A// in\n@@ -843,21 +843,24 @@\n %09res := \n-check\n+isSubset\n Sum(set,\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-05-20_09-40-39",
+            "content": "@@ -72,17 +72,16 @@\n  bool %7B%0A\n-%0A\n %09if len(\n@@ -113,46 +113,8 @@\n e%0A%09%7D\n-%0A%0A%09if totalSum == 0 %7B%0A%09%09return true%0A%09%7D\n %0A%09//\n",
+            "lines": "87"
+        },
+        {
+            "label": "2026-05-20_09-43-41",
+            "content": "@@ -148,16 +148,352 @@\n  true%0A%09%7D\n+%0A%09// update := totalSum - set%5BcurrentIdx%5D//3 - 34 - 4 - 12 - 5 - 2%0A%09// //7 = 10 - 3 %7C 3 = 7 - 4 %7C 1 = 3 - 2%0A%09// //-27 = 7 - 34 %7C -9 = 3 - 12 %7C -2 = 3 - 5%0A%0A%09// if update == 0 %7B%0A%09// %09return true%0A%09// %7D else if update %3C 0 %7B%0A%09// %09return checkSum(currentIdx+1, set, totalSum)%0A%09// %7D else %7B%0A%09// %09return checkSum(currentIdx+1, set, update)%0A%09// %7D\n %0A%0A%09total\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-05-20_09-51-51",
+            "content": "@@ -264,25 +264,25 @@\n %0A%09%09for i := \n-0\n+1\n ; i %3C len(se\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-05-20_09-54-50",
+            "content": "@@ -113,19 +113,16 @@\n se%0A%09%7D%0A%0A%09\n-// \n if total\n@@ -133,19 +133,16 @@\n == 0 %7B%0A%09\n-// \n %09return \n@@ -151,48 +151,11 @@\n ue%0A%09\n-// \n %7D%0A%0A\n-%09for i := 0; i %3C len(set); i++ %7B%0A%09\n %09tot\n@@ -171,13 +171,12 @@\n set%5B\n-i\n+0\n %5D%0A%0A\n-%09\n %09if \n@@ -189,25 +189,24 @@\n um == 0 %7B%0A%09%09\n-%09\n return true%0A\n@@ -205,17 +205,16 @@\n rn true%0A\n-%09\n %09%7D else \n@@ -231,17 +231,16 @@\n m %3C 0 %7B%0A\n-%09\n %09%09return\n@@ -247,20 +247,61 @@\n  false%0A%09\n-%09%7D%0A%0A\n+%7D else %7B%0A%0A%09%09for i := 0; i %3C len(set); i++ %7B%0A%09\n %09%09res :=\n@@ -329,17 +329,17 @@\n talSum)%0A\n-%0A\n+%09\n %09%09if res\n@@ -341,16 +341,17 @@\n f res %7B%0A\n+%09\n %09%09%09retur\n@@ -362,30 +362,17 @@\n s%0A%09%09\n-%7D%0A\n %09%7D%0A%09\n-//  else %7B%0A%0A%09// \n+%09%7D%0A%0A%09\n %7D%0A%0A%09\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-05-20_15-57-38",
+            "content": "@@ -113,16 +113,19 @@\n se%0A%09%7D%0A%0A%09\n+// \n if total\n@@ -128,32 +128,35 @@\n otalSum == 0 %7B%0A%09\n+// \n %09return true%0A%09%7D%0A\n@@ -153,19 +153,56 @@\n n true%0A%09\n+// \n %7D%0A%0A\n+%09for i := 0; i %3C len(set); i++ %7B%0A%09\n %09totalSu\n@@ -214,12 +214,13 @@\n set%5B\n-0\n+i\n %5D%0A%0A\n+%09\n %09if \n@@ -233,24 +233,25 @@\n um == 0 %7B%0A%09%09\n+%09\n return true%0A\n@@ -250,16 +250,17 @@\n rn true%0A\n+%09\n %09%7D else \n@@ -273,24 +273,25 @@\n alSum %3C 0 %7B%0A\n+%09\n %09%09return fal\n@@ -298,53 +298,12 @@\n se%0A%09\n-%7D else %7B%0A%0A%09%09for i := 1; i %3C len(set); i++ %7B%0A%09\n+%09%7D%0A%0A\n %09%09re\n@@ -335,17 +335,17 @@\n talSum)%0A\n-%09\n+%0A\n %09%09if res\n@@ -347,17 +347,16 @@\n f res %7B%0A\n-%09\n %09%09%09retur\n@@ -367,17 +367,30 @@\n s%0A%09%09\n+%7D%0A\n %09%7D%0A%09\n-%09%7D%0A%0A%09\n+//  else %7B%0A%0A%09// \n %7D%0A%0A%09\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-20_15-59-10",
+            "content": "@@ -119,18 +119,8 @@\n %0A%09if\n- set%5B0%5D ==\n  tot\n@@ -125,16 +125,21 @@\n otalSum \n+== 0 \n %7B%0A%09%09retu\n@@ -387,16 +387,19 @@\n alse%0A%7D%0A%0A\n+// \n func isS\n@@ -410,37 +410,38 @@\n tSum(set %5B%5Dint, \n-total\n+cached\n Sum int) bool %7B%0A\n@@ -437,25 +437,31 @@\n nt) bool %7B%0A%0A\n-%09\n+// %09// \n var res bool\n@@ -461,17 +461,23 @@\n es bool%0A\n-%09\n+// %09// \n for i :=\n@@ -473,25 +473,25 @@\n // for i := \n-0\n+1\n ; i %3C len(se\n@@ -504,49 +504,124 @@\n + %7B%0A\n-%09%09res = checkSum(set%5Bi:%5D, totalSum)%0A%09%7D%0A%0A%09\n+// %09// %09// %09if res %7B%0A// %09// %09// %09%09break%0A// %09// %09// %09%7D%0A// %09// %09res = checkSum(0, i, set, cachedSum)%0A// %09// %7D%0A%0A// %09// \n retu\n@@ -627,16 +627,19 @@\n urn res%0A\n+// \n %7D%0A%0A// in\n@@ -731,12 +731,8 @@\n  2%0A%0A\n-34%0A%0A\n %0A*/%0A\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-05-20_16-18-39",
+            "content": "@@ -529,32 +529,8 @@\n um)%0A\n-%09%09if res %7B%0A%09%09%09break%0A%09%09%7D%0A\n %09%7D%0A%0A\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-05-20_16-20-08",
+            "content": "@@ -107,32 +107,42 @@\n rn false%0A%09%7D%0A%0A%09if\n+ set%5B0%5D ==\n  totalSum %3C 0 %7B%0A\n@@ -139,12 +139,8 @@\n Sum \n-%3C 0 \n %7B%0A%09%09\n@@ -142,34 +142,54 @@\n  %7B%0A%09%09return \n-fals\n+tru\n e%0A%09%7D%0A%0A\n+%09totalSum -= set%5B0%5D%0A%0A\n %09if totalSum\n@@ -216,29 +216,100 @@\n e%0A%09%7D\n-%0A%0A%09var res bool%0A\n+ else if totalSum %3C 0 %7B%0A%09%09return false%0A%09%7D else %7B%0A%0A%09%09for i := 1; i %3C len(set); i++ %7B%0A%09%09\n %09res \n+:\n = ch\n@@ -311,33 +311,33 @@\n := checkSum(set%5B\n-1\n+i\n :%5D, totalSum-set\n@@ -336,17 +336,12 @@\n lSum\n--set%5B0%5D\n )%0A\n+%09%09\n %09if \n@@ -346,16 +346,18 @@\n f res %7B%0A\n+%09%09\n %09%09return\n@@ -365,45 +365,20 @@\n res%0A\n+%09%09\n %09%7D%0A%09\n-res = checkSum(set%5B1:%5D, totalSum)\n+%09%7D%0A%0A%09%7D\n %0A%0A%09r\n@@ -387,18 +387,17 @@\n urn \n-res\n+false\n %0A%7D%0A%0A\n-// \n func\n@@ -442,19 +442,16 @@\n bool %7B%0A%0A\n-// \n %09var res\n@@ -456,19 +456,16 @@\n es bool%0A\n-// \n %09for i :\n@@ -489,19 +489,16 @@\n ; i++ %7B%0A\n-// \n %09%09res = \n@@ -525,19 +525,16 @@\n talSum)%0A\n-// \n %09%09if res\n@@ -536,19 +536,16 @@\n f res %7B%0A\n-// \n %09%09%09break\n@@ -549,25 +549,16 @@\n eak%0A\n-// \n %09%09%7D%0A\n-// \n %09%7D%0A%0A\n-// \n %09ret\n@@ -565,19 +565,16 @@\n urn res%0A\n-// \n %7D%0A%0A// in\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-20_16-36-11",
+            "content": "@@ -321,16 +321,19 @@\n  res%0A%7D%0A%0A\n+// \n func isS\n@@ -370,24 +370,27 @@\n nt) bool %7B%0A%0A\n+// \n %09var res boo\n@@ -391,16 +391,19 @@\n es bool%0A\n+// \n %09for i :\n@@ -427,16 +427,19 @@\n ; i++ %7B%0A\n+// \n %09%09res = \n@@ -466,16 +466,19 @@\n talSum)%0A\n+// \n %09%09if res\n@@ -480,16 +480,19 @@\n f res %7B%0A\n+// \n %09%09%09break\n@@ -496,16 +496,25 @@\n eak%0A\n+// \n %09%09%7D%0A\n+// \n %09%7D%0A%0A\n+// \n %09ret\n@@ -517,24 +517,27 @@\n %09return res%0A\n+// \n %7D%0A%0A// input \n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-05-20_16-37-26",
+            "content": "@@ -189,22 +189,35 @@\n ue%0A%09%7D%0A%0A%09\n-return\n+var res bool%0A%09res =\n  checkSu\n@@ -247,11 +247,41 @@\n %5B0%5D)\n- %7C%7C\n+%0A%09if res %7B%0A%09%09return res%0A%09%7D%0A%09res =\n  che\n@@ -304,16 +304,29 @@\n otalSum)\n+%0A%0A%09return res\n %0A%7D%0A%0Afunc\n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-05-20_16-41-25",
+            "content": "@@ -265,19 +265,16 @@\n Sum)%0A%7D%0A%0A\n-// \n func isS\n@@ -315,19 +315,16 @@\n bool %7B%0A%0A\n-// \n %09var res\n@@ -329,19 +329,16 @@\n es bool%0A\n-// \n %09for i :\n@@ -362,19 +362,16 @@\n ; i++ %7B%0A\n-// \n %09%09res = \n@@ -398,19 +398,16 @@\n talSum)%0A\n-// \n %09%09if res\n@@ -409,19 +409,16 @@\n f res %7B%0A\n-// \n %09%09%09break\n@@ -422,25 +422,16 @@\n eak%0A\n-// \n %09%09%7D%0A\n-// \n %09%7D%0A%0A\n-// \n %09ret\n@@ -438,19 +438,16 @@\n urn res%0A\n-// \n %7D%0A%0A// in\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-05-20_16-49-00",
+            "content": "@@ -265,16 +265,19 @@\n Sum)%0A%7D%0A%0A\n+// \n func isS\n@@ -314,24 +314,27 @@\n nt) bool %7B%0A%0A\n+// \n %09var res boo\n@@ -335,16 +335,19 @@\n es bool%0A\n+// \n %09for i :\n@@ -371,16 +371,19 @@\n ; i++ %7B%0A\n+// \n %09%09res = \n@@ -410,16 +410,19 @@\n talSum)%0A\n+// \n %09%09if res\n@@ -424,16 +424,19 @@\n f res %7B%0A\n+// \n %09%09%09break\n@@ -440,16 +440,25 @@\n eak%0A\n+// \n %09%09%7D%0A\n+// \n %09%7D%0A%0A\n+// \n %09ret\n@@ -465,16 +465,19 @@\n urn res%0A\n+// \n %7D%0A%0A// in\n@@ -802,24 +802,21 @@\n %09res := \n-isSubset\n+check\n Sum(set,\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-05-20_16-49-22",
+            "content": "@@ -772,21 +772,24 @@\n %09res := \n-check\n+isSubset\n Sum(set,\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-05-20_19-38-29",
+            "content": "@@ -265,19 +265,16 @@\n Sum)%0A%7D%0A%0A\n-// \n func isS\n@@ -315,19 +315,16 @@\n bool %7B%0A%0A\n-// \n %09var res\n@@ -329,19 +329,16 @@\n es bool%0A\n-// \n %09for i :\n@@ -362,19 +362,16 @@\n ; i++ %7B%0A\n-// \n %09%09res = \n@@ -398,19 +398,16 @@\n talSum)%0A\n-// \n %09%09if res\n@@ -409,19 +409,16 @@\n f res %7B%0A\n-// \n %09%09%09break\n@@ -422,25 +422,16 @@\n eak%0A\n-// \n %09%09%7D%0A\n-// \n %09%7D%0A%0A\n-// \n %09ret\n@@ -438,19 +438,16 @@\n urn res%0A\n-// \n %7D%0A%0A// in\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-05-20_19-47-38",
+            "content": "@@ -795,19 +795,16 @@\n e)%0A%09%7D%0A%0A%09\n-// \n res := c\n@@ -834,63 +834,22 @@\n %0A%0A%09f\n-or i := 0; i %3C len(set); i++ %7B%0A%09%09fmt.Println(set%5Bi%5D)%0A%09%7D%0A\n+mt.Println(res)\n %0A%7D%0A\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-05-20_19-48-35",
+            "content": "@@ -795,28 +795,26 @@\n e)%0A%09%7D%0A%0A%09\n-fmt.Println(\n+// res := \n checkSum\n@@ -833,15 +833,11 @@\n sum)\n-)\n %0A%0A%09\n-// \n for \n@@ -865,19 +865,16 @@\n  i++ %7B%0A%09\n-// \n %09fmt.Pri\n@@ -887,16 +887,13 @@\n et%5Bi%5D)%0A%09\n-// \n %7D%0A%0A%7D%0A\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-05-20_19-49-30",
+            "content": "@@ -192,36 +192,8 @@\n %09%7D%0A%0A\n-%09fmt.Println(set, totalSum)%0A\n %09ret\n@@ -265,16 +265,325 @@\n Sum)%0A%7D%0A%0A\n+// func isSubsetSum(set %5B%5Dint, totalSum int) bool %7B%0A%0A// %09var res bool%0A// %09for i := 0; i %3C len(set); i++ %7B%0A// %09%09res = checkSum(set%5Bi:%5D, totalSum)%0A// %09%09if res %7B%0A// %09%09%09break%0A// %09%09%7D%0A// %09%7D%0A%0A// %09return res%0A// %7D%0A%0A// input = '''%0A// 6 10%0A// 3 34 4 12 5 2%0A// '''%0A%0A/*%0A%0A3%0A34    4     12  5  2%0A   12 5 2       2%0A%0A34%0A%0A%0A*/%0A%0A\n func mai\n@@ -834,10 +834,78 @@\n _sum))%0A%0A\n+%09// for i := 0; i %3C len(set); i++ %7B%0A%09// %09fmt.Println(set%5Bi%5D)%0A%09// %7D%0A%0A\n %7D%0A\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-05-20_19-53-53",
+            "content": "@@ -73,16 +73,55 @@\n bool %7B%0A%0A\n+%09if len(set) == 0 %7B%0A%09%09return false%0A%09%7D%0A%0A\n %09if tota\n@@ -193,50 +193,8 @@\n %7D%0A%0A%09\n-if len(set) == 0 %7B%0A%09%09return false%0A%09%7D%0A%0A%09// \n fmt.\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-05-20_20-00-18",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc checkSum(set []int, totalSum int) bool {\n\n\tif totalSum < 0 {\n\t\treturn false\n\t}\n\n\tif totalSum == 0 {\n\t\treturn true\n\t}\n\n\tif len(set) == 0 {\n\t\treturn false\n\t}\n\n\t// fmt.Println(set, totalSum)\n\treturn checkSum(set[1:], totalSum-set[0]) || checkSum(set[1:], totalSum)\n}\n\nfunc main() {\n\n\tvar qtd_subset, total_sum int\n\n\tfmt.Scan(&qtd_subset, &total_sum)\n\n\tset := make([]int, 0, qtd_subset)\n\n\tfor i := 0; i < qtd_subset; i++ {\n\t\tvar value int\n\t\tfmt.Scan(&value)\n\t\tset = append(set, value)\n\t}\n\n\tfmt.Println(checkSum(set, total_sum))\n\n}\n",
+            "lines": "41"
+        }
+    ]
+}

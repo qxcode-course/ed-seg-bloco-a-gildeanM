@@ -15,8 +15,14 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@rec
 - ed@vector
+- ed@rec
+- ed@bfs
+- ed@linear
+- ed@dfs
+- ed@list
+- ed@map_set
+- ed@backtrack
 flags:
   inbox: all
   panel: skills
@@ -24,5 +30,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@multiset
-selected_index: 32
+selected: ed@lista_d2
+selected_index: 51

@@ -1,0 +1,134 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-20_21-15-08",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,89 +37,39 @@\n ) %7B%0A\n-%0A%09var seq string%0A%09var L int%0A%0A%09fmt.Scan(&seq, &L)%0A%09fmt.Println(seq)%0A%09fmt.Println(L\n+    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-20_21-16-31",
+            "content": "@@ -18,79 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22strings%22%0A)%0A%0A// func findDotIdx(str string) %7B%0A//     str%0A// %7D\n %0A%0Afu\n@@ -119,35 +119,9 @@\n tln(\n-strings.IndexAny(seq, %22.%22))%0A\n+L)\n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-05-20_21-21-11",
+            "content": "@@ -37,16 +37,19 @@\n ngs%22%0A)%0A%0A\n+// \n func fin\n@@ -53,597 +53,167 @@\n find\n-ElementBySet(originIdx int, L int, val byte, seq string) bool %7B%0A%0A%09if len(seq) == 0 %7B%0A%09%09return false%0A%09%7D%0A%0A%09if seq%5BoriginIdx%5D == val %7B%0A%09%09return false%0A%09%7D%0A%0A%09if L == int(val) %7B%0A%09%09return true%0A%09%7D%0A%0A%09if findElementBySet(originIdx-1, L, val, seq%5B:originIdx%5D) && findElementBySet(originIdx+1, L, val, seq%5BoriginIdx:%5D) %7B%0A%09%09seqbytes := %5B%5Dbyte(seq)%0A%09%09seqbytes%5BoriginIdx%5D = val%0A%09%09seq = string(seqbytes)%0A%09%7D else %7B%0A%09%09val++%0A%09%7D%0A%0A%09return true%0A%0A%7D%0A%0Afunc main() %7B%0A%0A%09var seq string%0A%09var L int%0A%0A%09fmt.Scan(&seq, &L)%0A%0A%09idx := 0%0A%09for idx != -1 %7B%0A%09%09idx = strings.IndexAny(seq, %22.%22)%0A%09%09findElementBySet(idx, L, 0, seq)%0A%09%7D\n+DotIdx(str string) %7B%0A//     str%0A// %7D%0A%0Afunc main() %7B%0A%0A%09var seq string%0A%09var L int%0A%0A%09fmt.Scan(&seq, &L)%0A%09fmt.Println(seq)%0A%09fmt.Println(strings.IndexAny(seq, %22.%22))\n %0A%0A%7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-20_22-29-49",
+            "content": "@@ -602,87 +602,10 @@\n .%22)%0A\n-%0A\n %09%09\n-seqbytes := %5B%5Dbyte(seq)%0A%09%09seqbytes%5Bidx%5D = 'T'%0A%09%09seq = string(seqbytes)%0A%09%09// \n find\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-21_21-03-17",
+            "content": "@@ -547,19 +547,16 @@\n x := 0%0A%09\n-// \n for idx \n@@ -563,16 +563,17 @@\n != -1 %7B%0A\n+%09\n %09idx = s\n@@ -602,31 +602,11 @@\n .%22)%0A\n-%09fmt.Println(idx)%0A%0A%09// \n+%0A%09%09\n seqb\n@@ -626,19 +626,17 @@\n e(seq)%0A%09\n-// \n+%09\n seqbytes\n@@ -648,19 +648,17 @@\n  = 'T'%0A%09\n-// \n+%09\n seq = st\n@@ -672,16 +672,17 @@\n qbytes)%0A\n+%09\n %09// find\n@@ -711,16 +711,13 @@\n , seq)%0A%09\n-// \n %7D%0A%0A%7D%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-05-21_21-04-11",
+            "content": "@@ -547,16 +547,19 @@\n x := 0%0A%09\n+// \n for idx \n@@ -566,17 +566,16 @@\n != -1 %7B%0A\n-%09\n %09idx = s\n@@ -604,46 +604,106 @@\n .%22)%0A\n-%0A%09%09seq = seq%5B:idx%5D + %22T%22 + seq%5Bidx:%5D%0A%09\n+%09fmt.Println(idx)%0A%0A%09// seqbytes := %5B%5Dbyte(seq)%0A%09// seqbytes%5Bidx%5D = 'T'%0A%09// seq = string(seqbytes)%0A\n %09// \n@@ -740,28 +740,12 @@\n q)%0A%09\n-%7D%0A%0A%09fmt.Println(seq)\n+// %7D\n %0A%0A%7D%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-21_21-07-27",
+            "content": "@@ -639,27 +639,8 @@\n x:%5D%0A\n-%09%09fmt.Println(idx)%0A\n %09%09//\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-05-21_21-08-02",
+            "content": "@@ -603,27 +603,8 @@\n %22)%0A%0A\n-%09%09fmt.Println(idx)%0A\n %09%09se\n@@ -635,16 +635,35 @@\n q%5Bidx:%5D%0A\n+%09%09fmt.Println(idx)%0A\n %09%09// fin\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-21_21-08-16",
+            "content": "@@ -555,37 +555,17 @@\n for \n-strings.ContainsAny(seq, %22.%22)\n+idx != -1\n  %7B%0A%09\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-21_21-09-36",
+            "content": "@@ -547,19 +547,16 @@\n x := 0%0A%09\n-// \n for stri\n@@ -583,16 +583,17 @@\n  %22.%22) %7B%0A\n+%09\n %09idx = s\n@@ -620,19 +620,17 @@\n  %22.%22)%0A%0A%09\n-// \n+%09\n fmt.Prin\n@@ -638,16 +638,17 @@\n ln(idx)%0A\n+%09\n %09seq = s\n@@ -674,16 +674,17 @@\n q%5Bidx:%5D%0A\n+%09\n %09// find\n@@ -713,19 +713,16 @@\n , seq)%0A%09\n-// \n %7D%0A%0A%09fmt.\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-21_21-10-14",
+            "content": "@@ -674,18 +674,16 @@\n  seq%5Bidx\n-+1\n :%5D%0A%09// f\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-21_21-10-43",
+            "content": "@@ -547,16 +547,19 @@\n x := 0%0A%09\n+// \n for stri\n@@ -586,17 +586,16 @@\n  %22.%22) %7B%0A\n-%09\n %09idx = s\n@@ -621,17 +621,16 @@\n , %22.%22)%0A%0A\n-%09\n %09// fmt.\n@@ -642,17 +642,16 @@\n ln(idx)%0A\n-%09\n %09seq = s\n@@ -679,17 +679,16 @@\n idx+1:%5D%0A\n-%09\n %09// find\n@@ -717,16 +717,19 @@\n , seq)%0A%09\n+// \n %7D%0A%0A%09fmt.\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-21_21-11-06",
+            "content": "@@ -27,19 +27,8 @@\n mt%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -85,19 +85,20 @@\n nt, val \n-int\n+byte\n , seq st\n@@ -116,280 +116,22 @@\n %7B%0A%0A%09\n-// 2, 3, 0, seq%5B0,1,.,2,.%5D%0A%0A%09// 1, 3, 0, seq%5B0,1,.,2,.%5D false%0A%09// 0, 3, 0, seq%5B0,1,.,2,.%5D false%0A%09// 0, 3, 1, seq%5B0,1,.,2,.%5D false%0A%0A%09//3, 3, 0, seq%5B0,1,.,2,.%5D false%0A%09//4, 3, 0, seq%5B0,1,.,2,.%5D false%0A%09//5, 3, 1, seq%5B0,1,.,2,.%5D false%0A%0A%09if len(seq)-1 %3E originIdx %7C%7C originIdx %3C\n+if len(seq) ==\n  0 %7B\n@@ -158,12 +158,8 @@\n %09if \n-int(\n seq%5B\n@@ -168,17 +168,16 @@\n iginIdx%5D\n-)\n  == val \n@@ -202,27 +202,32 @@\n %7D%0A%0A%09if L == \n+int(\n val\n+)\n  %7B%0A%09%09return \n@@ -243,9 +243,8 @@\n %09if \n-!\n find\n@@ -284,17 +284,24 @@\n  seq\n-) %7B%0A%0A%09%09if\n+%5B:originIdx%5D) &&\n  fin\n@@ -342,78 +342,103 @@\n  seq\n+%5BoriginIdx:%5D\n ) %7B%0A\n-%09\n %09%09seq\n- = seq%5B:originIdx%5D + strconv.Itoa(val) + seq%5BoriginIdx+1:%5D%0A%09\n+bytes := %5B%5Dbyte(seq)%0A%09%09seqbytes%5BoriginIdx%5D = val%0A%09%09seq = string(seqbytes)%0A\n %09%7D e\n@@ -449,20 +449,14 @@\n %7B%0A%09%09\n-%09\n val++%0A\n-%09%09%7D%0A%0A\n %09%7D%0A%0A\n@@ -536,16 +536,26 @@\n q, &L)%0A%0A\n+%09idx := 0%0A\n %09for str\n@@ -589,17 +589,16 @@\n %7B%0A%09%09idx \n-:\n = string\n@@ -621,16 +621,79 @@\n %22.%22)%0A%0A%09%09\n+// fmt.Println(idx)%0A%09%09seq = seq%5B:idx%5D + %22T%22 + seq%5Bidx+1:%5D%0A%09%09// \n findElem\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-21_21-35-15",
+            "content": "@@ -126,580 +126,773 @@\n %7B%0A%0A%09\n-if len(seq)-1 %3E originIdx %7C%7C originIdx %3C 0 %7B%0A%09%09return false%0A%09%7D%0A%0A%09if int(seq%5BoriginIdx%5D) == val %7B%0A%09%09return false%0A%09%7D%0A%0A%09if L == val %7B%0A%09%09return true%0A%09%7D%0A%0A%09return findElementBySet(originIdx-1, L, val, seq) && findElementBySet(originIdx+1, L, val, seq)%0A%0A%7D%0A%0Afunc main() %7B%0A%0A%09var seq string%0A%09var L int%0A%0A%09fmt.Scan(&seq, &L)%0A%0A%09for i := 0; i %3C= L; i++ %7B%0A%09%09idx := strings.IndexAny(seq, %22.%22)%0A%09%09if findElementBySet(idx-1, L, i, seq) && findElementBySet(idx+1, L, i, seq) %7B%0A%09%09%09seq = seq%5B:idx%5D + strconv.Itoa(i) + seq%5Bidx+1:%5D%0A%09%09%09i = 0%0A%09%09%7D%0A%0A%09%09if !strings.ContainsAny(seq, %22.%22) %7B%0A%09%09%09break%0A%09%09%7D\n+// 2, 3, 0, seq%5B0,1,.,2,.%5D%0A%0A%09// 1, 3, 0, seq%5B0,1,.,2,.%5D false%0A%09// 0, 3, 0, seq%5B0,1,.,2,.%5D false%0A%09// 0, 3, 1, seq%5B0,1,.,2,.%5D false%0A%0A%09//3, 3, 0, seq%5B0,1,.,2,.%5D false%0A%09//4, 3, 0, seq%5B0,1,.,2,.%5D false%0A%09//5, 3, 1, seq%5B0,1,.,2,.%5D false%0A%0A%09if len(seq)-1 %3E originIdx %7C%7C originIdx %3C 0 %7B%0A%09%09return false%0A%09%7D%0A%0A%09if int(seq%5BoriginIdx%5D) == val %7B%0A%09%09return false%0A%09%7D%0A%0A%09if L == val %7B%0A%09%09return true%0A%09%7D%0A%0A%09if !findElementBySet(originIdx-1, L, val, seq) %7B%0A%0A%09%09if findElementBySet(originIdx+1, L, val, seq) %7B%0A%09%09%09seq = seq%5B:originIdx%5D + strconv.Itoa(val) + seq%5BoriginIdx+1:%5D%0A%09%09%7D else %7B%0A%09%09%09val++%0A%09%09%7D%0A%0A%09%7D%0A%0A%09return true%0A%0A%7D%0A%0Afunc main() %7B%0A%0A%09var seq string%0A%09var L int%0A%0A%09fmt.Scan(&seq, &L)%0A%0A%09for strings.ContainsAny(seq, %22.%22) %7B%0A%09%09idx := strings.IndexAny(seq, %22.%22)%0A%0A%09%09findElementBySet(idx, L, 0, seq)\n %0A%09%7D%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-05-21_21-45-23",
+            "content": "@@ -125,44 +125,8 @@\n  %7B%0A%0A\n-%09// 1, 3, 0, seq%0A%0A%09// 3, 3, 0, seq%0A%0A\n %09if \n@@ -163,24 +163,24 @@\n inIdx %3C 0 %7B%0A\n+\n %09%09return fal\n@@ -247,17 +247,19 @@\n if L == \n-0\n+val\n  %7B%0A%09%09ret\n@@ -306,26 +306,24 @@\n iginIdx-1, L\n--1\n , val, seq) \n@@ -356,18 +356,16 @@\n Idx+1, L\n--1\n , val, s\n@@ -463,16 +463,16 @@\n ; i++ %7B%0A\n+\n %09%09idx :=\n@@ -502,14 +502,8 @@\n %22.%22)\n- // 2%0A\n %0A%09%09i\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-05-21_21-50-36",
+            "content": "@@ -569,26 +569,24 @@\n Set(idx-1, L\n--1\n , i, seq) &&\n@@ -611,18 +611,16 @@\n idx+1, L\n--1\n , i, seq\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-05-21_21-51-23",
+            "content": "@@ -128,97 +128,34 @@\n %0A%09//\n-1, 2, 3, seq%0A%09//0, 1, 3, seq%0A%09//-1, 0, 3, seq%0A%0A%09//3, 2, 3, seq%0A%09//4, 1, 3, seq%0A%09//5, 0, 3\n+ 1, 3, 0, seq%0A%0A%09// 3, 3, 0\n , se\n@@ -208,27 +208,28 @@\n  %7B%0A%09%09return \n-tru\n+fals\n e%0A%09%7D%0A%0A%09if in\n@@ -540,17 +540,17 @@\n %22.%22) // \n-3\n+2\n %0A%0A%09%09if f\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-05-21_22-04-45",
+            "content": "@@ -267,36 +267,35 @@\n  %3C 0 %7B%0A%09%09return \n-fals\n+tru\n e%0A%09%7D%0A%0A%09if int(se\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-21_22-05-18",
+            "content": "@@ -271,27 +271,28 @@\n  %7B%0A%09%09return \n-tru\n+fals\n e%0A%09%7D%0A%0A%09if in\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-21_22-07-35",
+            "content": "@@ -232,16 +232,18 @@\n len(seq)\n+-1\n  %3E origi\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-21_22-08-23",
+            "content": "@@ -126,32 +126,130 @@\n %7B%0A%0A%09\n-if originIdx %3E= len(seq)\n+//1, 2, 3, seq%0A%09//0, 1, 3, seq%0A%09//-1, 0, 3, seq%0A%0A%09//3, 2, 3, seq%0A%09//4, 1, 3, seq%0A%09//5, 0, 3, seq%0A%0A%09if len(seq) %3E originIdx\n  %7C%7C \n@@ -308,12 +308,8 @@\n Idx%5D\n--'0'\n ) ==\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-21_22-18-11",
+            "content": "@@ -440,16 +440,44 @@\n q, &L)%0A%0A\n+%09for i := 0; i %3C= L; i++ %7B%0A%09\n %09idx := \n@@ -511,35 +511,8 @@\n // 3\n-%0A%09for i := 0; i %3C= L; i++ %7B\n %0A%0A%09%09\n@@ -657,44 +657,8 @@\n = 0%0A\n-%09%09%09idx = strings.IndexAny(seq, %22.%22)%0A\n %09%09%7D%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-05-21_22-23-18",
+            "content": "@@ -52,1470 +52,725 @@\n %0A)%0A%0A\n-// func findElementBySet(originIdx int, L int, val int, seq string) bool %7B%0A%0A// %09if originIdx %3E= len(seq) %7C%7C originIdx %3C 0 %7B%0A// %09%09return true%0A// %09%7D%0A%0A// %09if int(seq%5BoriginIdx%5D-'0') == val %7B%0A// %09%09return false%0A// %09%7D%0A%0A// %09if L == 0 %7B%0A// %09%09return true%0A// %09%7D%0A%0A// %09return findElementBySet(originIdx-1, L-1, val, seq) && findElementBySet(originIdx+1, L-1, val, seq)%0A%0A// %7D%0A%0Afunc solve(pos int, seq string, L int) bool %7B%0A%0A%09idx := strings.IndexAny(seq%5Bpos:%5D, %22.%22)%0A%0A%09if idx == -1 %7B%0A%09%09return true%0A%09%7D%0A%0A%09for i := 0; i %3C= L; i++ %7B%0A%09%09if isValid(idx, i, seq, L) %7B%0A%09%09%09seq = seq%5B:idx%5D + strconv.Itoa(i) + seq%5Bidx:%5D%0A%09%09%09if solve(idx+1, seq, L) %7B%0A%09%09%09%09return true%0A%09%09%09%7D%0A%09%09%09seq = seq%5B:idx%5D + %22.%22 + seq%5Bidx:%5D%0A%09%09%7D%0A%09%7D%0A%0A%09return false%0A%0A%7D%0A%0Afunc isValid(idx int, d int, seq string, L int) bool %7B%0A%0A%09for i := 1; i %3C L; i++ %7B%0A%09%09if idx-i %3C 0 %7B%0A%09%09%09break%0A%09%09%7D%0A%0A%09%09if int(seq%5Bidx-i%5D-'0') == d %7B%0A%09%09%09return false%0A%09%09%7D%0A%09%7D%0A%0A%09for i := 1; i %3C L; i++ %7B%0A%09%09if idx+i %3E= len(seq) %7B%0A%09%09%09break%0A%09%09%7D%0A%0A%09%09if int(seq%5Bidx+1%5D-'0') == d %7B%0A%09%09%09return false%0A%09%09%7D%0A%09%7D%0A%0A%09return true%0A%7D%0A%0Afunc main() %7B%0A%0A%09var seq string%0A%09var L int%0A%0A%09fmt.Scan(&seq, &L)%0A%0A%09if solve(0, seq, L) %7B%0A%09%09fmt.Println(seq)%0A%09%7D%0A%0A%09// idx := strings.IndexAny(seq, %22.%22) // 3%0A%09// for i := 0; i %3C= L; i++ %7B%0A%0A%09// %09if findElementBySet(idx-1, L-1, i, seq) && findElementBySet(idx+1, L-1, i, seq) %7B%0A%09// %09%09seq = seq%5B:idx%5D + strconv.Itoa(i) + seq%5Bidx+1:%5D%0A%09// %09%09i = 0%0A%09// %09%09idx = strings.IndexAny(seq, %22.%22)%0A%09// %09%7D%0A%0A%09// %09if !strings.ContainsAny(seq, %22.%22) %7B%0A%09// %09%09break%0A%09// %09%7D%0A%09// %7D\n+func findElementBySet(originIdx int, L int, val int, seq string) bool %7B%0A%0A%09if originIdx %3E= len(seq) %7C%7C originIdx %3C 0 %7B%0A%09%09return true%0A%09%7D%0A%0A%09if int(seq%5BoriginIdx%5D-'0') == val %7B%0A%09%09return false%0A%09%7D%0A%0A%09if L == 0 %7B%0A%09%09return true%0A%09%7D%0A%0A%09return findElementBySet(originIdx-1, L-1, val, seq) && findElementBySet(originIdx+1, L-1, val, seq)%0A%0A%7D%0A%0Afunc main() %7B%0A%0A%09var seq string%0A%09var L int%0A%0A%09fmt.Scan(&seq, &L)%0A%0A%09idx := strings.IndexAny(seq, %22.%22) // 3%0A%09for i := 0; i %3C= L; i++ %7B%0A%0A%09%09if findElementBySet(idx-1, L-1, i, seq) && findElementBySet(idx+1, L-1, i, seq) %7B%0A%09%09%09seq = seq%5B:idx%5D + strconv.Itoa(i) + seq%5Bidx+1:%5D%0A%09%09%09i = 0%0A%09%09%09idx = strings.IndexAny(seq, %22.%22)%0A%09%09%7D%0A%0A%09%09if !strings.ContainsAny(seq, %22.%22) %7B%0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(seq)\n %0A%0A%7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-21_22-47-40",
+            "content": "@@ -455,22 +455,12 @@\n nt) \n-(\n bool\n-, string)\n  %7B%0A%0A\n@@ -534,27 +534,11 @@\n true\n-, seq%0A%09%7D%0A%0A%09idx += 1\n+%0A%09%7D\n %0A%0A%09f\n@@ -643,23 +643,16 @@\n %5Bidx\n-+1\n :%5D%0A%09%09%09\n-b, _ :=\n+if\n  sol\n@@ -672,16 +672,8 @@\n , L)\n-%0A%09%09%09if b\n  %7B%0A%09\n@@ -686,21 +686,16 @@\n urn true\n-, seq\n %0A%09%09%09%7D%0A%09%09\n@@ -726,18 +726,16 @@\n  seq%5Bidx\n-+1\n :%5D%0A%09%09%7D%0A%09\n@@ -750,21 +750,16 @@\n rn false\n-, seq\n %0A%0A%7D%0A%0Afun\n@@ -819,33 +819,32 @@\n %09for i := 1; i %3C\n-=\n  L; i++ %7B%0A%09%09if i\n@@ -936,25 +936,24 @@\n  i := 1; i %3C\n-=\n  L; i++ %7B%0A%09%09\n@@ -1006,17 +1006,17 @@\n seq%5Bidx+\n-i\n+1\n %5D-'0') =\n@@ -1128,18 +1128,12 @@\n &L)%0A\n-%09b, res :=\n+%0A%09if\n  sol\n@@ -1149,14 +1149,8 @@\n , L)\n-%0A%09if b\n  %7B%0A%09\n@@ -1166,19 +1166,18 @@\n tln(\n-res\n+seq\n )%0A%09%7D\n-%0A%7D\n %0A%0A\n+%09\n // i\n@@ -1214,16 +1214,17 @@\n %22) // 3%0A\n+%09\n // for i\n@@ -1241,24 +1241,25 @@\n = L; i++ %7B%0A%0A\n+%09\n // %09if findE\n@@ -1328,24 +1328,25 @@\n , i, seq) %7B%0A\n+%09\n // %09%09seq = s\n@@ -1386,16 +1386,17 @@\n idx+1:%5D%0A\n+%09\n // %09%09i =\n@@ -1398,16 +1398,17 @@\n %09%09i = 0%0A\n+%09\n // %09%09idx\n@@ -1437,23 +1437,25 @@\n q, %22.%22)%0A\n+%09\n // %09%7D%0A%0A\n+%09\n // %09if !\n@@ -1486,16 +1486,17 @@\n  %22.%22) %7B%0A\n+%09\n // %09%09bre\n@@ -1502,15 +1502,20 @@\n eak%0A\n+%09\n // %09%7D%0A\n+%09\n // %7D%0A\n+%0A%7D%0A\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-05-21_23-03-47",
+            "content": "@@ -558,19 +558,17 @@\n %09idx += \n-pos\n+1\n %0A%0A%09for i\n@@ -672,27 +672,25 @@\n x+1:%5D%0A%09%09%09b, \n-res\n+_\n  := solve(id\n@@ -729,19 +729,19 @@\n n true, \n-res\n+seq\n %0A%09%09%09%7D%0A%09%09\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-05-22_10-24-55",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\n// func findElementBySet(originIdx int, L int, val int, seq string) bool {\n\n// \tif originIdx >= len(seq) || originIdx < 0 {\n// \t\treturn true\n// \t}\n\n// \tif int(seq[originIdx]-'0') == val {\n// \t\treturn false\n// \t}\n\n// \tif L == 0 {\n// \t\treturn true\n// \t}\n\n// \treturn findElementBySet(originIdx-1, L-1, val, seq) && findElementBySet(originIdx+1, L-1, val, seq)\n\n// }\n\nfunc solve(pos int, seq string, L int) (bool, string) {\n\n\tidx := strings.IndexAny(seq[pos:], \".\")\n\n\tif idx == -1 {\n\t\treturn true, seq\n\t}\n\n\tidx += pos\n\n\tfor i := 0; i <= L; i++ {\n\t\tif isValid(idx, i, seq, L) {\n\t\t\tseq = seq[:idx] + strconv.Itoa(i) + seq[idx+1:]\n\t\t\tb, res := solve(idx+1, seq, L)\n\t\t\tif b {\n\t\t\t\treturn true, res\n\t\t\t}\n\t\t\tseq = seq[:idx] + \".\" + seq[idx+1:]\n\t\t}\n\t}\n\n\treturn false, seq\n\n}\n\nfunc isValid(idx int, d int, seq string, L int) bool {\n\n\tfor i := 1; i <= L; i++ {\n\t\tif idx-i < 0 {\n\t\t\tbreak\n\t\t}\n\n\t\tif int(seq[idx-i]-'0') == d {\n\t\t\treturn false\n\t\t}\n\t}\n\n\tfor i := 1; i <= L; i++ {\n\t\tif idx+i >= len(seq) {\n\t\t\tbreak\n\t\t}\n\n\t\tif int(seq[idx+i]-'0') == d {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn true\n}\n\nfunc main() {\n\n\tvar seq string\n\tvar L int\n\n\tfmt.Scan(&seq, &L)\n\tb, res := solve(0, seq, L)\n\tif b {\n\t\tfmt.Println(res)\n\t}\n}\n\n// idx := strings.IndexAny(seq, \".\") // 3\n// for i := 0; i <= L; i++ {\n\n// \tif findElementBySet(idx-1, L-1, i, seq) && findElementBySet(idx+1, L-1, i, seq) {\n// \t\tseq = seq[:idx] + strconv.Itoa(i) + seq[idx+1:]\n// \t\ti = 0\n// \t\tidx = strings.IndexAny(seq, \".\")\n// \t}\n\n// \tif !strings.ContainsAny(seq, \".\") {\n// \t\tbreak\n// \t}\n// }\n",
+            "lines": "101"
+        }
+    ]
+}
