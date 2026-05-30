@@ -6,29 +6,27 @@ sources:
   type: local
   writeable: true
   quests: null
-  tasks: null
 - name: ed
   target: https://github.com/qxcodeed/arcade.git
   index: README.md
   type: git
   writeable: false
   quests: null
-  tasks: null
 expanded:
-- ed@vector
-- ed@rec
-- ed@bfs
-- ed@linear
-- ed@dfs
 - ed@list
-- ed@map_set
+- ed@linear
 - ed@backtrack
+- ed@map_set
+- ed@dfs
+- ed@rec
+- ed@vector
+- ed@bfs
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@lista_d2
-selected_index: 51
+selected: ed@caminhao
+selected_index: 67

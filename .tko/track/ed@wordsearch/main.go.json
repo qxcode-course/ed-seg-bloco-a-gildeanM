@@ -2,8 +2,53 @@
     "patches": [
         {
             "label": "2026-05-22_10-36-11",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]byte, word string) bool {\n\t_, _ = grid, word\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]byte, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []byte(scanner.Text()))\n\t}\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "content": "@@ -186,113 +186,8 @@\n ord%0A\n-%0A%09for i := 0; i %3C len(grid); i++ %7B%0A%09%09for j := 0; j %3C len(grid); j++ %7B%0A%09%09%09fmt.Println(grid%5Bi%5D%5Bj%5D)%0A%09%09%7D%0A%09%7D%0A%0A\n %09ret\n",
             "lines": "29"
+        },
+        {
+            "label": "2026-05-26_20-22-40",
+            "content": "@@ -271,15 +271,8 @@\n tln(\n-string(\n grid\n@@ -278,17 +278,16 @@\n d%5Bi%5D%5Bj%5D)\n-)\n %0A%09%09%7D%0A%09%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-05-26_20-24-04",
+            "content": "@@ -295,20 +295,8 @@\n %09%09%7D%0A\n-%09%09println()%0A\n %09%7D%0A%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-05-26_20-24-15",
+            "content": "@@ -297,24 +297,17 @@\n %7D%0A%09%09\n-fmt.P\n+p\n rintln(\n-%22%22)%0A\n+)\n %0A%09%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-05-26_20-24-28",
+            "content": "@@ -264,16 +264,18 @@\n mt.Print\n+ln\n (string(\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-05-26_20-24-40",
+            "content": "@@ -199,17 +199,16 @@\n = 0; i %3C\n-=\n  len(gri\n@@ -234,17 +234,16 @@\n = 0; j %3C\n-=\n  len(gri\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-05-26_20-25-04",
+            "content": "@@ -199,16 +199,17 @@\n = 0; i %3C\n+=\n  len(gri\n@@ -235,16 +235,17 @@\n = 0; j %3C\n+=\n  len(gri\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-05-26_20-25-11",
+            "content": "@@ -192,62 +192,69 @@\n for \n-_, linha := range grid %7B%0A%09%09for _, valor := range linha\n+i := 0; i %3C len(grid); i++ %7B%0A%09%09for j := 0; j %3C len(grid); j++\n  %7B%0A%09\n@@ -276,13 +276,18 @@\n ing(\n-valor\n+grid%5Bi%5D%5Bj%5D\n ))%0A%09\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-05-26_20-27-36",
+            "content": "@@ -45,857 +45,156 @@\n %0A)%0A%0A\n-type Pos struct %7B%0A%09x int%0A%09y int%0A%7D%0A%0Afunc Acima(i int, j int) Pos %7B%0A%09return Pos%7Bx: i - 1, y: j%7D%0A%7D%0A%0Afunc Abaixo(i int, j int) Pos %7B%0A%09return Pos%7Bx: i + 1, y: j%7D%0A%7D%0A%0Afunc Aesquerda(i int, j int) Pos %7B%0A%09return Pos%7Bx: i, y: j - 1%7D%0A%7D%0A%0Afunc Adireita(i int, j int) Pos %7B%0A%09return Pos%7Bx: i, y: j + 1%7D%0A%7D%0A%0A// N%C3%A3o mude a assinatura desta fun%C3%A7%C3%A3o, ela %C3%A9 a fun%C3%A7%C3%A3o chamada pelo LeetCode%0Afunc exist(grid %5B%5D%5B%5Dbyte, word string) bool %7B%0A%09_, _ = grid, word%0A%0A%09wordLetters := %5B%5Dbyte(word)%0A%09idxLetterTest := 0%0A%0A%09neighsVisited := make(map%5BPos%5Dbool)%0A%0A%09for j := range grid%5B0%5D %7B%0A%09%09neighsVisited%5BPos%7Bx: -1, y: j%7D%5D = true%0A%09%7D%0A%0A%09for j := range grid%5B0%5D %7B%0A%09%09neighsVisited%5BPos%7Bx: len(grid), y: j%7D%5D = true%0A%09%7D%0A%0A%09for i := range grid %7B%0A%09%09neighsVisited%5BPos%7Bx: i, y: -1%7D%5D = true%0A%09%7D%0A%0A%09for i := range grid %7B%0A%09%09neighsVisited%5BPos%7Bx: i, y: len(grid%5B0%5D)%7D%5D = true%0A%09%7D%0A%0A%09stack := NewStack%5BPos%5D()%0A%0A%09for i\n+// N%C3%A3o mude a assinatura desta fun%C3%A7%C3%A3o, ela %C3%A9 a fun%C3%A7%C3%A3o chamada pelo LeetCode%0Afunc exist(grid %5B%5D%5B%5Dbyte, word string) bool %7B%0A%09_, _ = grid, word%0A%0A%09for _\n , li\n@@ -219,17 +219,17 @@\n %7B%0A%09%09for \n-j\n+_\n , valor \n@@ -249,590 +249,57 @@\n a %7B%0A\n-%0A\n %09%09%09\n-atualPos := Pos%7Bx: i, y: j%7D%0A%0A%09%09%09if wordLetters%5BidxLetterTest%5D == valor %7B%0A%09%09%09%09stack.Push(atualPos)%0A%09%09%09%7D%0A%0A%09%09%09var newPos Pos%0A%0A%09%09%09if !neighsVisited%5BAcima(i, j)%5D %7B%0A%09%09%09%09newPos = Acima(i, j)%0A%09%09%09%09i = newPos.x%0A%09%09%09%09j = newPos.y%0A%09%09%09%7D else if !neighsVisited%5BAdireita(i, j)%5D %7B%0A%09%09%09%09newPos = Adireita(i, j)%0A%09%09%09%09i = newPos.x%0A%09%09%09%09j = newPos.y%0A%09%09%09%7D else if !neighsVisited%5BAbaixo(i, j)%5D %7B%0A%09%09%09%09newPos = Abaixo(i, j)%0A%09%09%09%09i = newPos.x%0A%09%09%09%09j = newPos.y%0A%09%09%09%7D else if !neighsVisited%5BAesquerda(i, j)%5D %7B%0A%09%09%09%09newPos = Aesquerda(i, j)%0A%09%09%09%09i = newPos.x%0A%09%09%09%09j = newPos.y%0A%09%09%09%7D else %7B%0A%09%09%09%09return false%0A%09%09%09%7D%0A%0A%09%09%7D\n+fmt.Print(string(valor))%0A%09%09%7D%0A%09%09fmt.Println(%22%22)\n %0A%0A%09%7D\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-05-26_21-52-48",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tx int\n\ty int\n}\n\nfunc Acima(i int, j int) Pos {\n\treturn Pos{x: i - 1, y: j}\n}\n\nfunc Abaixo(i int, j int) Pos {\n\treturn Pos{x: i + 1, y: j}\n}\n\nfunc Aesquerda(i int, j int) Pos {\n\treturn Pos{x: i, y: j - 1}\n}\n\nfunc Adireita(i int, j int) Pos {\n\treturn Pos{x: i, y: j + 1}\n}\n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]byte, word string) bool {\n\t_, _ = grid, word\n\n\twordLetters := []byte(word)\n\tidxLetterTest := 0\n\n\tneighsVisited := make(map[Pos]bool)\n\n\tfor j := range grid[0] {\n\t\tneighsVisited[Pos{x: -1, y: j}] = true\n\t}\n\n\tfor j := range grid[0] {\n\t\tneighsVisited[Pos{x: len(grid), y: j}] = true\n\t}\n\n\tfor i := range grid {\n\t\tneighsVisited[Pos{x: i, y: -1}] = true\n\t}\n\n\tfor i := range grid {\n\t\tneighsVisited[Pos{x: i, y: len(grid[0])}] = true\n\t}\n\n\tstack := NewStack[Pos]()\n\n\tfor i, linha := range grid {\n\t\tfor j, valor := range linha {\n\n\t\t\tatualPos := Pos{x: i, y: j}\n\n\t\t\tif wordLetters[idxLetterTest] == valor {\n\t\t\t\tstack.Push(atualPos)\n\t\t\t}\n\n\t\t\tvar newPos Pos\n\n\t\t\tif !neighsVisited[Acima(i, j)] {\n\t\t\t\tnewPos = Acima(i, j)\n\t\t\t\ti = newPos.x\n\t\t\t\tj = newPos.y\n\t\t\t} else if !neighsVisited[Adireita(i, j)] {\n\t\t\t\tnewPos = Adireita(i, j)\n\t\t\t\ti = newPos.x\n\t\t\t\tj = newPos.y\n\t\t\t} else if !neighsVisited[Abaixo(i, j)] {\n\t\t\t\tnewPos = Abaixo(i, j)\n\t\t\t\ti = newPos.x\n\t\t\t\tj = newPos.y\n\t\t\t} else if !neighsVisited[Aesquerda(i, j)] {\n\t\t\t\tnewPos = Aesquerda(i, j)\n\t\t\t\ti = newPos.x\n\t\t\t\tj = newPos.y\n\t\t\t} else {\n\t\t\t\treturn false\n\t\t\t}\n\n\t\t}\n\n\t}\n\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]byte, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []byte(scanner.Text()))\n\t}\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "109"
         }
     ]
 }

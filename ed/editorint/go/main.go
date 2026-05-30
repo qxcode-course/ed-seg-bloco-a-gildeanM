@@ -33,7 +33,6 @@ func (e *Editor) KeyLeft() {
 
 func (e *Editor) KeyEnter() {
 
-	// if e.cursor.Next() != nil {
 	newLine := NewList[rune]()
 	e.lines.Insert(e.line.Next(), newLine)
 
@@ -49,18 +48,11 @@ func (e *Editor) KeyEnter() {
 	e.line = e.line.Next()
 	e.cursor = e.line.Value.Front()
 
-	// }
-
-	// nova := NewList[rune]()
-	// e.lines.Insert(e.line.Next(), nova)
-	// e.line = e.line.Next()
-	// e.cursor = e.line.Value.Front()
-
 }
 
 func (e *Editor) KeyRight() {
 
-	if e.cursor != e.line.Value.Back() {
+	if e.cursor != e.line.Value.root {
 		e.cursor = e.cursor.Next()
 		return
 	}
@@ -73,22 +65,82 @@ func (e *Editor) KeyRight() {
 }
 
 func (e *Editor) KeyUp() {
-}
 
-func (e *Editor) KeyDown() {
-}
+	idxCursor := e.line.Value.IndexOf(e.cursor)
 
-func (e *Editor) KeyBackspace() {
+	if e.line != e.lines.Front() {
+		e.line = e.line.Prev()
+	}
 
-	if e.cursor != e.line.Value.Front() { // Se o cursor não está no início da linha
-		e.cursor = e.cursor.Prev()
-		e.cursor = e.line.Value.Erase(e.cursor)
+	if idxCursor > e.line.Value.Size() {
+		e.cursor = e.line.Value.Back()
 		return
+	}
+
+	e.cursor = e.line.Value.Front()
+	for ; idxCursor > 0; idxCursor-- {
+		e.cursor = e.cursor.Next()
 	}
 
 }
 
+func (e *Editor) KeyDown() {
+	idxCursor := e.line.Value.IndexOf(e.cursor)
+
+	if e.line != e.lines.Back() {
+		e.line = e.line.Next()
+	}
+
+	if idxCursor > e.line.Value.Size() {
+		e.cursor = e.line.Value.End()
+		return
+	}
+
+	e.cursor = e.line.Value.Front()
+	for ; idxCursor > 0; idxCursor-- {
+		e.cursor = e.cursor.Next()
+	}
+}
+
+func (e *Editor) KeyBackspace() {
+
+	if e.cursor == e.line.Value.Front() && e.line != e.lines.Front() {
+
+		lineup := e.line.Prev()
+		cursorLineup := lineup.Value.Back()
+
+		for ; e.cursor != e.line.Value.End(); e.cursor = e.cursor.Next() {
+			lineup.Value.PushBack(e.cursor.Value)
+		}
+		e.line = lineup
+		e.cursor = cursorLineup.Next()
+		e.lines.Erase(e.line.Next())
+
+		return
+	}
+
+	e.cursor = e.cursor.Prev()
+	e.cursor = e.line.Value.Erase(e.cursor)
+
+}
+
 func (e *Editor) KeyDelete() {
+
+	if e.cursor == e.line.Value.End() && e.line != e.lines.Back() {
+
+		lineup := e.line.Next()
+		cursorPos := e.line.Value.Back()
+
+		for cursor := lineup.Value.Front(); cursor != lineup.Value.End(); cursor = cursor.Next() {
+			e.line.Value.PushBack(cursor.Value)
+		}
+
+		e.cursor = cursorPos
+		e.lines.Erase(e.line.Next())
+
+		return
+	}
+
 	e.cursor = e.line.Value.Erase(e.cursor)
 }
 

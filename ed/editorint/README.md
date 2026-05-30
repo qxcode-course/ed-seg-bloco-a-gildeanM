@@ -14,10 +14,10 @@ Para cada funcionalidade implementada, você receberá uma pontuação que vai d
 - [x] 1 ponto - Up e Down para navegar entre as linhas movendo o cursor para o início da linha.
 - [x] 1 ponto - Left no início da linha move o cursor para o final da linha anterior.
 - [x] 1 ponto - Right no final da linha move o cursor para o início da linha seguinte.
-- [ ] 1 ponto - Enter no meio da linha divide a linha em duas e move o cursor para o início da nova linha.
-- [ ] 1 ponto - Up e Down para navegar entre as linhas movendo o cursor para a posição correta.
-- [ ] 1 ponto - Backspace no início da linha puxa a linha pra cima e move o cursor para a posição correta.
-- [ ] 1 ponto - Delete no final da linha junta as linhas e move o cursor para a posição correta.
+- [x] 1 ponto - Enter no meio da linha divide a linha em duas e move o cursor para o início da nova linha.
+- [x] 1 ponto - Up e Down para navegar entre as linhas movendo o cursor para a posição correta.
+- [x] 1 ponto - Backspace no início da linha puxa a linha pra cima e move o cursor para a posição correta.
+- [x] 1 ponto - Delete no final da linha junta as linhas e move o cursor para a posição correta.
 
 ## Implementação
 

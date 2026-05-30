@@ -1,0 +1,229 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-26_12-58-56",
+            "content": "@@ -250,19 +250,16 @@\n ) %25 cap%0A\n-// \n func (d \n@@ -290,19 +290,16 @@\n ) int %7B%0A\n-// \n %09return \n@@ -337,57 +337,8 @@\n ity%0A\n-// %7D%0A%0Afunc (b *Deque) Len() int %7B%0A%09return b.size%0A\n %7D%0A%0Af\n",
+            "lines": "118"
+        },
+        {
+            "label": "2026-05-26_13-02-35",
+            "content": "@@ -1416,24 +1416,27 @@\n  %22size%22:%0A%09%09%09\n+// \n fmt.Println(\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-05-26_13-02-45",
+            "content": "@@ -47,60 +47,15 @@\n %22str\n-conv%22%0A%09%22strings%22%0A)%0A%0A// REAL = (LOGICA + FRONT) %25 cap\n+ings%22%0A)\n %0A%0A//\n@@ -221,102 +221,44 @@\n %0A%7D%0A%0A\n-func (b *Deque) PushBack(v int) %7B%0A%09idx := b.getPos(b.size)%0A%0A%09b.data%5Bidx%5D = v%0A%0A%09b.size += 1%0A%7D%0A%0A\n+// REAL = (LOGICA + FRONT) %25 cap%0A// \n func\n@@ -293,24 +293,27 @@\n ) int %7B%0A\n+// \n %09return \n (d.front\n@@ -308,25 +308,29 @@\n urn \n-(\n+d.data%5B\n d.front\n- + \n++\n index\n-)\n+%5D\n  %25 d\n@@ -339,16 +339,19 @@\n apacity%0A\n+// \n %7D%0A%0Afunc \n@@ -1466,16 +1466,19 @@\n ck%22:%0A%09%09%09\n+// \n for _, v\n@@ -1501,16 +1501,19 @@\n :%5D %7B%0A%09%09%09\n+// \n %09num, _ \n@@ -1534,16 +1534,19 @@\n i(v)%0A%09%09%09\n+// \n %09buf.Pus\n@@ -1559,16 +1559,19 @@\n num)%0A%09%09%09\n+// \n %7D%0A%09%09case\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-05-26_13-14-29",
+            "content": "@@ -360,52 +360,8 @@\n %0A%7D%0A%0A\n-func (b *Deque) PopBack() %7B%0A%09b.size -= 1%0A%7D%0A%0A\n func\n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-05-26_13-15-38",
+            "content": "@@ -356,19 +356,16 @@\n += 1%0A%7D%0A%0A\n-// \n func (b \n@@ -388,73 +388,8 @@\n ) %7B%0A\n-// %09b.size -= 1%0A// %7D%0A%0Afunc (b *Deque) PopFront() %7B%0A%09b.front += 1%0A\n %09b.s\n",
+            "lines": "136"
+        },
+        {
+            "label": "2026-05-26_13-17-20",
+            "content": "@@ -442,68 +442,8 @@\n ) %7B%0A\n-%0A%09b.data = append(b.data%5B:b.front%5D, b.data%5Bb.front+1:%5D...)%0A%0A\n %09b.f\n",
+            "lines": "141"
+        },
+        {
+            "label": "2026-05-26_13-20-06",
+            "content": "@@ -439,14 +439,8 @@\n nt()\n- error\n  %7B%0A%0A\n@@ -528,21 +528,8 @@\n -= 1\n-%0A%0A%09return nil\n %0A%7D%0A%0A\n@@ -2058,16 +2058,19 @@\n nt%22:%0A%09%09%09\n+// \n if err :\n@@ -2103,16 +2103,19 @@\n il %7B%0A%09%09%09\n+// \n %09fmt.Pri\n@@ -2123,24 +2123,27 @@\n tln(err)%0A%09%09%09\n+// \n %7D%0A%09%09case %22fr\n",
+            "lines": "144"
+        },
+        {
+            "label": "2026-05-26_13-20-54",
+            "content": "@@ -446,19 +446,16 @@\n ror %7B%0A%0A%09\n-// \n b.data =\n",
+            "lines": "146"
+        },
+        {
+            "label": "2026-05-26_13-21-09",
+            "content": "@@ -357,67 +357,8 @@\n = 1%0A\n-%0A%09if b.size == b.capacity %7B%0A%09%09b.resize(b.capacity * 2)%0A%09%7D%0A%0A\n %7D%0A%0A/\n@@ -554,203 +554,8 @@\n %0A%7D%0A%0A\n-func (b *Deque) resize(newCap int) %7B%0A%0A%09data := make(%5B%5Dint, newCap)%0A%09b.capacity = newCap%0A%0A%09data = append(data, b.data%5Bb.front-1:%5D...)%0A%09data = append(data, b.data%5B:b.front%5D...)%0A%0A%09b.data = data%0A%0A%7D%0A%0A\n func\n",
+            "lines": "146"
+        },
+        {
+            "label": "2026-05-26_13-36-39",
+            "content": "@@ -671,11 +671,8 @@\n int,\n- 0,\n  new\n",
+            "lines": "163"
+        },
+        {
+            "label": "2026-05-26_13-37-00",
+            "content": "@@ -736,16 +736,18 @@\n %5Bb.front\n+-1\n :%5D...)%0A%09\n@@ -792,21 +792,8 @@\n .)%0A%0A\n-%09b.front = 0%0A\n %09b.d\n",
+            "lines": "163"
+        },
+        {
+            "label": "2026-05-26_13-42-52",
+            "content": "@@ -678,16 +678,37 @@\n  newCap)\n+%0A%09b.capacity = newCap\n %0A%0A%09data \n@@ -793,53 +793,32 @@\n %0A%09b.\n-data = data%0A%09b.capacity = newCap%0A%09b.front = 0\n+front = 0%0A%09b.data = data\n %0A%0A%7D%0A\n",
+            "lines": "164"
+        },
+        {
+            "label": "2026-05-26_13-47-05",
+            "content": "@@ -355,19 +355,16 @@\n  += 1%0A%0A%09\n-// \n if b.siz\n@@ -382,19 +382,16 @@\n city %7B%0A%09\n-// \n %09b.resiz\n@@ -409,19 +409,16 @@\n y * 2)%0A%09\n-// \n %7D%0A%0A%7D%0A%0A//\n",
+            "lines": "164"
+        },
+        {
+            "label": "2026-05-26_13-48-41",
+            "content": "@@ -296,18 +296,78 @@\n  int) %7B%0A\n-%0A\n %09\n+idx := b.getPos(b.size)%0A%0A%09b.data%5Bidx%5D = v%0A%0A%09b.size += 1%0A%0A%09// \n if b.siz\n@@ -385,16 +385,19 @@\n city %7B%0A%09\n+// \n %09b.resiz\n@@ -419,67 +419,12 @@\n 2)%0A%09\n-%7D%0A%0A%09idx := b.getPos(b.size)%0A%0A%09b.data%5Bidx%5D = v%0A%0A%09b.size += 1\n+// %7D\n %0A%0A%7D%0A\n@@ -693,28 +693,8 @@\n p)%0A%0A\n-%09if b.front != 0 %7B%0A%09\n %09dat\n@@ -731,17 +731,16 @@\n t:%5D...)%0A\n-%09\n %09data = \n@@ -772,19 +772,16 @@\n ont%5D...)\n-%0A%09%7D\n %0A%0A%09b.dat\n",
+            "lines": "164"
+        },
+        {
+            "label": "2026-05-26_14-16-34",
+            "content": "@@ -307,18 +307,16 @@\n f b.size\n-+1\n  == b.ca\n",
+            "lines": "167"
+        },
+        {
+            "label": "2026-05-26_14-17-00",
+            "content": "@@ -298,19 +298,16 @@\n nt) %7B%0A%0A%09\n-// \n if b.siz\n@@ -307,16 +307,18 @@\n f b.size\n++1\n  == b.ca\n@@ -327,19 +327,16 @@\n city %7B%0A%09\n-// \n %09b.resiz\n@@ -354,19 +354,16 @@\n y * 2)%0A%09\n-// \n %7D%0A%0A%09idx \n",
+            "lines": "167"
+        },
+        {
+            "label": "2026-05-26_14-18-01",
+            "content": "@@ -677,16 +677,19 @@\n e(%5B%5Dint,\n+ 0,\n  newCap)\n",
+            "lines": "167"
+        },
+        {
+            "label": "2026-05-26_14-23-37",
+            "content": "@@ -298,16 +298,19 @@\n nt) %7B%0A%0A%09\n+// \n if b.siz\n@@ -328,16 +328,19 @@\n city %7B%0A%09\n+// \n %09b.resiz\n@@ -358,16 +358,19 @@\n y * 2)%0A%09\n+// \n %7D%0A%0A%09idx \n",
+            "lines": "167"
+        },
+        {
+            "label": "2026-05-26_14-25-33",
+            "content": "@@ -672,11 +672,8 @@\n int,\n- 0,\n  new\n@@ -801,48 +801,12 @@\n a = \n-append(make(%5B%5Dint, newCap), data%5B0:%5D...)\n+data\n %0A%09b.\n",
+            "lines": "167"
+        },
+        {
+            "label": "2026-05-26_14-28-53",
+            "content": "@@ -2478,57 +2478,8 @@\n %09%09%7D%0A\n-%09%09case %22resize%22:%0A%09%09%09buf.resize(buf.capacity * 2)%0A\n %09%09ca\n",
+            "lines": "167"
+        },
+        {
+            "label": "2026-05-26_14-31-14",
+            "content": "@@ -791,19 +791,16 @@\n .)%0A%09%7D%0A%0A%09\n-// \n b.data =\n@@ -845,23 +845,8 @@\n ..)%0A\n-%09b.data = data%0A\n %09b.c\n",
+            "lines": "169"
+        },
+        {
+            "label": "2026-05-26_14-45-52",
+            "content": "@@ -790,16 +790,70 @@\n ..)%0A%09%7D%0A%0A\n+%09// b.data = append(make(%5B%5Dint, newCap), data%5B0:%5D...)%0A\n %09b.data \n",
+            "lines": "170"
+        },
+        {
+            "label": "2026-05-26_14-47-47",
+            "content": "@@ -298,19 +298,16 @@\n nt) %7B%0A%0A%09\n-// \n if b.siz\n@@ -325,19 +325,16 @@\n city %7B%0A%09\n-// \n %09b.resiz\n@@ -356,41 +356,8 @@\n 2)%0A%09\n-// %09fmt.Println(len(b.data))%0A%09// \n %7D%0A%0A%09\n@@ -668,16 +668,19 @@\n e(%5B%5Dint,\n+ 0,\n  newCap)\n@@ -682,19 +682,16 @@\n wCap)%0A%0A%09\n-// \n if b.fro\n@@ -701,19 +701,16 @@\n != 0 %7B%0A%09\n-// \n %09data = \n@@ -744,19 +744,16 @@\n :%5D...)%0A%09\n-// \n %09data = \n@@ -791,97 +791,25 @@\n .)%0A%09\n-// \n %7D%0A%0A%09\n-copy(data, b.data%5Bb.front:%5D)%0A%09copy(data%5B(b.capacity-b.front):%5D, b.data%5B:b.front%5D)%0A\n+b.data = data\n %0A%09b.\n",
+            "lines": "169"
+        },
+        {
+            "label": "2026-05-26_15-54-23",
+            "content": "@@ -298,16 +298,19 @@\n nt) %7B%0A%0A%09\n+// \n if b.siz\n@@ -328,16 +328,19 @@\n city %7B%0A%09\n+// \n %09b.resiz\n@@ -358,16 +358,19 @@\n y * 2)%0A%09\n+// \n %09fmt.Pri\n@@ -388,16 +388,19 @@\n data))%0A%09\n+// \n %7D%0A%0A%09idx \n",
+            "lines": "172"
+        },
+        {
+            "label": "2026-05-26_15-54-38",
+            "content": "@@ -298,19 +298,16 @@\n nt) %7B%0A%0A%09\n-// \n if b.siz\n@@ -325,19 +325,16 @@\n city %7B%0A%09\n-// \n %09b.resiz\n@@ -352,19 +352,16 @@\n y * 2)%0A%09\n-// \n %09fmt.Pri\n@@ -379,19 +379,16 @@\n data))%0A%09\n-// \n %7D%0A%0A%09idx \n@@ -705,16 +705,137 @@\n ewCap)%0A%0A\n+%09// if b.front != 0 %7B%0A%09// %09data = append(data, b.data%5Bb.front:%5D...)%0A%09// %09data = append(data, b.data%5B:b.front%5D...)%0A%09// %7D%0A%0A\n %09copy(da\n@@ -914,23 +914,8 @@\n %5D)%0A%0A\n-%09b.data = data%0A\n %09b.c\n",
+            "lines": "172"
+        },
+        {
+            "label": "2026-05-26_15-55-59",
+            "content": "@@ -298,16 +298,19 @@\n nt) %7B%0A%0A%09\n+// \n if b.siz\n@@ -328,16 +328,19 @@\n city %7B%0A%09\n+// \n %09b.resiz\n@@ -358,16 +358,19 @@\n y * 2)%0A%09\n+// \n %09fmt.Pri\n@@ -388,16 +388,19 @@\n data))%0A%09\n+// \n %7D%0A%0A%09idx \n@@ -508,16 +508,16 @@\n 1%0A// %7D%0A%0A\n-\n func (b \n@@ -544,16 +544,78 @@\n rror %7B%0A%0A\n+%09// b.data = append(b.data%5B:b.front%5D, b.data%5Bb.front+1:%5D...)%0A%0A\n %09b.front\n",
+            "lines": "168"
+        },
+        {
+            "label": "2026-05-26_15-58-38",
+            "content": "@@ -351,16 +351,43 @@\n ty * 2)%0A\n+%09%09fmt.Println(len(b.data))%0A\n %09%7D%0A%0A%09idx\n",
+            "lines": "166"
+        },
+        {
+            "label": "2026-05-26_15-58-54",
+            "content": "@@ -420,81 +420,8 @@\n %0A%7D%0A%0A\n-func (b *Deque) PushFront(v int) %7B%0A%09b.front -= 1%0A%09b.data%5Bb.front%5D = v%0A%7D%0A%0A\n // f\n",
+            "lines": "165"
+        },
+        {
+            "label": "2026-05-26_16-00-34",
+            "content": "@@ -2135,24 +2135,27 @@\n _front%22:%0A%09%09%09\n+// \n for _, v := \n@@ -2166,32 +2166,35 @@\n e args%5B1:%5D %7B%0A%09%09%09\n+// \n %09num, _ := strco\n@@ -2199,32 +2199,35 @@\n conv.Atoi(v)%0A%09%09%09\n+// \n %09buf.PushFront(n\n@@ -2225,32 +2225,35 @@\n shFront(num)%0A%09%09%09\n+// \n %7D%0A%09%09case %22pop_ba\n",
+            "lines": "170"
+        },
+        {
+            "label": "2026-05-26_16-00-47",
+            "content": "@@ -456,43 +456,41 @@\n  %7B%0A%09\n-b.data%5B\n b.front\n--1%5D\n  \n+-\n = \n-v\n+1\n %0A%09\n+b.data%5B\n b.front\n+%5D\n  \n--\n = \n-1\n+v\n %0A%7D%0A%0A\n",
+            "lines": "170"
+        },
+        {
+            "label": "2026-05-26_16-01-42",
+            "content": "@@ -371,20 +371,16 @@\n b.getPos\n-Back\n (b.size)\n@@ -850,20 +850,16 @@\n ) getPos\n-Back\n (index i\n@@ -914,95 +914,8 @@\n %0A%7D%0A%0A\n-func (d *Deque) getPosFront(index int) int %7B%0A%09return d.capacity - (d.front + index)%0A%7D%0A%0A\n func\n@@ -2141,19 +2141,16 @@\n nt%22:%0A%09%09%09\n-// \n for _, v\n@@ -2173,19 +2173,16 @@\n :%5D %7B%0A%09%09%09\n-// \n %09num, _ \n@@ -2203,19 +2203,16 @@\n i(v)%0A%09%09%09\n-// \n %09buf.Pus\n@@ -2222,27 +2222,24 @@\n ont(num)%0A%09%09%09\n-// \n %7D%0A%09%09case %22po\n",
+            "lines": "170"
+        },
+        {
+            "label": "2026-05-26_16-10-17",
+            "content": "@@ -459,53 +459,31 @@\n ) %7B%0A\n-%0A%09if b.size != 0 %7B%0A%09%09b.front -= 1%0A%09%7D else %7B%0A%09\n+%09b.data%5Bb.front-1%5D = v%0A\n %09b.f\n@@ -491,61 +491,12 @@\n ont \n+-\n = \n-(b.capacity - b.front - 1)%0A%09%7D%0A%0A%09b.data%5Bb.front%5D = v\n+1\n %0A%7D%0A%0A\n@@ -2232,24 +2232,27 @@\n _front%22:%0A%09%09%09\n+// \n for _, v := \n@@ -2263,32 +2263,35 @@\n e args%5B1:%5D %7B%0A%09%09%09\n+// \n %09num, _ := strco\n@@ -2296,32 +2296,35 @@\n conv.Atoi(v)%0A%09%09%09\n+// \n %09buf.PushFront(n\n@@ -2322,32 +2322,35 @@\n shFront(num)%0A%09%09%09\n+// \n %7D%0A%09%09case %22pop_ba\n",
+            "lines": "174"
+        },
+        {
+            "label": "2026-05-26_16-18-24",
+            "content": "@@ -563,29 +563,16 @@\n nt%5D = v%0A\n-%09b.size += 1%0A\n %7D%0A%0A// fu\n",
+            "lines": "180"
+        },
+        {
+            "label": "2026-05-26_16-19-43",
+            "content": "@@ -462,21 +462,20 @@\n %0A%0A%09if b.\n-front\n+size\n  != 0 %7B%0A\n@@ -559,25 +559,24 @@\n .front%5D = v%0A\n-%0A\n %09b.size += 1\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-05-26_16-21-28",
+            "content": "@@ -460,66 +460,8 @@\n  %7B%0A%0A\n-%09if b.size == b.capacity %7B%0A%09%09b.resize(b.capacity * 2)%0A%09%7D%0A%0A\n %09if \n",
+            "lines": "182"
+        },
+        {
+            "label": "2026-05-26_16-22-31",
+            "content": "@@ -775,74 +775,8 @@\n %0A%7D%0A%0A\n-func (b *Deque) Clear() %7B%0A%09b.data = make(%5B%5Dint, 0, b.capacity)%0A%7D%0A%0A\n func\n@@ -2980,24 +2980,27 @@\n %22clear%22:%0A%09%09%09\n+// \n buf.Clear()%0A\n",
+            "lines": "186"
+        },
+        {
+            "label": "2026-05-26_16-23-40",
+            "content": "@@ -838,33 +838,8 @@\n ty)%0A\n-%09b.size = 0%0A%09b.front = 0%0A\n %7D%0A%0Af\n",
+            "lines": "190"
+        },
+        {
+            "label": "2026-05-26_16-25-36",
+            "content": "@@ -29,18 +29,8 @@\n io%22%0A\n-%09%22errors%22%0A\n %09%22fm\n@@ -732,72 +732,8 @@\n  %7B%0A%0A\n-%09if b.size == 0 %7B%0A%09%09return errors.New(%22fail: buffer vazio%22)%0A%09%7D%0A%0A\n %09b.f\n",
+            "lines": "192"
+        },
+        {
+            "label": "2026-05-26_16-26-48",
+            "content": "@@ -645,24 +645,27 @@\n ize += 1%0A%7D%0A%0A\n+// \n func (b *Deq\n@@ -680,16 +680,19 @@\n ack() %7B%0A\n+// \n %09b.size \n@@ -696,16 +696,19 @@\n ze -= 1%0A\n+// \n %7D%0A%0Afunc \n",
+            "lines": "197"
+        },
+        {
+            "label": "2026-05-26_16-27-30",
+            "content": "@@ -674,22 +674,16 @@\n opBack()\n- error\n  %7B%0A%09b.si\n@@ -690,28 +690,16 @@\n ze -= 1%0A\n-%09return nil%0A\n %7D%0A%0Afunc \n@@ -2641,24 +2641,27 @@\n p_back%22:%0A%09%09%09\n+// \n if err := bu\n@@ -2681,32 +2681,35 @@\n err != nil %7B%0A%09%09%09\n+// \n %09fmt.Println(err\n@@ -2705,32 +2705,35 @@\n Println(err)%0A%09%09%09\n+// \n %7D%0A%09%09case %22pop_fr\n",
+            "lines": "197"
+        },
+        {
+            "label": "2026-05-26_16-27-55",
+            "content": "@@ -686,72 +686,8 @@\n or %7B\n-%0A%0A%09if b.size == 0 %7B%0A%09%09return errors.New(%22fail: buffer vazio%22)%0A%09%7D\n %0A%09b.\n",
+            "lines": "198"
+        },
+        {
+            "label": "2026-05-26_16-28-15",
+            "content": "@@ -276,181 +276,8 @@\n %0A%7D%0A%0A\n-func (b Deque) Front() (int, error) %7B%0A%0A%09var front int%0A%0A%09if b.size == 0 %7B%0A%09%09return front, errors.New(%22fail: buffer vazio%22)%0A%09%7D%0A%0A%09front = b.data%5Bb.front%5D%0A%09return front, nil%0A%7D%0A%0A\n func\n@@ -2871,32 +2871,81 @@\n intln(err)%0A%09%09%09%7D%0A\n+%09%09case %22resize%22:%0A%09%09%09buf.resize(buf.capacity * 2)%0A\n %09%09case %22front%22:%0A\n@@ -2947,16 +2947,19 @@\n nt%22:%0A%09%09%09\n+// \n if val, \n@@ -2986,32 +2986,35 @@\n err != nil %7B%0A%09%09%09\n+// \n %09fmt.Println(err\n@@ -3018,16 +3018,19 @@\n err)%0A%09%09%09\n+// \n %7D else %7B\n@@ -3029,24 +3029,27 @@\n %7D else %7B%0A%09%09%09\n+// \n %09fmt.Println\n@@ -3053,24 +3053,27 @@\n tln(val)%0A%09%09%09\n+// \n %7D%0A%09%09case %22ba\n",
+            "lines": "202"
+        },
+        {
+            "label": "2026-05-26_16-32-04",
+            "content": "@@ -449,189 +449,8 @@\n %0A%7D%0A%0A\n-func (b Deque) Back() (int, error) %7B%0A%0A%09var back int%0A%0A%09if b.size == 0 %7B%0A%09%09return back, errors.New(%22fail: buffer vazio%22)%0A%09%7D%0A%0A%09back = b.data%5Bb.getPosBack(b.size)%5D%0A%09return back, nil%0A%7D%0A%0A\n func\n@@ -3185,24 +3185,27 @@\n  %22back%22:%0A%09%09%09\n+// \n if val, err \n@@ -3227,32 +3227,35 @@\n err != nil %7B%0A%09%09%09\n+// \n %09fmt.Println(err\n@@ -3251,32 +3251,35 @@\n Println(err)%0A%09%09%09\n+// \n %7D else %7B%0A%09%09%09%09fmt\n@@ -3266,32 +3266,35 @@\n %09// %7D else %7B%0A%09%09%09\n+// \n %09fmt.Println(val\n@@ -3290,32 +3290,35 @@\n Println(val)%0A%09%09%09\n+// \n %7D%0A%09%09case %22clear%22\n",
+            "lines": "212"
+        },
+        {
+            "label": "2026-05-26_16-33-15",
+            "content": "@@ -607,10 +607,8 @@\n ize)\n--1\n %5D%0A%09r\n",
+            "lines": "224"
+        },
+        {
+            "label": "2026-05-26_16-34-29",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"errors\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\n// REAL = (LOGICA + FRONT) % cap\n\n// pop back: diminui o size\n// push back: coloca na posicao real e incrementa size\n\ntype Deque struct {\n\tdata     []int\n\tfront    int\n\tsize     int\n\tcapacity int\n}\n\nfunc (b Deque) Front() (int, error) {\n\n\tvar front int\n\n\tif b.size == 0 {\n\t\treturn front, errors.New(\"fail: buffer vazio\")\n\t}\n\n\tfront = b.data[b.front]\n\treturn front, nil\n}\n\nfunc (b Deque) Back() (int, error) {\n\n\tvar back int\n\n\tif b.size == 0 {\n\t\treturn back, errors.New(\"fail: buffer vazio\")\n\t}\n\n\tback = b.data[b.getPosBack(b.size)-1]\n\treturn back, nil\n}\n\nfunc (b *Deque) PushBack(v int) {\n\n\tif b.size == b.capacity {\n\t\tb.resize(b.capacity * 2)\n\t}\n\n\tidx := b.getPosBack(b.size)\n\n\tb.data[idx] = v\n\n\tb.size += 1\n\n}\n\nfunc (b *Deque) PushFront(v int) {\n\n\tif b.size == b.capacity {\n\t\tb.resize(b.capacity * 2)\n\t}\n\n\tif b.front != 0 {\n\t\tb.front -= 1\n\t} else {\n\t\tb.front = (b.capacity - b.front - 1)\n\t}\n\n\tb.data[b.front] = v\n\n\tb.size += 1\n}\n\nfunc (b *Deque) PopBack() error {\n\n\tif b.size == 0 {\n\t\treturn errors.New(\"fail: buffer vazio\")\n\t}\n\tb.size -= 1\n\treturn nil\n}\n\nfunc (b *Deque) PopFront() error {\n\n\tif b.size == 0 {\n\t\treturn errors.New(\"fail: buffer vazio\")\n\t}\n\n\tb.front += 1\n\tb.size -= 1\n\n\treturn nil\n}\n\nfunc (b *Deque) Clear() {\n\tb.data = make([]int, 0, b.capacity)\n\tb.size = 0\n\tb.front = 0\n}\n\nfunc (b *Deque) resize(newCap int) {\n\n\tdata := make([]int, newCap)\n\n\tcopy(data, b.data[b.front:])\n\tcopy(data[(b.capacity-b.front):], b.data[:b.front])\n\n\tb.data = data\n\tb.capacity = newCap\n\tb.front = 0\n\n}\n\nfunc (d *Deque) getPosBack(index int) int {\n\treturn (d.front + index) % d.capacity\n}\n\nfunc (d *Deque) getPosFront(index int) int {\n\treturn d.capacity - (d.front + index)\n}\n\nfunc (b *Deque) Len() int {\n\treturn b.size\n}\n\nfunc (b *Deque) String() string {\n\tresult := []string{}\n\tfor i := range b.size {\n\t\tval := b.data[(b.front+i)%b.capacity]\n\t\tresult = append(result, fmt.Sprint(val))\n\t}\n\treturn \"[\" + strings.Join(result, \", \") + \"]\"\n}\n\nfunc (b *Deque) Debug() string {\n\tresult := make([]string, b.capacity)\n\tfor i, _ := range result {\n\t\tresult[i] = \" _\"\n\t\tif i == b.front {\n\t\t\tresult[i] = \">_\"\n\t\t}\n\t}\n\tfor i := range b.size {\n\t\tindex := (b.front + i) % b.capacity\n\t\tval := b.data[index]\n\t\tprefix := \" \"\n\t\tif i == 0 {\n\t\t\tprefix = \">\"\n\t\t}\n\t\tresult[index] = fmt.Sprintf(\"%s%d\", prefix, val)\n\t}\n\treturn strings.Join(result, \" |\")\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tbuf := &Deque{data: make([]int, 4), capacity: 4}\n\n\tfor {\n\t\tfmt.Print(\"$\")\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\tfmt.Println(line)\n\t\targs := strings.Fields(line)\n\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\n\t\tcmd := args[0]\n\n\t\tswitch cmd {\n\t\tcase \"show\":\n\t\t\tfmt.Println(buf.String())\n\t\tcase \"debug\":\n\t\t\tfmt.Println(buf.Debug())\n\t\tcase \"size\":\n\t\t\tfmt.Println(buf.Len())\n\t\tcase \"push_back\":\n\t\t\tfor _, v := range args[1:] {\n\t\t\t\tnum, _ := strconv.Atoi(v)\n\t\t\t\tbuf.PushBack(num)\n\t\t\t}\n\t\tcase \"push_front\":\n\t\t\tfor _, v := range args[1:] {\n\t\t\t\tnum, _ := strconv.Atoi(v)\n\t\t\t\tbuf.PushFront(num)\n\t\t\t}\n\t\tcase \"pop_back\":\n\t\t\tif err := buf.PopBack(); err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t}\n\t\tcase \"pop_front\":\n\t\t\tif err := buf.PopFront(); err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t}\n\t\tcase \"front\":\n\t\t\tif val, err := buf.Front(); err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t} else {\n\t\t\t\tfmt.Println(val)\n\t\t\t}\n\t\tcase \"back\":\n\t\t\tif val, err := buf.Back(); err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t} else {\n\t\t\t\tfmt.Println(val)\n\t\t\t}\n\t\tcase \"clear\":\n\t\t\tbuf.Clear()\n\t\tcase \"end\":\n\t\t\treturn\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "224"
+        }
+    ]
+}

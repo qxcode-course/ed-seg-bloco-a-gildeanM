@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-26_19-36-28",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,297 +37,39 @@\n ) %7B%0A\n-%0A%09var str string%0A%0A%09stack := NewStack%5Brune%5D()%0A%0A%09fmt.Scan(&str)%0A%0A%09for _, atualLetter := range str %7B%0A%0A%09%09if stack.IsEmpty() %7B%0A%09%09%09stack.Push(atualLetter)%0A%09%09%09continue%0A%09%09%7D%0A%0A%09%09letterAtTop := stack.Top()%0A%0A%09%09if letterAtTop == atualLetter %7B%0A%09%09%09stack.Pop()%0A%09%09%7D else %7B%0A%09%09%09stack.Push(atualLetter)%0A%09%09%7D%0A%09%7D%0A\n+    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-26_20-00-16",
+            "content": "@@ -330,102 +330,6 @@\n %09%7D%0A%0A\n-%09if stack.IsEmpty() %7B%0A%09%09fmt.Println(%22balanceado%22)%0A%09%7D else %7B%0A%09%09fmt.Println(%22nao balanceado%22)%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-05-26_20-01-02",
+            "content": "@@ -25,217 +25,8 @@\n t%22%0A%0A\n-func equals(l1 rune, l2 rune) bool %7B%0A%0A%09if (l1 == '(' && l2 == ')') %7C%7C (l1 == ')' && l2 == '(') %7B%0A%09%09return true%0A%09%7D%0A%0A%09if (l1 == '%5B' && l2 == '%5D') %7C%7C (l1 == '%5D' && l2 == '%5B') %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A%0A\n func\n@@ -35,16 +35,16 @@\n ain() %7B%0A\n+\n %0A%09var st\n@@ -138,18 +138,8 @@\n  %7B%0A%0A\n-%09%09// ( )%0A%0A\n %09%09if\n@@ -240,15 +240,8 @@\n %09if \n-equals(\n lett\n@@ -247,17 +247,19 @@\n terAtTop\n-,\n+ ==\n  atualLe\n@@ -262,17 +262,16 @@\n alLetter\n-)\n  %7B%0A%09%09%09st\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-05-26_20-06-25",
+            "content": "@@ -59,24 +59,25 @@\n bool %7B%0A%0A%09if \n+(\n l1 == '(' &&\n@@ -86,16 +86,45 @@\n 2 == ')'\n+) %7C%7C (l1 == ')' && l2 == '(')\n  %7B%0A%09%09ret\n@@ -140,16 +140,17 @@\n %09%7D%0A%0A%09if \n+(\n l1 == '%5B\n@@ -163,16 +163,45 @@\n 2 == '%5D'\n+) %7C%7C (l1 == '%5D' && l2 == '%5B')\n  %7B%0A%09%09ret\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-26_20-07-13",
+            "content": "@@ -26,25 +26,180 @@\n %22%0A%0Afunc \n-balanced(\n+equals(l1 rune, l2 rune) bool %7B%0A%0A%09if l1 == '(' && l2 == ')' %7B%0A%09%09return true%0A%09%7D%0A%0A%09if l1 == '%5B' && l2 == '%5D' %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A%0Afunc main() %7B%0A%0A%09var \n str stri\n@@ -200,24 +200,16 @@\n r string\n-) bool %7B\n %0A%0A%09stack\n@@ -230,16 +230,33 @@\n une%5D()%0A%0A\n+%09fmt.Scan(&str)%0A%0A\n %09for _, \n@@ -283,16 +283,26 @@\n  str %7B%0A%0A\n+%09%09// ( )%0A%0A\n %09%09if sta\n@@ -499,9 +499,8 @@\n %09if \n-!\n stac\n@@ -517,261 +517,8 @@\n ) %7B%0A\n-%09%09return false%0A%09%7D%0A%0A%09return true%0A%7D%0A%0Afunc equals(l1 rune, l2 rune) bool %7B%0A%0A%09if l1 == '(' && l2 == ')' %7B%0A%09%09return true%0A%09%7D%0A%0A%09if l1 == '%5B' && l2 == '%5D' %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A%0Afunc main() %7B%0A%0A%09var str string%0A%0A%09fmt.Scan(&str)%0A%0A%09if balanced(str) %7B%0A\n %09%09fm\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-26_20-09-16",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc balanced(str string) bool {\n\n\tstack := NewStack[rune]()\n\n\tfor _, atualLetter := range str {\n\n\t\tif stack.IsEmpty() {\n\t\t\tstack.Push(atualLetter)\n\t\t\tcontinue\n\t\t}\n\n\t\tletterAtTop := stack.Top()\n\n\t\tif equals(letterAtTop, atualLetter) {\n\t\t\tstack.Pop()\n\t\t} else {\n\t\t\tstack.Push(atualLetter)\n\t\t}\n\t}\n\n\tif !stack.IsEmpty() {\n\t\treturn false\n\t}\n\n\treturn true\n}\n\nfunc equals(l1 rune, l2 rune) bool {\n\n\tif l1 == '(' && l2 == ')' {\n\t\treturn true\n\t}\n\n\tif l1 == '[' && l2 == ']' {\n\t\treturn true\n\t}\n\n\treturn false\n}\n\nfunc main() {\n\n\tvar str string\n\n\tfmt.Scan(&str)\n\n\tif balanced(str) {\n\t\tfmt.Println(\"balanceado\")\n\t} else {\n\t\tfmt.Println(\"nao balanceado\")\n\t}\n\n}\n",
+            "lines": "57"
+        }
+    ]
+}
