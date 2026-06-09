@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"cmp"
 	"fmt"
 	"math"
 	"os"
@@ -17,78 +18,205 @@ type Pair struct {
 
 func occurr(vet []int) []Pair {
 
-	// pairs := make([]Pair, 0)
-
-	max := slices.MaxFunc(vet, func(i, j int) int {
-		if math.Abs(float64(i)) > math.Abs(float64(j)) {
-			return i
-		}
-		return j
+	slices.SortFunc(vet, func(a, b int) int {
+		return cmp.Compare(math.Abs(float64(a)), math.Abs(float64(b)))
 	})
 
-	println(max)
+	max := int(math.Abs(float64(vet[len(vet)-1]))) + 1
 
-	// count_vet := make([]int, max)
-	//
-	// for _, value := range vet {
-	// 	count_vet[int(math.Abs(float64(value)))]++
-	// }
+	occ := make([]int, max)
 
-	// for idx, count := range count_vet {
-	// 	if count == 0 {
-	// 		continue
-	// 	}
+	for _, val := range vet {
+		idx := int(math.Abs(float64(val)))
+		occ[idx]++
+	}
 
-	// 	pairs = append(pairs, Pair{idx, count})
+	pairs := make([]Pair, 0, max)
 
-	// }
+	for idx := range occ {
+		if occ[idx] > 0 {
+			pairs = append(pairs, Pair{One: idx, Two: occ[idx]})
+		}
+	}
 
-	return nil
+	return pairs
 }
 
 func teams(vet []int) []Pair {
-	_ = vet
-	return nil
+
+	pairs := make([]Pair, 0, len(vet))
+
+	for _, val := range vet {
+		if len(pairs) > 0 && pairs[len(pairs)-1].One == val {
+			pairs[len(pairs)-1].Two++
+		} else {
+			pairs = append(pairs, Pair{One: val, Two: 1})
+		}
+	}
+
+	return pairs
 }
 
 func mnext(vet []int) []int {
-	_ = vet
-	return nil
+	mapaprox := make([]int, len(vet))
+	n := len(vet)
+
+	for i := range vet {
+
+		if i == 0 {
+			if n == 1 && vet[i] > 0 {
+				continue
+			} else if n > 1 {
+				if vet[i] > 0 && vet[i+1] > 0 {
+					continue
+				}
+			}
+		} else if i == (n - 1) {
+			if vet[i] < 0 || vet[i] > 0 && vet[i-1] > 0 {
+				continue
+			}
+		} else {
+			if vet[i] > 0 && vet[i+1] > 0 && vet[i-1] > 0 {
+				continue
+			}
+		}
+
+		if vet[i] < 0 {
+			continue
+		}
+
+		mapaprox[i]++
+	}
+
+	return mapaprox
 }
 
 func alone(vet []int) []int {
-	_ = vet
-	return nil
+	mapaprox := make([]int, len(vet))
+	n := len(vet)
+
+	for i := range vet {
+
+		if i == 0 {
+			if n == 1 && vet[i] < 0 {
+				continue
+			} else if n > 1 {
+				if vet[i] > 0 && vet[i+1] < 0 {
+					continue
+				}
+			}
+		} else if i == (n - 1) {
+			if vet[i] < 0 || vet[i] > 0 && vet[i-1] < 0 {
+				continue
+			}
+		} else {
+			if vet[i] > 0 && (vet[i+1] < 0 || vet[i-1] < 0) {
+				continue
+			}
+		}
+
+		if vet[i] < 0 {
+			continue
+		}
+
+		mapaprox[i]++
+	}
+
+	return mapaprox
 }
 
 func couple(vet []int) int {
-	_ = vet
-	return 0
+
+	qtdPersons := make(map[int]int, len(vet))
+
+	for _, val := range vet {
+		qtdPersons[val] += 1
+	}
+
+	visited := make(map[int]bool, len(vet))
+	couples := 0
+
+	for _, val := range vet {
+
+		if !visited[val] {
+
+			man := qtdPersons[val]
+			woman := qtdPersons[-val]
+
+			if man == woman {
+				couples += man
+			} else if man > woman {
+				couples += woman
+			} else if woman > man {
+				couples += man
+			}
+
+			visited[val] = true
+			visited[-val] = true
+		}
+	}
+
+	return couples
 }
 
 func hasSubseq(vet []int, seq []int, pos int) bool {
-	_ = vet
-	_ = seq
-	_ = pos
-	return false
+
+	if (len(vet) - pos) < len(seq) {
+		return false
+	}
+
+	for i := 0; i < len(seq); i++ {
+		if vet[pos] != seq[i] {
+			return false
+		}
+		pos++
+	}
+
+	return true
 }
 
 func subseq(vet []int, seq []int) int {
 	_ = vet
 	_ = seq
+
+	for i := 0; i < len(vet); i++ {
+		if hasSubseq(vet, seq, i) {
+			return i
+		}
+	}
+
 	return -1
 }
 
 func erase(vet []int, posList []int) []int {
-	_ = vet
-	_ = posList
-	return nil
+
+	erasedvet := make([]int, 0, len(vet))
+	mapspos := make(map[int]bool, len(posList))
+
+	for _, val := range posList { //n * 1
+		mapspos[val] = true
+	}
+
+	for idx, val := range vet { //m * 1
+		if !mapspos[idx] {
+			erasedvet = append(erasedvet, val)
+		}
+	}
+
+	return erasedvet
 }
 
 func clear(vet []int, value int) []int {
-	_ = vet
-	_ = value
-	return nil
+
+	clearedByValueVet := make([]int, 0, len(vet))
+
+	for _, val := range vet {
+		if val != value {
+			clearedByValueVet = append(clearedByValueVet, val)
+		}
+	}
+
+	return clearedByValueVet
 }
 
 func main() {

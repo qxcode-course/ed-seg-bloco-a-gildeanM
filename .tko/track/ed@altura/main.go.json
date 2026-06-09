@@ -1,0 +1,189 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-08_20-37-43",
+            "content": "@@ -331,226 +331,14 @@\n de, \n+ \n value\n-%0A%0A%09if node == nil %7B%0A%09%09return node%0A%09%7D%0A%0A%09if node.Value == value %7B%0A%09%09return node%0A%09%7D%0A%0A%09var fnode *Node%0A%0A%09fnode = find(node.Left, value)%0A%09if fnode == nil %7B%0A%09%09fnode = find(node.Right, value)%0A%09%7D else %7B%0A%09%09return fnode%0A%09%7D%0A\n %0A%09re\n@@ -1903,16 +1903,19 @@\n , %22%22)%0A%0A%09\n+// \n values :\n@@ -1941,16 +1941,19 @@\n (line)%0A%09\n+// \n for s :=\n@@ -1969,16 +1969,19 @@\n lues %7B%0A%09\n+// \n %09value, \n@@ -2002,16 +2002,19 @@\n toi(s)%0A%09\n+// \n %09node :=\n@@ -2033,16 +2033,19 @@\n value)%0A%09\n+// \n %09if node\n@@ -2051,24 +2051,27 @@\n e != nil %7B%0A%09\n+// \n %09%09fmt.Printf\n@@ -2154,16 +2154,19 @@\n alue))%0A%09\n+// \n %09%7D else \n@@ -2160,32 +2160,35 @@\n %0A%09// %09%7D else %7B%0A%09\n+// \n %09%09fmt.Println(%22-\n@@ -2192,16 +2192,22 @@\n (%22-1%22)%0A%09\n+// \n %09%7D%0A%09\n+// \n %7D%0A%7D%0A\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-06-08_20-44-50",
+            "content": "@@ -317,24 +317,26 @@\n e %7B%0A\n-%0A%09var fnode *Nod\n+%09_, _ = node, valu\n e%0A%0A%09\n@@ -414,16 +414,34 @@\n ode%0A%09%7D%0A%0A\n+%09var fnode *Node%0A%0A\n %09fnode =\n@@ -464,17 +464,16 @@\n  value)%0A\n-%0A\n %09if fnod\n@@ -470,25 +470,25 @@\n )%0A%09if fnode \n-!\n+=\n = nil %7B%0A%09%09re\n@@ -488,25 +488,8 @@\n  %7B%0A%09\n-%09return fnode%0A%09%7D%0A\n %09fno\n@@ -517,17 +517,27 @@\n  value)%0A\n-%0A\n+%09%7D else %7B%0A%09\n %09return \n@@ -538,24 +538,40 @@\n eturn fnode%0A\n+%09%7D%0A%0A%09return nil%0A\n %7D%0A%0A// node i\n",
+            "lines": "126"
+        },
+        {
+            "label": "2026-06-08_20-49-14",
+            "content": "@@ -711,228 +711,27 @@\n t %7B%0A\n-%0A%09height := 1%0A%09if node == nil %7B%0A%09%09return height%0A%09%7D%0A%0A%09height += 1%0A%09left_height := getHeight(node.Left)%0A%09right_height := getHeight(node.Right)%0A%0A%09if right_height %3E left_height %7B%0A%09%09return right_height%0A%09%7D%0A%0A%09return left_height\n+%09_ = node%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "125"
+        },
+        {
+            "label": "2026-06-09_13-17-18",
+            "content": "@@ -721,17 +721,16 @@\n ht := 1%0A\n-%0A\n %09if node\n@@ -773,24 +773,25 @@\n t += 1%0A%09left\n+_\n height := ge\n@@ -812,24 +812,16 @@\n eft)\n- + height\n %0A%09right\n+_\n heig\n@@ -845,32 +845,26 @@\n ode.\n-Left) + he\n+R\n ight\n+)\n %0A%0A%09if \n-left\n+right_\n heig\n@@ -868,21 +868,21 @@\n eight %3E \n-right\n+left_\n height %7B\n@@ -891,20 +891,22 @@\n %09return \n-left\n+right_\n height%0A%09\n@@ -910,25 +910,18 @@\n t%0A%09%7D\n- else %7B%0A%09\n+%0A%0A\n %09return \n righ\n@@ -920,24 +920,20 @@\n urn \n-right\n+left_\n height%0A\n-%09%7D%0A%0A\n %7D%0A%0A/\n",
+            "lines": "138"
+        },
+        {
+            "label": "2026-06-09_13-23-07",
+            "content": "@@ -808,16 +808,25 @@\n de.Left)\n+ + height\n %0A%09righth\n@@ -854,16 +854,25 @@\n de.Left)\n+ + height\n %0A%0A%09if le\n",
+            "lines": "140"
+        },
+        {
+            "label": "2026-06-09_13-23-24",
+            "content": "@@ -712,43 +712,8 @@\n  %7B%0A%0A\n-%09leftheight := 0%0A%09rightheight := 0%0A\n %09hei\n@@ -777,33 +777,33 @@\n = 1%0A%09leftheight \n-+\n+:\n = getHeight(node\n@@ -822,17 +822,17 @@\n theight \n-+\n+:\n = getHei\n",
+            "lines": "140"
+        },
+        {
+            "label": "2026-06-09_13-24-43",
+            "content": "@@ -795,16 +795,29 @@\n ght%0A%09%7D%0A%0A\n+%09height += 1%0A\n %09lefthei\n@@ -843,25 +843,16 @@\n de.Left)\n- + height\n %0A%09righth\n@@ -884,17 +884,8 @@\n eft)\n- + height\n %0A%0A%09i\n",
+            "lines": "142"
+        },
+        {
+            "label": "2026-06-09_13-25-21",
+            "content": "@@ -871,20 +871,19 @@\n ht(node.\n-Righ\n+Lef\n t) + hei\n",
+            "lines": "141"
+        },
+        {
+            "label": "2026-06-09_13-25-34",
+            "content": "@@ -799,21 +799,8 @@\n %09%7D%0A%0A\n-%09height += 1%0A\n %09lef\n@@ -830,16 +830,25 @@\n de.Left)\n+ + height\n %0A%09righth\n@@ -877,16 +877,25 @@\n e.Right)\n+ + height\n %0A%0A%09if le\n",
+            "lines": "141"
+        },
+        {
+            "label": "2026-06-09_13-25-48",
+            "content": "@@ -708,16 +708,51 @@\n  int %7B%0A%0A\n+%09leftheight := 0%0A%09rightheight := 0%0A\n %09height \n@@ -812,33 +812,33 @@\n = 1%0A%09leftheight \n-:\n++\n = getHeight(node\n@@ -857,17 +857,17 @@\n theight \n-:\n++\n = getHei\n",
+            "lines": "142"
+        },
+        {
+            "label": "2026-06-09_13-26-12",
+            "content": "@@ -774,24 +774,28 @@\n t += 1%0A%09\n+left\n height \n-+\n+:\n = getHei\n@@ -813,28 +813,48 @@\n ft)%0A\n-%0A\n %09r\n-eturn height%0A%09// \n+ightheight := getHeight(node.Right)%0A%0A%09\n if l\n@@ -876,27 +876,24 @@\n htheight %7B%0A%09\n-// \n %09return left\n@@ -900,19 +900,16 @@\n height%0A%09\n-// \n %7D else %7B\n@@ -910,19 +910,16 @@\n else %7B%0A%09\n-// \n %09return \n@@ -931,19 +931,16 @@\n height%0A%09\n-// \n %7D%0A%0A%7D%0A%0A//\n",
+            "lines": "140"
+        },
+        {
+            "label": "2026-06-09_13-27-03",
+            "content": "@@ -719,17 +719,17 @@\n ight := \n-0\n+1\n %0A%0A%09if no\n",
+            "lines": "140"
+        },
+        {
+            "label": "2026-06-09_13-27-53",
+            "content": "@@ -713,30 +713,8 @@\n %7B%0A%0A%09\n-leftheight := 0%0A%09right\n heig\n@@ -753,19 +753,20 @@\n urn \n-0\n+height\n %0A%09%7D%0A%0A%09\n-left\n heig\n@@ -774,20 +774,16 @@\n t += 1%0A%09\n-left\n height +\n@@ -809,66 +809,28 @@\n ft)%0A\n+%0A\n %09r\n-ightheight += 1%0A%09rightheight += getHeight(node.Right)%0A%0A%09\n+eturn height%0A%09// \n if l\n@@ -852,24 +852,27 @@\n htheight %7B%0A%09\n+// \n %09return left\n@@ -879,16 +879,19 @@\n height%0A%09\n+// \n %7D else %7B\n@@ -888,24 +888,27 @@\n / %7D else %7B%0A%09\n+// \n %09return righ\n@@ -916,16 +916,19 @@\n height%0A%09\n+// \n %7D%0A%0A%7D%0A%0A//\n",
+            "lines": "140"
+        },
+        {
+            "label": "2026-06-09_13-29-26",
+            "content": "@@ -1197,223 +1197,17 @@\n lue%0A\n-%0A%09if node == nil %7B%0A%09%09return -1%0A%09%7D%0A%0A%09if node.Value == value %7B%0A%09%09return 0%0A%09%7D%0A%0A%09level += calcNodeDepth(node.Left, level+1, value)%0A%0A%09if level == 1 %7B%0A%09%09level += calcNodeDepth(node.Right, level+1, value)%0A%09%7D%0A%0A%09return level\n+%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "142"
+        },
+        {
+            "label": "2026-06-09_13-47-01",
+            "content": "@@ -1322,19 +1322,16 @@\n alue)%0A%0A%09\n-// \n if level\n@@ -1339,19 +1339,16 @@\n == 1 %7B%0A%09\n-// \n %09level +\n@@ -1392,19 +1392,16 @@\n value)%0A%09\n-// \n %7D%0A%0A%09retu\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_13-49-36",
+            "content": "@@ -1263,17 +1263,17 @@\n %09return \n-1\n+0\n %0A%09%7D%0A%0A%09le\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_13-50-17",
+            "content": "@@ -1318,24 +1318,27 @@\n 1, value)%0A%0A%09\n+// \n if level == \n@@ -1342,16 +1342,19 @@\n == 1 %7B%0A%09\n+// \n %09level +\n@@ -1398,16 +1398,19 @@\n value)%0A%09\n+// \n %7D%0A%0A%09retu\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_13-50-35",
+            "content": "@@ -1322,19 +1322,16 @@\n alue)%0A%0A%09\n-// \n if level\n@@ -1339,19 +1339,16 @@\n == 1 %7B%0A%09\n-// \n %09level +\n@@ -1392,19 +1392,16 @@\n value)%0A%09\n-// \n %7D%0A%0A%09retu\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_13-51-58",
+            "content": "@@ -1280,17 +1280,10 @@\n vel \n-= level \n +\n+=\n  cal\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_13-54-55",
+            "content": "@@ -1263,21 +1263,17 @@\n %09return \n-level\n+1\n %0A%09%7D%0A%0A%09le\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_13-56-11",
+            "content": "@@ -1255,33 +1255,37 @@\n alue %7B%0A%09%09return \n-0\n+level\n %0A%09%7D%0A%0A%09level = le\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_13-56-25",
+            "content": "@@ -1263,17 +1263,17 @@\n %09return \n-1\n+0\n %0A%09%7D%0A%0A%09le\n@@ -1280,22 +1280,17 @@\n vel \n-+\n = \n-1%0A%09\n level +\n-=\n  cal\n@@ -1312,24 +1312,26 @@\n .Left, level\n++1\n , value)%0A%0A%09/\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_13-57-42",
+            "content": "@@ -1288,16 +1288,17 @@\n %0A%09level \n++\n = calcNo\n",
+            "lines": "158"
+        },
+        {
+            "label": "2026-06-09_13-58-03",
+            "content": "@@ -1217,25 +1217,26 @@\n  %7B%0A%09%09return \n-0\n+-1\n %0A%09%7D%0A%0A%09if nod\n",
+            "lines": "158"
+        },
+        {
+            "label": "2026-06-09_14-00-53",
+            "content": "@@ -1268,16 +1268,28 @@\n n 1%0A%09%7D%0A%0A\n+%09level += 1%0A\n %09level =\n@@ -1311,34 +1311,32 @@\n node.Left, level\n-+1\n , value)%0A%0A%09// if\n",
+            "lines": "158"
+        },
+        {
+            "label": "2026-06-09_14-02-03",
+            "content": "@@ -1254,33 +1254,33 @@\n alue %7B%0A%09%09return \n-0\n+1\n %0A%09%7D%0A%0A%09level += c\n@@ -1271,25 +1271,24 @@\n %0A%09%7D%0A%0A%09level \n-+\n = calcNodeDe\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_14-02-30",
+            "content": "@@ -1262,21 +1262,17 @@\n %09return \n-level\n+0\n %0A%09%7D%0A%0A%09le\n@@ -1308,24 +1308,26 @@\n t, level\n++1\n , value)\n  + 1%0A%0A%09/\n@@ -1322,12 +1322,8 @@\n lue)\n- + 1\n %0A%0A%09/\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_14-13-12",
+            "content": "@@ -1279,16 +1279,17 @@\n %0A%09level \n++\n = calcNo\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_14-13-34",
+            "content": "@@ -1275,25 +1275,24 @@\n %0A%09%7D%0A%0A%09level \n-+\n = calcNodeDe\n@@ -1319,16 +1319,20 @@\n , value)\n+ + 1\n %0A%0A%09// if\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_14-16-04",
+            "content": "@@ -1262,17 +1262,21 @@\n %09return \n-1\n+level\n %0A%09%7D%0A%0A%09le\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_14-16-13",
+            "content": "@@ -1221,18 +1221,17 @@\n %09return \n--1\n+0\n %0A%09%7D%0A%0A%09if\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_14-22-36",
+            "content": "@@ -1162,16 +1162,46 @@\n t) int %7B\n+%0A%09_, _, _ = node, level, value\n %0A%0A%09if no\n@@ -1221,16 +1221,17 @@\n %09return \n+-\n 1%0A%09%7D%0A%0A%09i\n@@ -1266,16 +1266,8 @@\n turn\n- level +\n  1%0A%09\n@@ -1268,32 +1268,33 @@\n rn 1%0A%09%7D%0A%0A%09level \n++\n = calcNodeDepth(\n@@ -1316,24 +1316,27 @@\n l, value)%0A%0A%09\n+// \n if level %3E 1\n@@ -1336,40 +1336,27 @@\n vel \n-%3E\n+==\n  1 %7B%0A%09\n-%09return level%0A%09%7D%0A%0A\n+// \n %09level \n++\n = ca\n@@ -1386,32 +1386,38 @@\n  level+1, value)\n+%0A%09// %7D\n %0A%0A%09return level%0A\n",
+            "lines": "157"
+        },
+        {
+            "label": "2026-06-09_15-51-02",
+            "content": "@@ -1277,34 +1277,32 @@\n node.Left, level\n-+1\n , value)%0A%0A%09if le\n",
+            "lines": "158"
+        },
+        {
+            "label": "2026-06-09_15-51-20",
+            "content": "@@ -1229,32 +1229,36 @@\n %7B%0A%09%09return level\n+ + 1\n %0A%09%7D%0A%0A%09level = ca\n",
+            "lines": "158"
+        },
+        {
+            "label": "2026-06-09_15-51-40",
+            "content": "@@ -1168,42 +1168,8 @@\n  %7B%0A%0A\n-%09leftdepth := 1%0A%09rightdepth := 1%0A%0A\n %09if \n@@ -1245,23 +1245,19 @@\n %0A%09%7D%0A%0A%09le\n-ftdepth\n+vel\n  = calcN\n@@ -1278,23 +1278,19 @@\n Left, le\n-ftdepth\n+vel\n +1, valu\n@@ -1296,19 +1296,50 @@\n ue)%0A\n-%09rightdepth\n+%0A%09if level %3E 1 %7B%0A%09%09return level%0A%09%7D%0A%0A%09level\n  = c\n@@ -1363,26 +1363,21 @@\n .Right, \n-rightdepth\n+level\n +1, valu\n@@ -1385,88 +1385,20 @@\n )%0A%0A%09\n-if rightdepth %3E leftdepth %7B%0A%09%09return rightdepth%0A%09%7D else %7B%0A%09%09return leftdepth%0A%09%7D%0A\n+return level\n %0A%7D%0A%0A\n",
+            "lines": "158"
+        },
+        {
+            "label": "2026-06-09_15-56-37",
+            "content": "@@ -1178,21 +1178,17 @@\n epth := \n-level\n+1\n %0A%09rightd\n@@ -1195,21 +1195,17 @@\n epth := \n-level\n+1\n %0A%0A%09if no\n",
+            "lines": "161"
+        },
+        {
+            "label": "2026-06-09_15-58-10",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\n// Search node with value\n// Starts with node == root\n// Value is the value we are looking for\n// Returns the node with the value or nil if not found\nfunc find(node *Node, value int) *Node {\n\n\tvar fnode *Node\n\n\tif node == nil {\n\t\treturn node\n\t}\n\n\tif node.Value == value {\n\t\treturn node\n\t}\n\n\tfnode = find(node.Left, value)\n\n\tif fnode != nil {\n\t\treturn fnode\n\t}\n\tfnode = find(node.Right, value)\n\n\treturn fnode\n}\n\n// node is the node we want to find the height of\n// the height of a node is the number of edges on the longest path from the node to a leaf\nfunc getHeight(node *Node) int {\n\n\tleftheight := 0\n\trightheight := 0\n\n\tif node == nil {\n\t\treturn 0\n\t}\n\n\tleftheight += 1\n\tleftheight += getHeight(node.Left)\n\trightheight += 1\n\trightheight += getHeight(node.Right)\n\n\tif leftheight > rightheight {\n\t\treturn leftheight\n\t} else {\n\t\treturn rightheight\n\t}\n\n}\n\n// node is the root of the tree\n// level is the current level in the tree (1 for root)\n// value is the value we are looking for\nfunc calcNodeDepth(node *Node, level int, value int) int {\n\n\tleftdepth := level\n\trightdepth := level\n\n\tif node == nil {\n\t\treturn 1\n\t}\n\n\tif node.Value == value {\n\t\treturn level\n\t}\n\n\tleftdepth = calcNodeDepth(node.Left, leftdepth+1, value)\n\trightdepth = calcNodeDepth(node.Right, rightdepth+1, value)\n\n\tif rightdepth > leftdepth {\n\t\treturn rightdepth\n\t} else {\n\t\treturn leftdepth\n\t}\n\n}\n\n// --------------------------------------------------------------------\n// Don't change from here\nfunc BShow(node *Node, heranca string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, heranca+\"l\")\n\t}\n\tfor i := 0; i < len(heranca)-1; i++ {\n\t\tif heranca[i] != heranca[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif heranca != \"\" {\n\t\tif heranca[len(heranca)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, heranca+\"r\")\n\t}\n}\n\nfunc create(parts *[]string) *Node {\n\telem := (*parts)[0]\n\t*parts = (*parts)[1:]\n\tif elem == \"#\" {\n\t\treturn nil\n\t}\n\tvalue, _ := strconv.Atoi(elem)\n\tnode := &Node{Value: value}\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\treturn node\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tscanner.Scan()\n\n\tline := scanner.Text()\n\tparts := strings.Split(line, \" \")\n\troot := create(&parts)\n\n\tscanner.Scan()\n\tline = scanner.Text()\n\tfmt.Println(\"Arvore:\")\n\tBShow(root, \"\")\n\n\tvalues := strings.FieldsSeq(line)\n\tfor s := range values {\n\t\tvalue, _ := strconv.Atoi(s)\n\t\tnode := find(root, value)\n\t\tif node != nil {\n\t\t\tfmt.Printf(\"Altura: %d, Profundidade: %d\\n\", getHeight(node), calcNodeDepth(root, 1, value))\n\t\t} else {\n\t\t\tfmt.Println(\"-1\")\n\t\t}\n\t}\n}\n",
+            "lines": "161"
+        }
+    ]
+}

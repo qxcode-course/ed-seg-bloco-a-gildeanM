@@ -1,0 +1,34 @@
+2026-06-02 15:54:30, MOVE, v:1, k:ed@especiais, mode:PICK
+2026-06-02 15:54:32, EXEC, v:1, k:ed@especiais, mode:FULL, rate:50, size:253
+2026-06-02 15:54:27, MOVE, v:1, k:ed@especiais, mode:EDIT
+2026-06-02 15:56:27, EXEC, v:1, k:ed@especiais, mode:FREE, size:256
+2026-06-02 15:56:26, MOVE, v:1, k:ed@especiais, mode:EDIT
+2026-06-02 16:02:47, MOVE, v:1, k:ed@especiais, mode:EDIT
+2026-06-02 19:32:54, MOVE, v:1, k:ed@especiais, mode:PICK
+2026-06-02 19:32:56, EXEC, v:1, k:ed@especiais, mode:FULL, rate:50, size:256
+2026-06-02 19:32:58, EXEC, v:1, k:ed@especiais, mode:FREE
+2026-06-02 19:37:28, MOVE, v:1, k:ed@especiais, mode:EDIT
+2026-06-02 19:37:48, EXEC, v:1, k:ed@especiais, mode:FULL, rate:62, size:253
+2026-06-02 19:47:00, EXEC, v:1, k:ed@especiais, mode:FULL, rate:62, size:265
+2026-06-02 19:46:54, MOVE, v:1, k:ed@especiais, mode:EDIT
+2026-06-02 19:49:58, EXEC, v:1, k:ed@especiais, mode:FULL, rate:62, size:265
+2026-06-02 19:49:53, MOVE, v:1, k:ed@especiais, mode:EDIT
+2026-06-02 19:53:09, EXEC, v:1, k:ed@especiais, mode:FULL, rate:75, size:269
+2026-06-02 19:53:05, MOVE, v:1, k:ed@especiais, mode:EDIT
+2026-06-02 20:02:23, EXEC, v:1, k:ed@especiais, mode:FULL, rate:87, size:283
+2026-06-02 20:02:33, MOVE, v:1, k:ed@especiais, mode:EDIT
+2026-06-02 20:08:48, EXEC, v:1, k:ed@especiais, mode:FULL, rate:100, size:290
+2026-06-02 20:08:58, MOVE, v:1, k:ed@especiais, mode:BACK
+2026-06-02 20:09:35, SELF, v:1, k:ed@especiais, self:1, rate:100, study:180
+2026-06-02 20:10:12, MOVE, v:1, k:ed@especiais, mode:PICK
+2026-06-02 20:10:16, EXEC, v:1, k:ed@especiais, mode:FULL, rate:0, size:5
+2026-06-02 20:17:24, EXEC, v:1, k:ed@especiais, mode:FREE, size:24
+2026-06-02 20:17:17, MOVE, v:1, k:ed@princesa, mode:EDIT
+2026-06-02 20:28:35, MOVE, v:1, k:ed@princesa, mode:EDIT
+2026-06-02 20:31:36, EXEC, v:1, k:ed@especiais, mode:FREE, size:50
+2026-06-02 20:34:08, MOVE, v:1, k:ed@princesa, mode:EDIT
+2026-06-02 20:38:28, MOVE, v:1, k:ed@princesa, mode:EDIT
+2026-06-02 20:43:57, MOVE, v:1, k:ed@princesa, mode:EDIT
+2026-06-02 20:44:22, MOVE, v:1, k:ed@princesa, mode:EDIT
+2026-06-02 20:51:49, MOVE, v:1, k:ed@princesa, mode:EDIT
+2026-06-02 20:55:26, MOVE, v:1, k:ed@especiais, mode:BACK

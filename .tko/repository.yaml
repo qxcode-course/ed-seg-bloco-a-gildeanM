@@ -13,20 +13,16 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@list
-- ed@linear
-- ed@backtrack
 - ed@map_set
-- ed@dfs
 - ed@rec
-- ed@vector
-- ed@bfs
+- ed@list
+- ed@tree
 flags:
   inbox: all
-  panel: graph
+  panel: skills
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@caminhao
-selected_index: 67
+selected: ed@compare
+selected_index: 55

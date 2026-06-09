@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-02_20-10-16",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,302 +23,46 @@\n mt%22%0A\n-%0Afunc princesa() %7B%0A%0A%7D%0A%0Afunc main() %7B%0A%09var qtd_elementos, pos_has_sword int%0A%0A%09fmt.Scan(&qtd_elementos, &pos_has_sword)%0A%0A%09elementos := make(%5B%5Dint, qtd_elementos)%0A%0A%09for i := 0; i %3C qtd_elementos; i++ %7B%0A%09%09elementos%5Bi%5D = i + 1%0A%09%7D%0A%0A%09for i := 0; i %3C qtd_elementos; i++ %7B%0A%09%09fmt.Println(elementos%5Bi%5D)%0A%09%7D%0A\n+func main() %7B%0A    fmt.Println(%22qxcode%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-02_20-17-24",
+            "content": "@@ -18,29 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22strconv%22%0A)\n %0A%0Afu\n@@ -39,398 +39,12 @@\n esa(\n-elementos %5B%5Dint, has_sword int) %7B%0A%0A%09// len := len(elementos)%0A%0A%09fmt.Println(elementos, has_sword)%0A%0A%09// has_sword = (has_sword + 2) %25 len%0A%7D%0A%0Afunc String(elementos %5B%5Dint, hasSword int) string %7B%0A%09out := %22%22%0A%0A%09out += %22%5B %22%0A%09for _, val := range elementos %7B%0A%0A%09%09if val == 0 %7B%0A%09%09%09continue%0A%09%09%7D%0A%0A%09%09out += strconv.Itoa(val)%0A%09%09if val == hasSword %7B%0A%09%09%09out += %22%3E%22%0A%09%09%7D%0A%09%09out += %22 %22%0A%09%7D%0A%09out += %22%5D%22%0A%09return out\n+) %7B%0A\n %0A%7D%0A%0A\n@@ -251,42 +251,75 @@\n %7D%0A%0A%09\n-princesa(elementos, pos_has_sword)\n+for i := 0; i %3C qtd_elementos; i++ %7B%0A%09%09fmt.Println(elementos%5Bi%5D)%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-02_20-31-36",
+            "content": "@@ -41,176 +41,8 @@\n %0A)%0A%0A\n-func procurar_vivo(deads map%5Bint%5Dbool, pos int, size int) int %7B%0A%0A%09for true %7B%0A%09%09if deads%5Bpos%5D %7B%0A%09%09%09pos = (pos + 1) %25 size%0A%09%09%7D else %7B%0A%09%09%09return pos%0A%09%09%7D%0A%09%7D%0A%0A%09return -1%0A%7D%0A%0A\n func\n@@ -87,16 +87,19 @@\n nt) %7B%0A%0A%09\n+// \n len := l\n@@ -116,246 +116,82 @@\n os)%0A\n-%09deads := make(map%5Bint%5Dbool, len)%0A%0A%09for i := len; len %3E 0; i-- %7B%0A%09%09pos := procurar_vivo(deads, has_sword, len)%0A%09%09deads%5Bpos%5D = true%0A%09%09has_sword = procurar_vivo(deads, pos, len)%0A%09%09fmt.Println(String(elementos, has_sword, deads))%0A%09%09len--%0A%09%7D%0A\n+%0A%09fmt.Println(elementos, has_sword)%0A%0A%09// has_sword = (has_sword + 2) %25 len\n %0A%7D%0A%0A\n@@ -219,20 +219,17 @@\n  %5B%5Dint, \n-posH\n+h\n asSword \n@@ -235,28 +235,8 @@\n  int\n-, deads map%5Bint%5Dbool\n ) st\n@@ -272,19 +272,17 @@\n  %22%0A%09for \n-idx\n+_\n , val :=\n@@ -310,18 +310,16 @@\n %09if \n-deads%5Bidx%5D\n+val == 0\n  %7B%0A%09\n@@ -370,19 +370,16 @@\n %09if \n-idx\n+val\n  == \n-posH\n+h\n asSw\n@@ -430,17 +430,16 @@\n  += %22%5D%22%0A\n-%0A\n %09return \n@@ -471,32 +471,36 @@\n  qtd_elementos, \n+pos_\n has_sword int%0A%0A%09\n@@ -525,16 +525,20 @@\n entos, &\n+pos_\n has_swor\n@@ -661,32 +661,36 @@\n cesa(elementos, \n+pos_\n has_sword-1)%0A%0A%7D%0A\n@@ -686,10 +686,8 @@\n word\n--1\n )%0A%0A%7D\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-03_08-58-27",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n)\n\nfunc procurar_vivo(deads map[int]bool, pos int, size int) int {\n\n\tfor true {\n\t\tif deads[pos] {\n\t\t\tpos = (pos + 1) % size\n\t\t} else {\n\t\t\treturn pos\n\t\t}\n\t}\n\n\treturn -1\n}\n\nfunc princesa(elementos []int, has_sword int) {\n\n\tlen := len(elementos)\n\tdeads := make(map[int]bool, len)\n\n\tfor i := len; len > 0; i-- {\n\t\tpos := procurar_vivo(deads, has_sword, len)\n\t\tdeads[pos] = true\n\t\thas_sword = procurar_vivo(deads, pos, len)\n\t\tfmt.Println(String(elementos, has_sword, deads))\n\t\tlen--\n\t}\n\n}\n\nfunc String(elementos []int, posHasSword int, deads map[int]bool) string {\n\tout := \"\"\n\n\tout += \"[ \"\n\tfor idx, val := range elementos {\n\n\t\tif deads[idx] {\n\t\t\tcontinue\n\t\t}\n\n\t\tout += strconv.Itoa(val)\n\t\tif idx == posHasSword {\n\t\t\tout += \">\"\n\t\t}\n\t\tout += \" \"\n\t}\n\tout += \"]\"\n\n\treturn out\n}\n\nfunc main() {\n\tvar qtd_elementos, has_sword int\n\n\tfmt.Scan(&qtd_elementos, &has_sword)\n\n\telementos := make([]int, qtd_elementos)\n\n\tfor i := 0; i < qtd_elementos; i++ {\n\t\telementos[i] = i + 1\n\t}\n\n\tprincesa(elementos, has_sword-1)\n\n}\n",
+            "lines": "70"
+        }
+    ]
+}
